@@ -1,0 +1,487 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Working with substitution</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInWorkingWithSubstitution.tex" /> 
+<meta name="date" content="2016-07-26 20:51:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="To be able to use the method of substitution to solve more difficult types of integrals."/> 
+<meta name="learning-outcome" content="To be able to both correctly identify what to substitute for and to be able to successfully carry out the process to correctly solve the problem."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                            
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 12--><p class="noindent" >We explore more diﬃcult problems involving substitution.
+</p></div>   <div class="maketitle"></div>
+We begin by restating the substitution formula.
+<div class="theorem-like problem-environment theorem" id="problem1"><a 
+ id="x1-58r1"></a><span class="theorem-like-title">Integral Substitution Formula</span> If <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script> is diﬀerentiable on the interval <script type="math/tex"> <![CDATA[ 
+[a,b] 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> is
+diﬀerentiable on the interval <script type="math/tex"> <![CDATA[ 
+[g(a),g(b)] 
+]]> 
+</script>, then <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _a^b f'(g(x)) g'(x) \d x =\int _{g(a)}^{g(b)} f'(g) \d g.  
+]]> 
+</script>
+</div>
+<!--l. 28--><p class="noindent" >We spend pretty much this entire section working out examples.
+</p>
+<div class="theorem-like problem-environment example" id="problem2"><a 
+ id="x1-59r2"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _{2}^{3} \frac {1}{x\ln (x)} \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem3"><a 
+ id="x1-60r3"></a>Let <script type="math/tex; mode=display"> <![CDATA[ 
+ g =\answer [given]{\ln (x)},  
+]]> 
+</script> computing <script type="math/tex"> <![CDATA[ 
+\d g 
+]]> 
+</script>, we ﬁnd <script type="math/tex; mode=display"> <![CDATA[ 
+ \d g =\answer [given]{\frac {1}{x}}\d x  
+]]> 
+</script> and solving for <script type="math/tex"> <![CDATA[ 
+\d x 
+]]> 
+</script> we ﬁnd <script type="math/tex; mode=display"> <![CDATA[ 
+ \d x = \answer [given]{x} \d g.  
+]]> 
+</script> Now
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int_{2}^{3} \frac{1}{x\ln(x)} \d x &= \int_{g(2)}^{g(3)} \frac{1}{x \cdot g} x \d g  \\
+&= \int_{\answer[given]{\ln(2)}}^{\answer[given]{\ln(3)}} \answer[given]{\frac{1}{g}} \d g\\
+&= \eval{\answer[given]{\ln(g)}}_{\answer[given]{\ln(2)}}^{\answer[given]{\ln(3)}}\\
+& = \ln(\ln(3)) - \ln(\ln(2)).
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 60--><p class="noindent" >The next example requires a new technique.
+</p>
+<div class="theorem-like problem-environment example" id="problem4"><a 
+ id="x1-61r4"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x^3\sqrt {1-x^2}\d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem5"><a 
+ id="x1-62r5"></a>Here it is not apparent that the chain rule is involved. However,
+if it was involved, perhaps a good guess for <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script> would be <script type="math/tex; mode=display"> <![CDATA[ 
+ g = \answer [given]{1-x^2}  
+]]> 
+</script> and then
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+  \d g &= \answer[given]{-2x} \d x, \\
+  \d x &= \answer[given]{\frac{-1}{2x}} \d g.
+\end{align*} 
+]]> 
+</script>
+Now we consider the integral we are trying to compute <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x^3\sqrt {1-x^2}\d x  
+]]> 
+</script>
+and we substitute using our work above. Write with me
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+  \int x^3\sqrt{1-x^2}\d x &= \int x^3 \answer[given]{\sqrt{g}} \left( \answer[given]{\frac{-1}{2x}} \right) \d g \\
+  &= \int \frac{-x^2 \answer[given]{\sqrt{g}}}{2}\d g.
+\end{align*} 
+]]> 
+</script>
+However, we cannot continue until each <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> is replaced. We know that <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+g &= 1-x^2 \\
+\Rightarrow \qquad g -1 &= -x^2\\
+\Rightarrow \qquad \answer[given]{1- g} &= x^2
+\end{align*} 
+]]> 
+</script>
+so now we may replace <script type="math/tex"> <![CDATA[ 
+x^2 
+]]> 
+</script> <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x^3\sqrt {1-x^2}\d x = \int -\frac {\answer [given]{(1-g)} \sqrt {g}}{2}\d g.  
+]]> 
+</script> At this point, we are close to being done. Write
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int -\frac{(1-g)\sqrt{g}}{2}\d g &= \int \left(\frac{g\sqrt{g}}{2} - \frac{\sqrt{g}}{2}\right) \d g \\
+&= \int \frac{\answer[given]{g^{3/2}}}{2} \d g - \int \frac{\sqrt{g}}{2} \d g \\
+                                                                  
+
+                                                                  
+&= \answer[given]{\frac{g^{5/2}}{5}} - \answer[given]{\frac{g^{3/2}}{3}}.
+\end{align*} 
+]]> 
+</script>
+Now recall that <script type="math/tex"> <![CDATA[ 
+g = 1-x^2 
+]]> 
+</script>. Hence our ﬁnal answer is <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x^3\sqrt {1-x^2}\d x = \answer [given]{\frac {(1-x^2)^{5/2}}{5}} - \frac {(1-x^2)^{3/2}}{3}+C.  
+]]> 
+</script>
+</div>
+</div>
+<!--l. 111--><p class="noindent" >Sometimes it is not obvious how a fraction could have been obtained using the chain
+rule. A common trick though is to substitute for the <em>denominator</em> of a fraction. Like
+all tricks, this technique does not always work. Regardless the next two examples
+present how this technique can be used.
+</p>
+<div class="theorem-like problem-environment example" id="problem6"><a 
+ id="x1-63r6"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \frac {\sec (y) \tan (y) + \sec ^2(y)}{\sec (y) + \tan (y)} \d y  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem7"><a 
+ id="x1-64r7"></a>We substitute <script type="math/tex; mode=display"> <![CDATA[ 
+ g = \sec (y) + \tan (y)  
+]]> 
+</script> and we immediately see that
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+  \d g &= \answer[given]{(\sec(y) \tan(y) + \sec^2(y))} \d y,\\
+  \d y &= \frac{1}{\answer[given]{\sec(y) \tan(y) + \sec^2(y)}} \d g.
+\end{align*} 
+]]> 
+</script>
+But this cancels perfectly with the numerator! So we have that
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int \frac{\sec(y) \tan(y) + \sec^2(y)}{\sec(y) + \tan(y)} \d y &= \int \frac{1}{g} \d g  \\
+&= \ln|g| + C  \\
+&= \ln| \sec(y) + \tan(y) | + C.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 145--><p class="noindent" >Notice that <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {\sec (x) \tan (x) + \sec ^2(x)}{\sec (x) + \tan (x)} = \frac {\sec (x) (\tan (x) + \sec (x))}{\sec (x) + \tan (x)} = \sec (x)  
+]]> 
+</script> when <script type="math/tex"> <![CDATA[ 
+\sec (x) \neq - \tan (x) 
+]]> 
+</script>. So in a very contrived way, we have just proved
+</p>
+<div class="theorem-like problem-environment theorem" id="problem8"><a 
+ id="x1-65r8"></a><script type="math/tex; mode=display"> <![CDATA[ 
+ \int \sec (x) \d x = \ln |\sec (x) + \tan (x)| + C.  
+]]> 
+</script>
+</div>
+<!--l. 159--><p class="noindent" >Notice the variable in this next example.
+</p>
+<div class="theorem-like problem-environment example" id="problem9"><a 
+ id="x1-66r9"></a> Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \frac {g}{1-g^2} \d g  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem10"><a 
+ id="x1-67r10"></a>We want to substitute for <script type="math/tex"> <![CDATA[ 
+1-g^2 
+]]> 
+</script>. But the variable “<script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script>” has already been
+used…OH NO! Never fear! We can substitute with whatever variable that
+we want. In particular, let us use “<script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script>” for this problem. So we let <script type="math/tex; mode=display"> <![CDATA[ 
+ h = 1 - g^2  
+]]> 
+</script> and then
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+  \d h &= \answer[given]{-2g} \d g,\\
+  \d g &= \answer[given]{\frac{-1}{2g}} \d h.
+\end{align*} 
+]]> 
+</script>
+Thus <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int \frac{g}{1-g^2} \d g &= \int \frac{g}{h} \left( \answer[given]{\frac{-1}{2g}} \right) \d h  \\
+&= - \frac{1}{2} \int \frac{1}{h} \d h  \\
+&= - \frac{1}{2} \ln|h| + C  \\
+&= - \frac{1}{2} \ln|1-g^2| + C.
+                                                                  
+
+                                                                  
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem11"><a 
+ id="x1-68r11"></a> Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \tan (x) \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem12"><a 
+ id="x1-69r12"></a>We begin by writing <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\tan(x) &= \frac{\sin(x)}{\cos(x)}  \\
+&= \frac{\sin(x)}{\cos(x)} \cdot \frac{\cos(x)}{\cos(x)}  \\
+&= \frac{\sin(x) \cos(x)}{1 - \sin^2(x)}.
+\end{align*} 
+]]> 
+</script>
+We then make the substitution <script type="math/tex; mode=display"> <![CDATA[ 
+ g = \sin (x)  
+]]> 
+</script> and so <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\d g &= \answer[given]{\cos(x)} \d x,\\
+\d x &= \frac{1}{\answer[given]{\cos(x)}} \d g.
+\end{align*} 
+]]> 
+</script>
+Then <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int \tan(x) \d x &= \int \frac{\sin(x) \cos(x)}{1 - \sin^2(x)} \d x  \\
+&= \int \frac{g \cos(x)}{1 - g^2} \cdot \frac{1}{\answer[given]{\cos(x)}} \d g  \\
+&= \int \frac{g}{1-g^2} \d g.
+\end{align*} 
+]]> 
+</script>
+But this is the same problem as Example <a 
+href="#x1-66r9">9<!--tex4ht:ref: key example --></a>! And so we know that
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int \tan(x) \d x &= - \frac{1}{2} \ln|1-g^2| + C  \\
+&= - \frac{1}{2} \ln|1-\sin^2 (x)| + C  \\
+&= - \frac{1}{2} \ln|\cos^2(x)| + C  \\
+&= \ln|\cos^2(x)|^{- \frac{1}{2}} + C  \\
+&= \ln|\sec(x)| + C.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 236--><p class="noindent" >We have just proved
+</p>
+<div class="theorem-like problem-environment theorem" id="problem13"><a 
+ id="x1-70r13"></a><script type="math/tex; mode=display"> <![CDATA[ 
+ \int \tan (x) \d x = \ln |\sec (x)| + C.  
+]]> 
+</script>
+</div>
+<!--l. 244--><p class="noindent" >Note that in Example <a 
+href="#x1-68r11">11<!--tex4ht:ref: example tan --></a>, we could have instead made the substitution <script type="math/tex; mode=display"> <![CDATA[ 
+ g = 1-\sin ^2(x).  
+]]> 
+</script> This would
+have gotten us to the answer quicker and without using Example <a 
+href="#x1-66r9">9<!--tex4ht:ref: key example --></a>. You are
+encouraged to work this out on your own right now!
+</p><!--l. 251--><p class="noindent" >We end this section with two more diﬃcult examples.
+</p>
+<div class="theorem-like problem-environment example" id="problem14"><a 
+ id="x1-71r14"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \frac {e^{2x}}{1 - e^{2x}} \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem15"><a 
+ id="x1-72r15"></a>Maybe the biggest key to solving this problem is to recall that <script type="math/tex; mode=display"> <![CDATA[ 
+ e^{2x} = (\answer [given]{e^x})^2.  
+]]> 
+</script> So we
+can rewrite the problem <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \frac {e^{2x}}{1 - e^{2x}} \d x = \int \frac {(\answer [given]{e^x})^2}{1 - (\answer [given]{e^x})^2} \d x.  
+]]> 
+</script> Now, if we make the substitution <script type="math/tex"> <![CDATA[ 
+g = e^x 
+]]> 
+</script>, we have that
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\d g &= \answer[given]{e^x} \d x,\\
+                                                                  
+
+                                                                  
+\d x &= \frac{1}{\answer[given]{e^x}} \d g,
+\end{align*} 
+]]> 
+</script>
+and <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int \frac{e^{2x}}{1 - e^{2x}} \d x &= \int \frac{(e^x)^2}{1 - g^2} \cdot \frac{1}{\answer[given]{e^x}} \d g  \\
+&= \int \frac{e^x}{1-g^2} \d g  \\
+&= \int \frac{g}{1-g^2} \d g.
+\end{align*} 
+]]> 
+</script>
+But now we are back to Example <a 
+href="#x1-66r9">9<!--tex4ht:ref: key example --></a>, and so we know that
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int \frac{e^{2x}}{1 - e^{2x}} \d x &= - \frac{1}{2} \ln|1-g^2| + C  \\
+&= - \frac{1}{2} \ln|1 - e^{2x}| + C.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 289--><p class="noindent" >Again, in the previous example we could have instead made the substitution <script type="math/tex; mode=display"> <![CDATA[ 
+ g = 1 - e^{2x}  
+]]> 
+</script> and
+avoided using Example <a 
+href="#x1-66r9">9<!--tex4ht:ref: key example --></a>. In general, any time that you make two successive
+substitutions in a problem, you could have instead just made one substitution. This
+one substitution is the <em>composition</em> of the two original substitutions. But
+sometimes it may not be obvious to make one clever substitution, and so two
+substitutions makes more sense. The next example helps to demonstrate
+this.
+</p>
+<div class="theorem-like problem-environment example" id="problem16"><a 
+ id="x1-73r16"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _0^{16} \sqrt {4 - \sqrt {x}} \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem17"><a 
+ id="x1-74r17"></a>While it is not obvious at all, let us try the substitution <script type="math/tex; mode=display"> <![CDATA[ 
+ g = \sqrt {x}.  
+]]> 
+</script> Then
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\d g &= \answer[given]{\frac{1}{2 \sqrt{x}}} \d x,\\
+\d x &= 2 \sqrt{x} \d g = 2g \d g,
+\end{align*} 
+]]> 
+</script>
+and so <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int_0^{16} \sqrt{4 - \sqrt{x}} \d x &= \int_{g(0)}^{g(16)} \answer[given]{\sqrt{4-g} \cdot 2g} \d g  \\
+&= \int_{\answer[given]{0}}^{\answer[given]{4}} \answer[given]{2g \sqrt{4-g}} \d g.
+\end{align*} 
+]]> 
+</script>
+From here we now make the second (and more obvious) substitution <script type="math/tex; mode=display"> <![CDATA[ 
+ h = 4-g.  
+]]> 
+</script> Then <script type="math/tex"> <![CDATA[ 
+g = 4-h 
+]]> 
+</script>, and
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\d h &= - \d g,\\
+\d g &= - \d h.
+\end{align*} 
+]]> 
+</script>
+So <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int_0^{16} \sqrt{4 - \sqrt{x}} \d x &= \int_0^4 2g \sqrt{4-g} \d g  \\
+&= \int_{h(0)}^{h(4)} 2 (4-h) \sqrt{h} (-1) \d h  \\
+&= - \int_{\answer[given]{4}}^{\answer[given]{0}} ( 8h^{\frac{1}{2}} - 2h^{\frac{3}{2}} ) \d h  \\
+&= \int_{\answer[given]{0}}^{\answer[given]{4}} ( 8h^{\frac{1}{2}} - 2h^{\frac{3}{2}} ) \d h  \\
+&= \eval{ \answer[given]{8 \left( \frac{2}{3} \right) h^{\frac{3}{2}} - 2 \left( \frac{2}{5} \right) h^{\frac{5}{2}}} }_{0}^{4}  \\
+&= \left( \frac{16}{3} (4)^{\frac{3}{2}} - \frac{4}{5} (4)^{\frac{5}{2}} \right) - \left( 0 - 0 \right)  \\
+                                                                  
+
+                                                                  
+&= \frac{128}{3} - \frac{128}{5}   \\
+&= \frac{256}{15}.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div> </body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

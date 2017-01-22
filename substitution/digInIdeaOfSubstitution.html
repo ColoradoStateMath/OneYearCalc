@@ -1,0 +1,398 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>The idea of substitution</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInIdeaOfSubstitution.tex" /> 
+<meta name="date" content="2016-07-26 20:46:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="To be able to use the method of substitution to solve some ``simple'' integrals, with an emphasis on being able to correctly identify what to substitute for."/> 
+<meta name="learning-outcome" content="Undo the Chain Rule."/> 
+<meta name="learning-outcome" content="Calculate indefinite integrals (antiderivatives) using basic substitution."/> 
+<meta name="learning-outcome" content="Calculate definite integrals using basic substitution."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                              
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 12--><p class="noindent" >We learn a new technique, called substitution, to help us solve problems involving
+integration.
+</p></div>   <div class="maketitle"></div>
+Computing antiderivatives is not as easy as computing derivatives. One
+issue is that the chain rule can be diﬃcult to “undo.” We have a general
+method called “integration by substitution” that will somewhat help with this
+diﬃculty. The idea is this, we know from the chain rule that <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx f(g(x)) = f'(g(x))g'(x)  
+]]> 
+</script> so if we conisder
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+  \int_a^b f'(g(x))g'(x) \d x &= \eval{f(g(x))}_a^b \\
+  &= f(g(b)) - f(g(a)) \\
+  &= \eval{f(g)}_{g(a)}^{g(b)}\\
+  &= \int_{g(a)}^{g(b)}f'(g) \d g.
+\end{align*} 
+]]> 
+</script>
+<!--l. 34--><p class="noindent" >This “transformation” is worth stating explicity:
+</p>
+<div class="theorem-like problem-environment theorem" id="problem1"><a 
+ id="x1-58r1"></a><span class="theorem-like-title">Integral Substitution Formula</span> If <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script> is diﬀerentiable on the interval <script type="math/tex"> <![CDATA[ 
+[a,b] 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> is
+diﬀerentiable on the interval <script type="math/tex"> <![CDATA[ 
+[g(a),g(b)] 
+]]> 
+</script>, then <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _a^b f'(g(x)) g'(x) \d x =\int _{g(a)}^{g(b)} f'(g) \d g.  
+]]> 
+</script>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-1000"></a>Three similar techinques</h3>
+<!--l. 46--><p class="noindent" >There are several diﬀerent ways to think about substitution. The ﬁrst
+is directly using the formula <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _a^b f'(g(x)) g'(x) \d x = \int _{g(a)}^{g(b)} f'(g) \d g.  
+]]> 
+</script> </p><div class="theorem-like problem-environment example" id="problem2"><a 
+ id="x1-1001r2"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _1^3 x\cos (x^2)\d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem3"><a 
+ id="x1-1002r3"></a>A little thought reveals that
+if <script type="math/tex"> <![CDATA[ 
+x\cos (x^2) 
+]]> 
+</script> is the derivative of some function, then it must have come from an
+application of the chain rule. <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \underbrace {x}_{\text {derivative of inside}}\cos (\underbrace {x^2}_{\text {inside}})\d x.  
+]]> 
+</script> Set <script type="math/tex"> <![CDATA[ 
+g(x) = x^2 
+]]> 
+</script>, so <script type="math/tex"> <![CDATA[ 
+g'(x) = 2x 
+]]> 
+</script>, and now it must be that <script type="math/tex"> <![CDATA[ 
+f'(g) = \frac {\cos (g)}{2} 
+]]> 
+</script>. Now we see
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int_1^3 x\cos(x^2)\d x &= \int_1^9 \frac{\cos(g)}{2}\d g\\
+&= \eval{\frac{\sin(g)}{2}}_1^9 \\
+&= \frac{\sin(9) -\sin(1)}{2}.
+\end{align*} 
+]]> 
+</script>
+Notice the change of endpoints in the ﬁrst equality! We obtained the new integrands
+by the computations <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+g(1) &= 1^2 = 1  \\
+g(3) &= 3^2 = 9.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 79--><p class="noindent" >We will usually solve these problems in a slightly diﬀerent way. Let&#x2019;s do the same
+example again, this time we will think in terms of diﬀerentials.
+                                                                  
+
+                                                                  
+</p>
+<div class="theorem-like problem-environment example" id="problem4"><a 
+ id="x1-1003r4"></a> Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _1^3 x\cos (x^2)\d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem5"><a 
+ id="x1-1004r5"></a>Here we will set <script type="math/tex"> <![CDATA[ 
+g(x) = x^2 
+]]> 
+</script>. Then <script type="math/tex"> <![CDATA[ 
+\d g = \answer [given]{2x} \d x 
+]]> 
+</script>, where we are thinking in
+terms of diﬀerentials. So we can solve for <script type="math/tex"> <![CDATA[ 
+\d x 
+]]> 
+</script> to get <script type="math/tex"> <![CDATA[ 
+\d x = \frac {\d g}{\answer [given]{2x}} 
+]]> 
+</script>. We then see that
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+  \int_1^3 x \cos(x^2) \d x &= \int_{g(1)}^{g(3)} x \cos(g) \frac{\d g}{2x}\\
+  &= \int_{1}^{9} \frac{\cos(g)}{2}\d g .
+\end{align*} 
+]]> 
+</script>
+At this point, we can continue as we did before and write <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _1^3 x\cos (x^2)\d x= \frac {\sin (9) -\sin (1)}{2}.  
+]]> 
+</script>
+</div>
+</div>
+<!--l. 104--><p class="noindent" >Finally, sometimes we simply want to deal with the antiderivative on its own, we&#x2019;ll
+repeat the example one more time demonstrating this.
+</p>
+<div class="theorem-like problem-environment example" id="problem6"><a 
+ id="x1-1005r6"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _1^3 x\cos (x^2)\d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem7"><a 
+ id="x1-1006r7"></a>Here we start as we did before, setting <script type="math/tex"> <![CDATA[ 
+g(x)=x^2 
+]]> 
+</script>. Now <script type="math/tex"> <![CDATA[ 
+\d g = 2x \d x 
+]]> 
+</script>, again
+thinking in terms of diﬀerentials. Now we see that <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x \cos (x^2) \d x = \int x \cos (g) \frac {\d g}{2x} = \int \frac {\cos (g)}{2}\d g .  
+]]> 
+</script> Hence <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x\cos (x^2)\d x = \frac {\sin (g)}{2} = \frac {\sin (x^2)}{2}.  
+]]> 
+</script> So
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int_1^3 x\cos(x^2)\d x &=\eval{\frac{\sin(x^2)}{2}}_1^3\\
+&= \frac{\sin(9) -\sin(1)}{2}.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-2000"></a>More examples</h3>
+<!--l. 132--><p class="noindent" >With some experience, it is (usually) not too hard to see what to substitute as <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script>. We
+will work through the following examples in the same way that we did for Example <a 
+href="#x1-1003r4">4<!--tex4ht:ref: main example --></a>.
+Let&#x2019;s see another example.
+</p>
+<div class="theorem-like problem-environment example" id="problem8"><a 
+ id="x1-2001r8"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x^4(x^5+1)^{9} \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem9"><a 
+ id="x1-2002r9"></a>Here we set <script type="math/tex"> <![CDATA[ 
+g(x) = \answer [given]{x^5+1} 
+]]> 
+</script>, so <script type="math/tex"> <![CDATA[ 
+\d g = \answer [given]{5x^4} \d x 
+]]> 
+</script>. Then <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+   \int x^4(x^5+1)^{9} \d x &= \frac{1}{5} \int 5x^4 (x^5+1)^{9} \d x \\
+  &= \frac{1}{5} \int g^{9} \d g\\
+&= \answer[given]{\frac{g^{10}}{50}}.
+\end{align*} 
+]]> 
+</script>
+Notice that this example is an indeﬁnite integral and not a deﬁnite integral, meaning
+that there are no limits of integration. So we do not need to worry about changing
+the endpoints of the integral. However, we do need to back-substitute into our
+answer, so that our ﬁnal answer is a function of <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>. Recalling that <script type="math/tex"> <![CDATA[ 
+g(x) = x^5+1 
+]]> 
+</script>, we have our ﬁnal
+answer <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x^4(x^5+1)^{9} \d x= \answer [given]{\frac {(x^5+1)^{10}}{50}}+C.  
+]]> 
+</script>
+</div>
+</div>
+<!--l. 162--><p class="noindent" >If substitution works to solve an integral (and that is not always the case!), a
+common trick to ﬁnd what to substitute for is to locate the “ugly” part of
+the function being integrated. We then substitute for the “inside” of this
+                                                                  
+
+                                                                  
+ugly part. While this technique is certainly not rigorous, it can prove to
+be very helpful. This is especially true for students new to the technique
+of substitution. The next two problems are really good examples of this
+philosophy.
+</p>
+<div class="theorem-like problem-environment example" id="problem10"><a 
+ id="x1-2003r10"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _{-1}^0 12x^3 e^{x^4} \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem11"><a 
+ id="x1-2004r11"></a>The “ugly” part of the function being integrated is <script type="math/tex"> <![CDATA[ 
+e^{x^4} 
+]]> 
+</script>. The
+“inside” of this term is then <script type="math/tex"> <![CDATA[ 
+x^4 
+]]> 
+</script>. So a good possibility is to try <script type="math/tex; mode=display"> <![CDATA[ 
+ g(x) = \answer [given]{x^4}.  
+]]> 
+</script> Then <script type="math/tex; mode=display"> <![CDATA[ 
+ \d g = \answer [given]{4x^3} \d x \qquad \Rightarrow \qquad \d x = \answer [given]{\frac {1}{4x^3}} \d g  
+]]> 
+</script> and so
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int_{-1}^0 12x^3 e^{x^4} \d x &= \int_{g(-1)}^{g(0)} 12 x^3 e^g \answer[given]{\frac{1}{4x^3}} \d g  \\
+&= \int_{\answer[given]{1}}^{\answer[given]{0}} \answer[given]{3 e^g} \d g  \\
+&= \eval{\answer[given]{3e^g}}_{\answer[given]{1}}^{\answer[given]{0}}  \\
+&= \answer[given]{3(1-e)}.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem12"><a 
+ id="x1-2005r12"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _{1}^{e^{\frac {\pi }{4}}} \frac {\cos (\ln x)}{x} \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem13"><a 
+ id="x1-2006r13"></a>Here the “ugly” part here is <script type="math/tex"> <![CDATA[ 
+\cos (\ln x) 
+]]> 
+</script>. So we substitute for the inside: <script type="math/tex; mode=display"> <![CDATA[ 
+ g(x)=\answer [given]{\ln x}.  
+]]> 
+</script> Then <script type="math/tex; mode=display"> <![CDATA[ 
+ \d g = \answer [given]{\frac {1}{x}} \d x \qquad \Rightarrow \qquad \d x = \answer [given]{x} \d g.  
+]]> 
+</script>
+Notice that <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+g(1) &= \ln (1) = \answer[given]{0} \\
+g \left( e^{\frac{\pi}{4}} \right) &= \ln \left( e^{\frac{\pi}{4}} \right) = \answer[given]{\frac{\pi}{4}}.
+\end{align*} 
+]]> 
+</script>
+Then we substitute back into the original integral and solve:
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int_{1}^{e^{\frac{\pi}{4}}} \frac{\cos(\ln x)}{x} \d x &= \int_0^{\frac{\pi}{4}} \frac{\cos(g)}{x} x \d g  \\
+&= \int_0^{\frac{\pi}{4}} \cos(g) \d g  \\
+&= \eval{\answer[given]{\sin(g)}}_{0}^{\frac{\pi}{4}}  \\
+&= \answer[given]{\frac{\sqrt{2}}{2}} - \answer[given]{0} = \answer[given]{\frac{\sqrt{2}}{2}}.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 229--><p class="noindent" >To summarize, if we suspect that a given function is the derivative of another via the
+chain rule, we let <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script> denote a likely candidate for the inner function, then translate the
+given function so that it is written entirely in terms of <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script>, with no <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> remaining in the
+expression. If we can integrate this new function of <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script>, then the antiderivative of the
+original function is obtained by replacing <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script> by the equivalent expression in
+<script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>.
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

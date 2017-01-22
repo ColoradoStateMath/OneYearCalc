@@ -1,0 +1,409 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="sigma-rules.tex" /> 
+<meta name="date" content="2016-07-26 20:44:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content=""/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                                  
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 11--><p class="noindent" >We have formulas for some simple sums
+</p></div>
+We have already ﬁgured out that <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=n} 1 = n 
+]]> 
+</script> in the last section. This should make sense. In
+words it just says “The sum of <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> ones is <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script>”.
+<!--l. 16--><p class="noindent" >We can generalize this slightly:
+</p>
+<div class="problem-environment question" id="problem1"><a 
+ id="x1-58r1"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=a}^{k=b} c = \answer {(b-a+1)c} 
+]]> 
+</script> <div class="problem-environment hint" id="problem2"><a 
+ id="x1-59r2"></a> How many terms are there? Be careful! Try some examples with small values of <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script>
+and <script type="math/tex"> <![CDATA[ 
+b 
+]]> 
+</script>
+</div> <div class="problem-environment hint" id="problem3"><a 
+ id="x1-60r3"></a> There are <script type="math/tex"> <![CDATA[ 
+b-a+1 
+]]> 
+</script> terms. For example, if <script type="math/tex"> <![CDATA[ 
+a=4 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+b=5 
+]]> 
+</script>, then there are <script type="math/tex"> <![CDATA[ 
+5-4+1 = 2 
+]]> 
+</script> terms.
+</div> <div class="problem-environment hint" id="problem4"><a 
+ id="x1-61r4"></a> So we are summing <script type="math/tex"> <![CDATA[ 
+b-a+1 
+]]> 
+</script> copies of <script type="math/tex"> <![CDATA[ 
+c 
+]]> 
+</script>, which is <script type="math/tex"> <![CDATA[ 
+(b-a+1)c 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 31--><p class="noindent" >There is something worth highlighting about this example.
+</p><!--l. 33--><p class="noindent" >In <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=n} c = c + c+ c+ ... + c 
+]]> 
+</script>, no individual term involves <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script>, but the number of terms does depend on
+<script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script>.
+</p><!--l. 35--><p class="noindent" >The formula <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=n} c = cn 
+]]> 
+</script> lets us rewrite this sum as a single function of <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script>.
+</p><!--l. 37--><p class="noindent" >This idea, that we can sometimes simplify a sum of a variable number of terms into
+an explicit function of the number of terms, is very powerful.
+</p><!--l. 39--><p class="noindent" >We now develop a similar formula for <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=n} k 
+]]> 
+</script>
+</p>
+<div class="problem-environment question" id="problem5"><a 
+ id="x1-62r5"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=1} k = \answer {1} 
+]]> 
+</script> <div class="problem-environment hint" id="problem6"><a 
+ id="x1-63r6"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=1} k = 1 
+]]> 
+</script>
+</div>
+<!--l. 47--><p class="noindent" ><script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=2} k = \answer {3} 
+]]> 
+</script> </p><div class="problem-environment hint" id="problem7"><a 
+ id="x1-64r7"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=2} k = 1+2 = 3 
+]]> 
+</script>
+</div>
+<!--l. 52--><p class="noindent" ><script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=3} k = \answer {6} 
+]]> 
+</script> </p><div class="problem-environment hint" id="problem8"><a 
+ id="x1-65r8"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=3} k = 1+2+3 = 6 
+]]> 
+</script>
+</div>
+<!--l. 57--><p class="noindent" ><script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=4} k = \answer {10} 
+]]> 
+</script> </p><div class="problem-environment hint" id="problem9"><a 
+ id="x1-66r9"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=4} k = 1+2+3+4 = 10 
+]]> 
+</script>
+</div>
+<!--l. 62--><p class="noindent" ></div>
+</p>
+<div class="problem-environment question" id="problem10"><a 
+ id="x1-67r10"></a> Find a formula for <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{n} k 
+]]> 
+</script> in terms of <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script>.
+<!--l. 69--><p class="noindent" >We may write <script type="math/tex; mode=display"> <![CDATA[ 
+ S(n) = 1+2+3+\dots +(n-2)+(n-1)+n.  
+]]> 
+</script> But we can also write <script type="math/tex; mode=display"> <![CDATA[ 
+ S(n) = n+(n-1)+(n-2)+\dots +3+2+1,  
+]]> 
+</script> since the order in which we add numbers does
+not aﬀect the sum. Adding these two expressions for <script type="math/tex"> <![CDATA[ 
+S(n) 
+]]> 
+</script> together we have <script type="math/tex; mode=display"> <![CDATA[ 
+ 2S(n) = (1+n)+[2+(n-1)]+[3+(n-2)]+...+[3+(n-2)]+\dots +[(n-2)+3]+[(n-1)+2]+\answer [given]{(n+1)}.  
+]]> 
+</script> Examine
+each term above. Each of these terms simpliﬁes to <script type="math/tex"> <![CDATA[ 
+\answer [given]{n+1} 
+]]> 
+</script> and there are <script type="math/tex"> <![CDATA[ 
+\answer [given]{n} 
+]]> 
+</script> terms total, so <script type="math/tex"> <![CDATA[ 
+S(n) = \answer {\frac {n(n+1)}{2}} 
+]]> 
+</script> </p><div class="problem-environment hint" id="problem11"><a 
+ id="x1-68r11"></a>
+Each term simpliﬁes to <script type="math/tex"> <![CDATA[ 
+n+1 
+]]> 
+</script>, and there are <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> terms, so the sum is <script type="math/tex"> <![CDATA[ 
+n(n+1) 
+]]> 
+</script>. Dividing both sides of
+the equation by <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script>, we have <script type="math/tex"> <![CDATA[ 
+S(n) = \frac {n(n+1)}{2} 
+]]> 
+</script>
+</div>
+                                                                  
+
+                                                                  
+<!--l. 88--><p class="noindent" >Check this formula by plugging in <script type="math/tex"> <![CDATA[ 
+n=1,2,3,4 
+]]> 
+</script> and see that it agrees with the answers you
+computed “by hand” above.
+</p>
+<div class="multiple-choice" id="problem12"><a 
+ id="x1-69r12"></a> <span class="choice correct" id="choice1">On my honor, I did check that the formula works for these values</span> <span class="choice" id="choice2">I did not check
+that the formula works for these values</span>
+</div>
+<!--l. 95--><p class="noindent" >You might also enjoy the following visualization of the formula:
+</p><!--l. 100--><p class="noindent" ></div>
+</p>
+<div class="problem-environment question" id="problem13"><a 
+ id="x1-70r13"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=n-2} k = \answer { \frac {(n-2)(n-2+1)}{2} } 
+]]> 
+</script> <div class="problem-environment hint" id="problem14"><a 
+ id="x1-71r14"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=n-2} k = \frac {(n-2)[(n-2)+1]}{2}  
+]]> 
+</script>
+</div>
+</div>
+<div class="problem-environment question" id="problem15"><a 
+ id="x1-72r15"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=4}^{k=n} k = \answer { \frac {n(n+1)}{2} - 6} 
+]]> 
+</script> <div class="problem-environment hint" id="problem16"><a 
+ id="x1-73r16"></a> You could do this in many ways, for instance by reindexing the sum to start at <script type="math/tex"> <![CDATA[ 
+k=1 
+]]> 
+</script>, or
+by thinking of this as <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=n} k -\sum _{k=1}^{k=3} k  
+]]> 
+</script>.
+</div> <div class="problem-environment hint" id="problem17"><a 
+ id="x1-74r17"></a> While the second way is probably easier, let us proceed by reindexing to get more
+practice with that technique.
+<!--l. 120--><p class="noindent" ><script type="math/tex"> <![CDATA[ 
+\sum _{k=4}^{k=n} k =\sum _{j=1}^{j=n-3} (j+3) 
+]]> 
+</script>
+</div> </p><div class="problem-environment hint" id="problem18"><a 
+ id="x1-75r18"></a> <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+             \sum_{k=4}^{k=n} k  &= \sum_{j=1}^{j=n-3} (j+3)\\
+        &= \sum_{j=1}^{j=n-3} j + \sum_{j=1}^{j=n-3} 3\\
+        &= \frac{(n-3)[(n-3)+1]}{2} + 3(n-3)\\
+      \end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<div class="problem-environment question" id="problem19"><a 
+ id="x1-76r19"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=n} k+7 = \answer { \frac {n(n+1)}{2} +7n} 
+]]> 
+</script> <div class="problem-environment hint" id="problem20"><a 
+ id="x1-77r20"></a> Breaking this into two sums, the ﬁrst is <script type="math/tex"> <![CDATA[ 
+\frac {n(n+1)}{2} 
+]]> 
+</script> and the second is <script type="math/tex"> <![CDATA[ 
+7n 
+]]> 
+</script>, so the answer is
+<script type="math/tex"> <![CDATA[ 
+\frac {n(n+1)}{2} +7n 
+]]> 
+</script>.
+</div>
+</div>
+<!--l. 138--><p class="noindent" ><strong>You should memorize the following formulas</strong>. The ﬁrst two we already
+understand, but deriving the last two is outside the scope of this class. If you are
+curious about the last two, you may enjoy this or this.
+</p>
+<div class="theorem-like problem-environment theorem" id="problem21"><a 
+ id="x1-78r21"></a>
+     <ul class="itemize1">
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=n} 1 = n 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=n} k = \frac {n(n+1)}{2} 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+ \sum _{k=1}^{k=n} k^2 = \frac {n(n+1)(2n+1)}{6} 
+]]> 
+</script>
+                                                                  
+
+                                                                  
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=n} k^3 = \frac {n(n+1)}{2}^2 
+]]> 
+</script></li></ul>
+<!--l. 147--><p class="noindent" ></div>
+</p><!--l. 149--><p class="noindent" >An interesting consequence of these identities is that, for instance, <script type="math/tex"> <![CDATA[ 
+(1+2+3+4+5)^2 = 1^3+2^3+3^3+4^3+5^3 
+]]> 
+</script>, which should be
+really surprising!
+</p>
+<div class="problem-environment question" id="problem22"><a 
+ id="x1-79r22"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=1}^{k=8} (3k^2+2k+7) = \answer {740} 
+]]> 
+</script> <div class="problem-environment hint" id="problem23"><a 
+ id="x1-80r23"></a> <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+         \sum_{k=1}^{k=8} (3k^2+2k+7) &= 3 \sum_{k=1}^{k=8} k^2 + 2 \sum_{k=1}^{k=8} k + 7   \sum_{k=1}^{k=8} 1\\
+      &= 3 \frac{8(8+1)(2\cdot 8+1)}{6} + 2 \frac{8(8+1)}{2} + 7(8)\\
+      &= 740
+    \end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<div class="problem-environment question" id="problem24"><a 
+ id="x1-81r24"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=9}^{k=200} k^3 = \answer {404008704} 
+]]> 
+</script>
+<div class="problem-environment hint" id="problem25"><a 
+ id="x1-82r25"></a> <script type="math/tex"> <![CDATA[ 
+\sum _{k=9}^{k=200} k^3 = \sum _{k=1}^{k=200} k^3 - \sum _{k=1}^{k=8} k^3  
+]]> 
+</script>
+</div> <div class="problem-environment hint" id="problem26"><a 
+ id="x1-83r26"></a> <script type="math/tex"> <![CDATA[ 
+= \frac {200*201*401}{6}-\frac {8(8+1)(2\cdot 8+1)}{6} = 404008704 
+]]> 
+</script>
+</div>
+</div> </body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

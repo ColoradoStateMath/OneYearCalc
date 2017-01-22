@@ -1,0 +1,8 @@
+\outcome {Define linear approximation as an application of the tangent to a curve.}
+\outcome {Find the linear approximation to a function at a point and use it to approximate the function value.}
+\outcome {Identify when a linear approximation can be used.}
+\outcome {Label a graph with the appropriate quantities used in linear approximation.}
+\outcome {Find the error of a linear approximation.}
+\outcome {Compute differentials.}
+\outcome {Contrast the notation and meaning of $\mathop {}\protect \kern -.1667em\relax dy$ versus $\Delta y$.}
+\outcome {Justify the chain rule via the composition of linear approximations.}

@@ -1,0 +1,278 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Polynomial functions</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInPolynomialFunctions.tex" /> 
+<meta name="date" content="2016-07-26 20:38:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Know the graphs and properties of ``famous'' functions."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 12--><p class="noindent" >Polynomials are some of our favorite functions.
+</p></div>   <div class="maketitle"></div>
+The functions you are most familiar with are probably polynomial functions.
+<h3 class="sectionHead"><a 
+ id="x1-1000"></a>What are polynomial functions?</h3>
+<div class="theorem-like problem-environment definition" id="problem1"><a 
+ id="x1-1001r1"></a>A <strong>polynomial function</strong> in the variable <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> is a function which can be written in the
+form <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0  
+]]> 
+</script> where the <script type="math/tex"> <![CDATA[ 
+a_i 
+]]> 
+</script>&#x2019;s are all constants (called the <strong>coeﬃcients</strong>) and <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> is a whole
+number (called the <strong>degree</strong> when <script type="math/tex"> <![CDATA[ 
+n\ne 0 
+]]> 
+</script>). The domain of a polynomial function is
+<script type="math/tex"> <![CDATA[ 
+(-\infty ,\infty ) 
+]]> 
+</script>.
+</div>
+<div class="problem-environment question" id="problem2"><a 
+ id="x1-1002r2"></a> Which of the following are polynomial functions? <div class="select-all" id="problem3"><a 
+ id="x1-1003r3"></a> <span class="choice correct" id="choice1"><script type="math/tex"> <![CDATA[ 
+f(x) = 0 
+]]> 
+</script></span> <span class="choice correct" id="choice2"><script type="math/tex"> <![CDATA[ 
+f(x) = -9 
+]]> 
+</script></span> <span class="choice correct" id="choice3"><script type="math/tex"> <![CDATA[ 
+f(x) = 3x+1 
+]]> 
+</script></span> <span class="choice" id="choice4"><script type="math/tex"> <![CDATA[ 
+f(x) = x^{1/2}-x +8 
+]]> 
+</script></span> <span class="choice" id="choice5"><script type="math/tex"> <![CDATA[ 
+f(x) = -4x^{-3}+5x^{-1}+7-18x^2 
+]]> 
+</script></span> <span class="choice correct" id="choice6"><script type="math/tex"> <![CDATA[ 
+f(x) = (x+1)(x-1)+e^x - e^x  
+]]> 
+</script></span> <span class="choice" id="choice7"><script type="math/tex"> <![CDATA[ 
+f(x) = \frac {x^2 - 3x + 2}{x-2} 
+]]> 
+</script></span> <span class="choice correct" id="choice8"><script type="math/tex"> <![CDATA[ 
+f(x) = x^7-32x^6-\pi x^3+45/84 
+]]> 
+</script></span>
+</div>
+</div>
+<!--l. 47--><p class="noindent" >The phrase above “in the variable <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>” can actually change. <script type="math/tex; mode=display"> <![CDATA[ 
+ y^2-4y +1  
+]]> 
+</script> is a polynomial in <script type="math/tex"> <![CDATA[ 
+y 
+]]> 
+</script>, and <script type="math/tex; mode=display"> <![CDATA[ 
+ \sin ^2(x) + \sin (x) -3  
+]]> 
+</script> is
+a polynomial in <script type="math/tex"> <![CDATA[ 
+\sin (x) 
+]]> 
+</script>.
+</p>
+<h3 class="sectionHead"><a 
+ id="x1-2000"></a>What can the graphs look like?</h3>
+<!--l. 60--><p class="noindent" >Fun fact:
+</p>
+<div class="theorem-like problem-environment theorem" id="problem4"><a 
+ id="x1-2001r4"></a><span class="theorem-like-title">The Fundamental Theorem of Algebra</span> Every polynomial of the form <script type="math/tex; mode=display"> <![CDATA[ 
+ a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0  
+]]> 
+</script> where the <script type="math/tex"> <![CDATA[ 
+a_i 
+]]> 
+</script>&#x2019;s
+are real (or even complex!) numbers and <script type="math/tex"> <![CDATA[ 
+a_n \ne 0 
+]]> 
+</script> has exactly <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> (possibly repeated) complex
+roots.
+</div>
+<!--l. 71--><p class="noindent" >Remember, a <strong>root</strong> is where a polynomial is zero. The theorem above is a deep fact of
+mathematics. The great mathematician Gauss proved the theorem in 1799 for his
+doctoral thesis.
+</p><!--l. 77--><p class="noindent" >The upshot as far as we are concerned is that when we plot a polynomial of degree <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script>,
+its graph will cross the <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>-axis at most <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> times.
+</p>
+<div class="theorem-like problem-environment example" id="problem5"><a 
+ id="x1-2002r5"></a>Here we see the the graphs of four polynomial functions.
+<div class="image-environment"><!--tex4ht:inline--><div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1" /><col 
+id="TBL-1-2" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">   <img 
+src="./digInPolynomialFunctions-figure0.svg" alt="PIC"  
+ />  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td11">   <img 
+src="./digInPolynomialFunctions-figure1.svg" alt="PIC"  
+ />  </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"  
+class="td11">  <img 
+src="./digInPolynomialFunctions-figure2.svg" alt="PIC"  
+ /> </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-2"  
+class="td11">  <img 
+src="./digInPolynomialFunctions-figure3.svg" alt="PIC"  
+ /></td>
+</tr></table>
+</div> </div>
+For each of the curves, determine if the polynomial has <strong>even</strong> or <strong>odd</strong> degree, and if
+the leading coeﬃcient (the one next to the highest power of <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>) of the polynomial is
+<strong>positive</strong> or <strong>negative</strong>. <div class="theorem-like problem-environment explanation" id="problem6"><a 
+ id="x1-2003r6"></a>
+     <ul class="itemize1">
+     <li class="itemize">Curve <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> is deﬁned by an <span class="word-choice" id="word-choice7"><a 
+ id="x1-2004r7"></a><span class="choice" id="choice9">even</span><span class="choice correct" id="choice10">odd</span>
+                                                                  
+
+                                                                  
+     </span> degree polynomial with a <span class="word-choice" id="word-choice8"><a 
+ id="x1-2005r8"></a><span class="choice correct" id="choice11">positive</span><span class="choice" id="choice12">negative</span>
+     </span> leading term.
+     </li>
+     <li class="itemize">Curve <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> is deﬁned by an <span class="word-choice" id="word-choice9"><a 
+ id="x1-2006r9"></a><span class="choice" id="choice13">even</span><span class="choice correct" id="choice14">odd</span>
+     </span> degree polynomial with a <span class="word-choice" id="word-choice10"><a 
+ id="x1-2007r10"></a><span class="choice" id="choice15">positive</span><span class="choice correct" id="choice16">negative</span>
+     </span> leading term.
+     </li>
+     <li class="itemize">Curve <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script> is deﬁned by an <span class="word-choice" id="word-choice11"><a 
+ id="x1-2008r11"></a><span class="choice correct" id="choice17">even</span><span class="choice" id="choice18">odd</span>
+     </span> degree polynomial with a <span class="word-choice" id="word-choice12"><a 
+ id="x1-2009r12"></a><span class="choice correct" id="choice19">positive</span><span class="choice" id="choice20">negative</span>
+     </span> leading term.
+     </li>
+     <li class="itemize">Curve <script type="math/tex"> <![CDATA[ 
+D 
+]]> 
+</script> is deﬁned by an <span class="word-choice" id="word-choice13"><a 
+ id="x1-2010r13"></a><span class="choice correct" id="choice21">even</span><span class="choice" id="choice22">odd</span>
+     </span> degree polynomial with a <span class="word-choice" id="word-choice14"><a 
+ id="x1-2011r14"></a><span class="choice" id="choice23">positive</span><span class="choice correct" id="choice24">negative</span>
+     </span> leading term.</li></ul>
+<!--l. 169--><p class="noindent" ></div>
+</div>
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

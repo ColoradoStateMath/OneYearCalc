@@ -1,0 +1,659 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Linear approximation</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInLinearApproximation.tex" /> 
+<meta name="date" content="2016-07-26 20:30:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Define linear approximation as an application of the tangent to a curve."/> 
+<meta name="learning-outcome" content="Find the linear approximation to a function at a point and use it to approximate the function value."/> 
+<meta name="learning-outcome" content="Identify when a linear approximation can be used."/> 
+<meta name="learning-outcome" content="Label a graph with the appropriate quantities used in linear approximation."/> 
+<meta name="learning-outcome" content="Find the error of a linear approximation."/> 
+<meta name="learning-outcome" content="Compute differentials."/> 
+<meta name="learning-outcome" content="Contrast the notation and meaning of $\o:mathop: {}\protect \kern -.1667em\relax dy$ versus $\Delta y$."/> 
+<meta name="learning-outcome" content="Justify the chain rule via the composition of linear approximations."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 22--><p class="noindent" >We use a method called “linear approximation” to estimate the value of a
+(complicated) function at a given point.
+</p></div>   <div class="maketitle"></div>
+Given a function, a <em>linear approximation</em> is a fancy phrase for something you already
+know:
+     <div class="quote">
+     <!--l. 33--><p class="noindent" ><strong>The derivative is the slope of the tangent line.</strong></p></div>
+<!--l. 35--><p class="noindent" >Except in this section, the emphasis is on the <strong>line</strong>.
+</p>
+<div class="theorem-like problem-environment definition" id="problem1"><a 
+ id="x1-58r1"></a> If <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> is a diﬀerentiable function at <script type="math/tex"> <![CDATA[ 
+x=a 
+]]> 
+</script>, then a <strong>linear approximation</strong> for <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> at <script type="math/tex"> <![CDATA[ 
+x=a 
+]]> 
+</script> is given by
+<script type="math/tex; mode=display"> <![CDATA[ 
+ \l (x) = f'(a)(x-a) +f(a).  
+]]> 
+</script>
+</div>
+<!--l. 46--><p class="noindent" >Note that <script type="math/tex"> <![CDATA[ 
+\l (x) 
+]]> 
+</script> is just the tangent line to <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> at <script type="math/tex"> <![CDATA[ 
+x=a 
+]]> 
+</script>.
+</p><!--l. 48--><p class="noindent" >A linear approximation of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> is a “good” approximation as long as <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> is “not too far”
+from <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script>. If one “zooms in” on <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> suﬃciently, then <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> and the linear approximation are
+nearly indistinguishable. As a ﬁrst example, we will see how linear approximations
+allow us to make approximate “diﬃcult” computations.
+</p>
+<div class="theorem-like problem-environment example" id="problem2"><a 
+ id="x1-59r2"></a>Use a linear approximation of <script type="math/tex"> <![CDATA[ 
+f(x) =\sqrt [3]{x} 
+]]> 
+</script> at <script type="math/tex"> <![CDATA[ 
+x=64 
+]]> 
+</script> to approximate <script type="math/tex"> <![CDATA[ 
+\sqrt [3]{50} 
+]]> 
+</script>. <div class="theorem-like problem-environment explanation" id="problem3"><a 
+ id="x1-60r3"></a>To start, write <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx f(x) = \ddx x^{1/3} = \frac {1}{\answer [given]{3x^{2/3}}}.  
+]]> 
+</script> So our linear approximation
+is <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\l(x) &= \frac{1}{3\cdot 64^{2/3}} (x-64) + \answer[given]{4} \\
+&= \frac{1}{\answer[given]{48}} (x-64) + 4\\
+&= \frac{x}{48} +\frac{8}{3}.
+\end{align*} 
+]]> 
+</script>
+<div class="image-environment">  <img 
+src="./digInLinearApproximation-figure0.svg" alt="PIC"  
+ />
+</div>
+Now we evaluate <script type="math/tex"> <![CDATA[ 
+\l (50) \approx 3.71 
+]]> 
+</script> and compare it to <script type="math/tex"> <![CDATA[ 
+\sqrt [3]{50}\approx 3.68 
+]]> 
+</script>. From this we see that the linear approximation,
+while perhaps inexact, is computationally <strong>easier</strong> than computing the cube
+root.
+</div>
+</div>
+<!--l. 101--><p class="noindent" >With modern calculators and computing software it may not appear necessary to use
+linear approximations. In fact they are quite useful. In cases requiring an
+explicit numerical approximation, they allow us to get a quick rough estimate
+which can be used as a “reality check” on a more complex calculation. In
+some complex calculations involving functions, the linear approximation
+makes an otherwise intractable calculation possible, without serious loss of
+accuracy.
+                                                                  
+
+                                                                  
+</p>
+<div class="theorem-like problem-environment example" id="problem4"><a 
+ id="x1-61r4"></a>Use a linear approximation of <script type="math/tex"> <![CDATA[ 
+f(x) =\sin (x) 
+]]> 
+</script> at <script type="math/tex"> <![CDATA[ 
+x=0 
+]]> 
+</script> to approximate <script type="math/tex"> <![CDATA[ 
+\sin (0.3) 
+]]> 
+</script>. <div class="theorem-like problem-environment explanation" id="problem5"><a 
+ id="x1-62r5"></a>To start, write <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx f(x) = \answer [given]{\cos (x)},  
+]]> 
+</script> so our linear
+approximation is <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\l(x) &= \answer[given]{\cos(0)}\cdot(x-0) + 0\\
+&= x.
+\end{align*} 
+]]> 
+</script>
+<div class="image-environment">  <img 
+src="./digInLinearApproximation-figure1.svg" alt="PIC"  
+ />
+</div>
+Hence a linear approximation for <script type="math/tex"> <![CDATA[ 
+\sin (x) 
+]]> 
+</script> at <script type="math/tex"> <![CDATA[ 
+x=0 
+]]> 
+</script> is <script type="math/tex"> <![CDATA[ 
+\l (x) = x 
+]]> 
+</script>, and so <script type="math/tex"> <![CDATA[ 
+\l (0.3) = 0.3 
+]]> 
+</script>. Comparing this to <script type="math/tex"> <![CDATA[ 
+\sin (.3) \approx 0.295 
+]]> 
+</script>, we see that the
+approximation is quite good. For this reason, it is common to approximate <script type="math/tex"> <![CDATA[ 
+\sin (x) 
+]]> 
+</script> with its
+linear approximation <script type="math/tex"> <![CDATA[ 
+\l (x) = x 
+]]> 
+</script> when <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> is near zero.
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-1000"></a>Diﬀerentials</h3>
+<!--l. 164--><p class="noindent" >The notion of a <em>diﬀerential</em> goes back to the origins of calculus, though our modern
+conceptualization of a diﬀerential is somewhat diﬀerent than how they were initially
+understood.
+</p>
+<div class="theorem-like problem-environment definition" id="problem6"><a 
+ id="x1-1001r6"></a>Let <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> be a diﬀerentiable function. We deﬁne a new independent variable <script type="math/tex"> <![CDATA[ 
+\d x 
+]]> 
+</script>, and a new
+dependent variable <script type="math/tex; mode=display"> <![CDATA[ 
+ \d f=f'(x)\cdot \d x.  
+]]> 
+</script> The variables <script type="math/tex"> <![CDATA[ 
+\d x 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+\d f 
+]]> 
+</script> are called <strong>diﬀerentials</strong>. Geometrically,
+diﬀerentials can be interpreted via the diagram below <div class="image-environment">  <img 
+src="./digInLinearApproximation-figure2.svg" alt="PIC"  
+ />
+</div>
+Note, it is now the case (by deﬁnition!) that <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {\d f}{\d x} = f'(x).  
+]]> 
+</script>
+</div>
+<div class="problem-environment question" id="problem7"><a 
+ id="x1-1002r7"></a> The diﬀerential <script type="math/tex"> <![CDATA[ 
+\d x 
+]]> 
+</script> is: <div class="multiple-choice" id="problem8"><a 
+ id="x1-1003r8"></a> <span class="choice" id="choice1"><script type="math/tex"> <![CDATA[ 
+d 
+]]> 
+</script> times <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>.</span> <span class="choice correct" id="choice2">A single variable.</span>
+</div> <div class="problem-environment question" id="problem9"><a 
+ id="x1-1004r9"></a> The diﬀerential <script type="math/tex"> <![CDATA[ 
+\d f 
+]]> 
+</script> is: <div class="multiple-choice" id="problem10"><a 
+ id="x1-1005r10"></a> <span class="choice" id="choice3"><script type="math/tex"> <![CDATA[ 
+d 
+]]> 
+</script> times <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script>.</span> <span class="choice correct" id="choice4">A single variable that is dependent on <script type="math/tex"> <![CDATA[ 
+\d x 
+]]> 
+</script>.</span>
+</div>
+</div>
+</div>
+<!--l. 223--><p class="noindent" >Essentially, diﬀerentials allow us to solve the problems presented in the previous
+examples from a slightly diﬀerent point of view. Recall, when <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script> is near but not equal
+zero, <script type="math/tex; mode=display"> <![CDATA[ 
+ f'(x) \approx \frac {f(x+h)-f(x)}{h}  
+]]> 
+</script> hence, <script type="math/tex; mode=display"> <![CDATA[ 
+ f'(x)h \approx f(x+h)-f(x).  
+]]> 
+</script> Since <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script> is simply a variable, and <script type="math/tex"> <![CDATA[ 
+\d x 
+]]> 
+</script> is simply a variable, we can replace <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script>
+with <script type="math/tex"> <![CDATA[ 
+\d x 
+]]> 
+</script> to write </p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+f'(x)\cdot \d x &\approx f(x+\d x)-f(x)\\
+\d f &\approx f(x+\d x)-f(x).
+\end{align*} 
+]]> 
+</script>
+Adding <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> to both sides we see <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x+\d x)\approx f(x) + \d f.  
+]]> 
+</script> While this is something of a “sleight of hand” with
+variables, there are contexts where the language of diﬀerentials is common. Here is
+the basic strategy: <div class="image-environment">  <img 
+src="./digInLinearApproximation-figure3.svg" alt="PIC"  
+ />
+</div>
+                                                                  
+
+                                                                  
+<!--l. 256--><p class="noindent" >We will repeat our previous examples using diﬀerentials.
+</p>
+<div class="theorem-like problem-environment example" id="problem11"><a 
+ id="x1-1006r11"></a>Use diﬀerentials to approximate <script type="math/tex"> <![CDATA[ 
+\sqrt [3]{50} 
+]]> 
+</script>. <div class="theorem-like problem-environment explanation" id="problem12"><a 
+ id="x1-1007r12"></a>Set <script type="math/tex"> <![CDATA[ 
+f(x) = \sqrt [3]{x} 
+]]> 
+</script>. We want to know <script type="math/tex"> <![CDATA[ 
+\sqrt [3]{50} 
+]]> 
+</script>. Since <script type="math/tex"> <![CDATA[ 
+4^3 = 64 
+]]> 
+</script>, we set <script type="math/tex"> <![CDATA[ 
+x=64 
+]]> 
+</script>. Setting <script type="math/tex"> <![CDATA[ 
+\d x=-14 
+]]> 
+</script>,
+we have <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+   \sqrt[3]{50} = f(x + \d x) &\approx  f(x) + \d f\\
+  &\approx \sqrt[3]{64} + \d f.
+  \end{align*} 
+]]> 
+</script>
+Here we see a plot of <script type="math/tex"> <![CDATA[ 
+y=\sqrt [3]{x} 
+]]> 
+</script> with the diﬀerentials above marked: <div class="image-environment">  <img 
+src="./digInLinearApproximation-figure4.svg" alt="PIC"  
+ />
+</div>
+Now we must compute <script type="math/tex"> <![CDATA[ 
+\d f 
+]]> 
+</script>: <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      \d f &= f'(x) \cdot \d f\\
+    &= \answer[given]{\frac{1}{3x^{2/3}}} \cdot \d f\\
+    &= \frac{1}{3\cdot64^{2/3}} \cdot(\answer[given]{-14})\\
+    &= \frac{1}{3\cdot64^{2/3}} \cdot(-14)\\
+    &= \frac{-7}{24}
+  \end{align*} 
+]]> 
+</script>
+Hence <script type="math/tex"> <![CDATA[ 
+f(50) \approx f(64) + \frac {-7}{24} \approx 3.71 
+]]> 
+</script>.
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem13"><a 
+ id="x1-1008r13"></a>Use diﬀerentials to approximate <script type="math/tex"> <![CDATA[ 
+\sin (0.3) 
+]]> 
+</script>. <div class="theorem-like problem-environment explanation" id="problem14"><a 
+ id="x1-1009r14"></a>Set <script type="math/tex"> <![CDATA[ 
+y = \sin (x) 
+]]> 
+</script>. We want to know <script type="math/tex"> <![CDATA[ 
+\sin (0.3) 
+]]> 
+</script>. Since <script type="math/tex"> <![CDATA[ 
+\sin (0) = 0 
+]]> 
+</script>, we will set <script type="math/tex"> <![CDATA[ 
+x = 0 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+\d x=0.3 
+]]> 
+</script>.
+Write with me <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+   \sin(0.3) = \sin(x + \d x) &\approx  \sin(x) + \d y\\
+  &\approx 0 + \d y.
+  \end{align*} 
+]]> 
+</script>
+Here we see a plot of <script type="math/tex"> <![CDATA[ 
+y=\sin (x) 
+]]> 
+</script> with the diﬀerentials above marked: <div class="image-environment">  <img 
+src="./digInLinearApproximation-figure5.svg" alt="PIC"  
+ />
+</div>
+Now we must compute <script type="math/tex"> <![CDATA[ 
+\d y 
+]]> 
+</script>: <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+   \d y &= \left(\ddx \sin(x)\right) \cdot \d x\\
+  &=\answer[given]{\cos(0)} \cdot \d x\\
+  &= 1 \cdot (\answer[given]{0.3})\\
+  &= 0.3
+\end{align*} 
+]]> 
+</script>
+Hence <script type="math/tex"> <![CDATA[ 
+\sin (0.3) \approx \sin (0) + 0.3 \approx 0.3 
+]]> 
+</script>.
+</div>
+</div>
+<!--l. 359--><p class="noindent" >The upshot is that linear approximations and diﬀerentials are simply two slightly
+diﬀerent ways of doing the exact same thing.
+</p>
+<h3 class="sectionHead"><a 
+ id="x1-2000"></a>Error approximation</h3>
+<!--l. 364--><p class="noindent" >Diﬀerentials also help us estimate error in real life settings.
+</p>
+                                                                  
+
+                                                                  
+<div class="theorem-like problem-environment example" id="problem15"><a 
+ id="x1-2001r15"></a>The cross-section of a <script type="math/tex"> <![CDATA[ 
+250 
+]]> 
+</script> ml glass can be modeled by the function <script type="math/tex"> <![CDATA[ 
+r(x) = \frac {x^4}{3} 
+]]> 
+</script>: <div class="image-environment">  <img 
+src="./digInLinearApproximation-figure6.svg" alt="PIC"  
+ />
+</div>
+At <script type="math/tex"> <![CDATA[ 
+16.8 
+]]> 
+</script> cm from the base of the glass, there is a mark indicating when the glass is ﬁlled
+to <script type="math/tex"> <![CDATA[ 
+250 
+]]> 
+</script> ml. If the glass is ﬁlled within <script type="math/tex"> <![CDATA[ 
+\pm 2 
+]]> 
+</script> millimeters of the mark, what are the bounds on
+the volume? As a gesture of friendship, we will tell you that the volume in milliliters,
+as a function of the height of water in centimeters, <script type="math/tex"> <![CDATA[ 
+y 
+]]> 
+</script>, is given by <script type="math/tex; mode=display"> <![CDATA[ 
+ V(y) = \frac {2\pi y^{3/2}}{\sqrt {3}}.  
+]]> 
+</script> Note: If you persist
+in your quest to learn calculus, you will be able to derive the formula above like it&#x2019;s
+no-big-deal. <div class="theorem-like problem-environment explanation" id="problem16"><a 
+ id="x1-2002r16"></a>We want to know what a small change in the height, <script type="math/tex"> <![CDATA[ 
+y 
+]]> 
+</script> does to the volume
+<script type="math/tex"> <![CDATA[ 
+V 
+]]> 
+</script>. These small changes can be modeled by the diﬀerentials <script type="math/tex"> <![CDATA[ 
+\d V 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+\d y 
+]]> 
+</script>. Since <script type="math/tex; mode=display"> <![CDATA[ 
+ \d V = V'(y) \d y  
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+V'(x) = \answer [given]{\pi \sqrt {3 y}} 
+]]> 
+</script>
+we use the fact that <script type="math/tex"> <![CDATA[ 
+\d y = \pm 0.2 
+]]> 
+</script> with <script type="math/tex"> <![CDATA[ 
+y=\answer [given]{16.8} 
+]]> 
+</script> to see <script type="math/tex; mode=display"> <![CDATA[ 
+ \d V = \answer [given]{\pi \sqrt {3 \cdot 16.8}} \cdot 0.2.  
+]]> 
+</script> Hence the volume will vary by at most <script type="math/tex"> <![CDATA[ 
+\pm \answer [given,tolerance=.01]{4.46062} 
+]]> 
+</script>
+milliliters.
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-3000"></a>New and old friends</h3>
+<!--l. 421--><p class="noindent" >You might be wondering, given a plot <script type="math/tex"> <![CDATA[ 
+y=f(x) 
+]]> 
+</script>,
+     </p><div class="quote">
+     <!--l. 423--><p class="noindent" >What&#x2019;s the diﬀerence between <script type="math/tex"> <![CDATA[ 
+\Delta x 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+\d x 
+]]> 
+</script>? What about <script type="math/tex"> <![CDATA[ 
+\Delta y 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+\d y 
+]]> 
+</script>?</p></div>
+<!--l. 426--><p class="noindent" >Regardless, it is now a pressing question. Here&#x2019;s the deal: <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {\Delta y}{\Delta x}  
+]]> 
+</script> is the <strong>average rate of
+change</strong> of <script type="math/tex"> <![CDATA[ 
+y=f(x) 
+]]> 
+</script> with respect to <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>. On the other hand: <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {\d y}{\d x}  
+]]> 
+</script> is the <strong>instantaneous rate of
+change</strong> of <script type="math/tex"> <![CDATA[ 
+y=f(x) 
+]]> 
+</script> with respect to <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>. Essentially, <script type="math/tex"> <![CDATA[ 
+\Delta x 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+\d x 
+]]> 
+</script> are the same type of thing, they
+are (usually small) changes in <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>. However, <script type="math/tex"> <![CDATA[ 
+\Delta y 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+\d y 
+]]> 
+</script> are very diﬀerent things.
+</p>
+     <ul class="itemize1">
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\Delta y 
+]]> 
+</script> is the change of <script type="math/tex"> <![CDATA[ 
+y 
+]]> 
+</script> associated to <script type="math/tex"> <![CDATA[ 
+\Delta x 
+]]> 
+</script>.
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\d y 
+]]> 
+</script> is the change in <script type="math/tex"> <![CDATA[ 
+y 
+]]> 
+</script> needed to make the following relation true: <script type="math/tex; mode=display"> <![CDATA[ 
+ \d y = f'(x)\d x  
+]]> 
+</script></li></ul>
+<div class="problem-environment question" id="problem17"><a 
+ id="x1-3001r17"></a> Suppose <script type="math/tex"> <![CDATA[ 
+f(x) = x^2 
+]]> 
+</script>. If <script type="math/tex"> <![CDATA[ 
+\Delta x =\d x = 0.1 
+]]> 
+</script>, what is <script type="math/tex"> <![CDATA[ 
+\Delta y 
+]]> 
+</script>? What is <script type="math/tex"> <![CDATA[ 
+\d y 
+]]> 
+</script>? <script type="math/tex; mode=display"> <![CDATA[ 
+ \Delta y = \answer {0.01}\qquad \d y = \answer {0.02}  
+]]> 
+</script> 
+</div> Diﬀerentials can be confusing at ﬁrst. However, when you master them, you will
+have a powerful tool at your disposal.
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

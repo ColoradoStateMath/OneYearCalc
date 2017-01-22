@@ -1,0 +1,679 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Inverses of functions</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInInversesOfFunctions.tex" /> 
+<meta name="date" content="2016-07-26 20:50:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Find the domain and range of a function."/> 
+<meta name="learning-outcome" content="Determine if a function is one-to-one."/> 
+<meta name="learning-outcome" content="Perform basic operations and compositions on functions."/> 
+<meta name="learning-outcome" content="Define and work with inverse functions."/> 
+<meta name="learning-outcome" content="Plot inverses of basic functions."/> 
+<meta name="learning-outcome" content="Find inverse functions (algebraically and graphically)."/> 
+<meta name="learning-outcome" content="Find the largest interval containing a given point where the function is invertible."/> 
+<meta name="learning-outcome" content="Determine the intervals on which a function has an inverse."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                 
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 22--><p class="noindent" >Here we “undo” functions.
+</p></div>   <div class="maketitle"></div>
+If a function maps every “input” to exactly one “output,” an inverse of that function
+maps every “output” to exactly one “input.” We need a more formal deﬁnition to
+actually say anything with rigor.
+<div class="theorem-like problem-environment definition" id="problem1"><a 
+ id="x1-58r1"></a>Let <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> be a function with domain <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> and range <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script>: <div class="image-environment">  <img 
+src="./digInInversesOfFunctions-figure0.svg" alt="PIC"  
+ />
+</div>
+Let <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script> be a function with domain <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> and range <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script>: <div class="image-environment">  <img 
+src="./digInInversesOfFunctions-figure1.svg" alt="PIC"  
+ />
+</div>
+We say that <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script> are <strong>inverses</strong> of each other if <script type="math/tex"> <![CDATA[ 
+f(g(b)) = b 
+]]> 
+</script> for all <script type="math/tex"> <![CDATA[ 
+b 
+]]> 
+</script> in <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script>, and also <script type="math/tex"> <![CDATA[ 
+g(f(a)) = a 
+]]> 
+</script> for all <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script> in <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script>.
+Sometimes we write <script type="math/tex"> <![CDATA[ 
+g = f^{-1} 
+]]> 
+</script> in this case. <div class="image-environment">  <img 
+src="./digInInversesOfFunctions-figure2.svg" alt="PIC"  
+ />
+</div>
+and <div class="image-environment">  <img 
+src="./digInInversesOfFunctions-figure3.svg" alt="PIC"  
+ />
+</div>
+So, we could rephrase these conditions as <script type="math/tex; mode=display"> <![CDATA[ 
+ f(f^{-1}(x)) = x\qquad \text {and}\qquad f^{-1}(f(x)) = x.  
+]]> 
+</script>
+</div> These two simple equations are somewhat more subtle than they initially
+appear.
+<div class="problem-environment question" id="problem2"><a 
+ id="x1-59r2"></a> Let <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> be a function. If the point <script type="math/tex"> <![CDATA[ 
+(1,9) 
+]]> 
+</script> is on the graph of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script>, what point must be the the
+graph of <script type="math/tex"> <![CDATA[ 
+f^{-1} 
+]]> 
+</script>? <script type="math/tex; mode=display"> <![CDATA[ 
+ \left ( \answer {9}, \answer {1} \right )  
+]]> 
+</script> 
+<div class="feedback" data-feedback="attempt" id="feedback3">Since <script type="math/tex"> <![CDATA[ 
+f(1) = 9 
+]]> 
+</script>, we must have <script type="math/tex"> <![CDATA[ 
+f^{-1}(f(1)) = 1 
+]]> 
+</script>, so <script type="math/tex"> <![CDATA[ 
+f^{-1}(9) = 1 
+]]> 
+</script>. Thus <script type="math/tex"> <![CDATA[ 
+(9,1) 
+]]> 
+</script> is on the graph of <script type="math/tex"> <![CDATA[ 
+f^{-1} 
+]]> 
+</script>. This is a general rule. If <script type="math/tex"> <![CDATA[ 
+(a,b) 
+]]> 
+</script> is on
+the graph of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script>, then <script type="math/tex"> <![CDATA[ 
+(b,a) 
+]]> 
+</script> will be on the graph of <script type="math/tex"> <![CDATA[ 
+f^{-1} 
+]]> 
+</script>. </div>
+</div>
+<div class="theorem-like problem-environment warning" id="problem4"><a 
+ id="x1-60r3"></a>This notation can be very confusing. Keep a watchful eye:
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+    f^{-1}(x) &= \text{the inverse function of $f(x)$.}\\
+    f(x)^{-1} &= \text{$\frac{1}{f(x)}$.}
+  \end{align*} 
+]]> 
+</script>
+</div> <div class="problem-environment question" id="problem5"><a 
+ id="x1-61r4"></a> Which of the following is notation for the inverse of the function <script type="math/tex"> <![CDATA[ 
+\sin (\theta ) 
+]]> 
+</script> on the interval <script type="math/tex"> <![CDATA[ 
+[-\pi /2,\pi /2] 
+]]> 
+</script>? <div class="multiple-choice" id="problem6"><a 
+ id="x1-62r5"></a> <span class="choice correct" id="choice1"><script type="math/tex"> <![CDATA[ 
+\sin ^{-1}(\theta ) 
+]]> 
+</script></span>
+<span class="choice" id="choice2"><script type="math/tex"> <![CDATA[ 
+\sin (\theta )^{-1} 
+]]> 
+</script></span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback7"><script type="math/tex"> <![CDATA[ 
+\sin ^{-1}(\theta ) 
+]]> 
+</script> is the inverse function for <script type="math/tex"> <![CDATA[ 
+\sin (\theta ) 
+]]> 
+</script> on the interval <script type="math/tex"> <![CDATA[ 
+[-\pi /2,\pi /2] 
+]]> 
+</script>.
+<!--l. 113--><p class="noindent" >On the other hand, <script type="math/tex; mode=display"> <![CDATA[ 
+ \sin (\theta )^{-1} = \frac {1}{\sin (\theta )} \ne \sin ^{-1}(\theta ).  
+]]> 
+</script> </div>
+</div>
+</p>
+<div class="problem-environment question" id="problem8"><a 
+ id="x1-63r6"></a> Consider the graph of <script type="math/tex"> <![CDATA[ 
+y=f(x) 
+]]> 
+</script> below <div class="image-environment">  <img 
+src="./digInInversesOfFunctions-figure4.svg" alt="PIC"  
+ />
+</div>
+Is <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> invertible at <script type="math/tex"> <![CDATA[ 
+x=0.5 
+]]> 
+</script>? <div class="multiple-choice" id="problem9"><a 
+ id="x1-64r7"></a> <span class="choice correct" id="choice3">yes</span> <span class="choice" id="choice4">no</span>
+</div> <div class="problem-environment question" id="problem10"><a 
+ id="x1-65r8"></a> <script type="math/tex; mode=display"> <![CDATA[ 
+ f^{-1}(1) = \answer {1.5}  
+]]> 
+</script>
+</div>
+</div>
+                                                                  
+
+                                                                  
+<!--l. 174--><p class="noindent" >So far, we&#x2019;ve only dealt with abstract examples. Let&#x2019;s see if we can ground this in a
+real-life context.
+</p>
+<div class="theorem-like problem-environment example" id="problem11"><a 
+ id="x1-66r9"></a>The function <script type="math/tex; mode=display"> <![CDATA[ 
+ f(t) = \left (\frac {9}{5}\right ) t + 32  
+]]> 
+</script> takes a temperature <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script> in degrees Celsius, and converts it into
+Fahrenheit. The domain of this function is <script type="math/tex"> <![CDATA[ 
+-\infty < t < \infty  
+]]> 
+</script>. What does the inverse of this function
+tell you? What is the inverse of this function?
+<div class="theorem-like problem-environment explanation" id="problem12"><a 
+ id="x1-67r10"></a>If <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> converts Celsius measurements to Fahrenheit measurements of temperature, then <script type="math/tex"> <![CDATA[ 
+f^{-1} 
+]]> 
+</script>
+converts Fahrenheit measurements to Celsius measurements of temperature.
+<!--l. 191--><p class="noindent" >To ﬁnd the inverse function, ﬁrst note that <script type="math/tex; mode=display"> <![CDATA[ 
+ f(f^{-1}(t)) = t \qquad \text {by the definition of inverse functions.}  
+]]> 
+</script> Now write out the left-hand side of the equation <script type="math/tex; mode=display"> <![CDATA[ 
+ f(f^{-1}(t)) = \left (\frac {9}{5}\right ) f^{-1}(t)+32\qquad \text {by the rule for $f$}  
+]]> 
+</script> and solve
+for <script type="math/tex"> <![CDATA[ 
+f^{-1}(t) 
+]]> 
+</script>. </p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+         \left(\frac{9}{5}\right) f^{-1}(t)+32 &= t &&\text{by the rule for $f$}\\
+      \left(\frac{9}{5}\right) f^{-1}(t)&= t -32\\
+      f^{-1}(t) &= \answer[given]{\left(\frac{5}{9}\right)(t - 32)}.
+    \end{align*} 
+]]> 
+</script>
+So <script type="math/tex"> <![CDATA[ 
+f^{-1}(t) = \left (\frac {5}{9}\right )(t - 32) 
+]]> 
+</script> is the inverse function of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script>, which converts a Fahrenheit measurement
+back into a Celsius measurement. The domain of this inverse function is
+<script type="math/tex"> <![CDATA[ 
+-\infty < t <\infty  
+]]> 
+</script>.
+<!--l. 210--><p class="noindent" >Finally, we could check our work again using the deﬁnition of inverse functions. We
+have already guaranteed that <script type="math/tex; mode=display"> <![CDATA[ 
+ f(f^{-1}(t)) = t,  
+]]> 
+</script> since we solved for <script type="math/tex"> <![CDATA[ 
+f^{-1} 
+]]> 
+</script> in our calculation. On the other
+hand, </p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      f^{-1}(f(t)) &=\left(\frac{5}{9}\right)(f(t) - 32)\\
+    &= \left(\frac{5}{9}\right)(f(t) - 32)\\
+    \end{align*} 
+]]> 
+</script>
+which you should simplify to check that <script type="math/tex"> <![CDATA[ 
+f^{-1}(f(t)) = t 
+]]> 
+</script>.
+</div>
+</div>
+<!--l. 226--><p class="noindent" >We have examined several functions in order to determine their inverse functions, but
+there is still more to this story. Not every function has an inverse function, so we
+must learn how to check for this situation.
+</p>
+<div class="problem-environment question" id="problem13"><a 
+ id="x1-68r11"></a> Let <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> be a function, and imagine that the points <script type="math/tex"> <![CDATA[ 
+(2,3) 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+(7,3) 
+]]> 
+</script> are both on its graph. Could <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script>
+have an inverse function? <div class="multiple-choice" id="problem14"><a 
+ id="x1-69r12"></a> <span class="choice" id="choice5">yes</span> <span class="choice correct" id="choice6">no</span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback15">The function <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> could <strong>not</strong> have an inverse function. Imagine that it did. Then <script type="math/tex"> <![CDATA[ 
+f^{-1}(f(2)) = 2 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+f^{-1}(f(7)) = 7 
+]]> 
+</script>.
+Then we have both <script type="math/tex"> <![CDATA[ 
+f^{-1}(3) = 2 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+f^{-1}(3) = 7 
+]]> 
+</script>. Since a <strong>function</strong> cannot send the same input to two
+diﬀerent outputs, <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> must not have an inverse function. </div>
+</div>
+<!--l. 249--><p class="noindent" >Look again at the last question. If two diﬀerent inputs for a function have the same
+output, there is no hope of that function having an inverse function. Why? This is
+because the inverse function must also be a function, and a function can
+only have one output for each input. More speciﬁcally, we have the next
+deﬁnition.
+</p>
+                                                                  
+
+                                                                  
+<div class="theorem-like problem-environment definition" id="problem16"><a 
+ id="x1-70r13"></a>A function is called <strong>one-to-one</strong> if each output value corresponds to exactly one
+input value.
+</div>
+<div class="problem-environment question" id="problem17"><a 
+ id="x1-71r14"></a> Which of the following are functions that are also one-to-one? <div class="select-all" id="problem18"><a 
+ id="x1-72r15"></a> <span class="choice" id="choice7">Mapping words to
+their meaning in a dictionary.</span> <span class="choice correct" id="choice8">Mapping social security numbers of living people to
+actual living people.</span> <span class="choice" id="choice9">Mapping people to their birthday.</span> <span class="choice" id="choice10">Mapping mothers to their
+children.</span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback19">
+     <ul class="itemize1">
+     <li class="itemize">Since words may have more than one deﬁnition, “relating words to their
+     deﬁnition in a dictionary” is not a function.
+     </li>
+     <li class="itemize">Since every social security number corresponds exactly to one person,
+     “relating social security numbers of living people to actual living people” is
+     a function. Also, since each person has exactly one social security number,
+     it is one-to-one.
+     </li>
+     <li class="itemize">Since every person only has one birth date, “relating people to their birth
+     date” is a function. However, many people have the same birth date, hence
+     this function is not one-to-one.
+     </li>
+     <li class="itemize">Since mothers can have more (or less) than one child, “relating mothers
+     to their children” is not a function.</li></ul>
+</div>
+</div>
+<div class="problem-environment question" id="problem20"><a 
+ id="x1-73r16"></a> Which of the following functions are one to one? Select all that apply. <div class="select-all" id="problem21"><a 
+ id="x1-74r17"></a> <span class="choice correct" id="choice11"><script type="math/tex"> <![CDATA[ 
+f(x) = x 
+]]> 
+</script></span> <span class="choice" id="choice12"><script type="math/tex"> <![CDATA[ 
+f(x) = x^2 
+]]> 
+</script></span> <span class="choice" id="choice13"><script type="math/tex"> <![CDATA[ 
+f(x) = x^3 - 4x 
+]]> 
+</script></span>
+<span class="choice correct" id="choice14"><script type="math/tex"> <![CDATA[ 
+f(x) = x^3+4 
+]]> 
+</script></span>
+</div>
+</div>
+<!--l. 301--><p class="noindent" >You may recall that a plot gives <script type="math/tex"> <![CDATA[ 
+y 
+]]> 
+</script> as a function of <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> if every vertical line crosses the
+plot at most once, and we called this the <strong>vertical line test</strong>. Similarly, a function is
+one-to-one if every horizontal line crosses the plot at most once, and we call this the
+<strong>horizontal line test</strong>.
+</p>
+<div class="theorem-like problem-environment theorem" id="problem22"><a 
+ id="x1-75r18"></a>A function is one-to-one at <script type="math/tex"> <![CDATA[ 
+x=a 
+]]> 
+</script> if the horizontal line <script type="math/tex"> <![CDATA[ 
+y = f(a) 
+]]> 
+</script> intersects the curve <script type="math/tex"> <![CDATA[ 
+y=f(x) 
+]]> 
+</script> in exactly one
+point. This is called the <strong>horizontal line test</strong>.
+</div> Below, we give a graph of <script type="math/tex"> <![CDATA[ 
+f(x)=-5x^2+30x+60 
+]]> 
+</script>. While this graph passes the vertical line test, and hence
+represents <script type="math/tex"> <![CDATA[ 
+y 
+]]> 
+</script> as a function of <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>, it does not pass the horizontal line test, so the function
+is not one-to-one. <div class="image-environment">  <img 
+src="./digInInversesOfFunctions-figure5.svg" alt="PIC"  
+ />
+                                                                  
+
+                                                                  
+</div>
+<!--l. 331--><p class="noindent" >As we have discussed, we can only ﬁnd an inverse of a function when it is one-to-one.
+If a function is not one-to-one, but we still want an inverse, we must restrict the
+domain. Let&#x2019;s see what this means in our next examples.
+</p>
+<div class="problem-environment question" id="problem23"><a 
+ id="x1-76r19"></a> Consider the graph of the function <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> below: <div class="image-environment">  <img 
+src="./digInInversesOfFunctions-figure6.svg" alt="PIC"  
+ />
+</div>
+On which of the following intervals is <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> one-to-one? <div class="select-all" id="problem24"><a 
+ id="x1-77r20"></a> <span class="choice correct" id="choice15"><script type="math/tex"> <![CDATA[ 
+[A,B] 
+]]> 
+</script></span> <span class="choice" id="choice16"><script type="math/tex"> <![CDATA[ 
+[A,C] 
+]]> 
+</script></span> <span class="choice correct" id="choice17"><script type="math/tex"> <![CDATA[ 
+[B,D] 
+]]> 
+</script></span> <span class="choice" id="choice18"><script type="math/tex"> <![CDATA[ 
+[C,E] 
+]]> 
+</script></span> <span class="choice correct" id="choice19"><script type="math/tex"> <![CDATA[ 
+[C,D] 
+]]> 
+</script></span>
+</div>
+</div>
+<!--l. 379--><p class="noindent" >This idea of restricting the domain is critical for understanding functions like
+<script type="math/tex"> <![CDATA[ 
+f(x) = \sqrt {x} 
+]]> 
+</script>.
+</p>
+<div class="theorem-like problem-environment warning" id="problem25"><a 
+ id="x1-78r21"></a>We deﬁne <script type="math/tex"> <![CDATA[ 
+f(x) = \sqrt {x} 
+]]> 
+</script> to be the positive square-root, so that we can be sure that <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> is a function.
+Thinking of the square-root as the inverse of the squaring function, we can see the
+issue a little more clearly. There are two <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>-values that square to <script type="math/tex"> <![CDATA[ 
+9 
+]]> 
+</script>. <script type="math/tex; mode=display"> <![CDATA[ 
+ x^2 = 9\qquad \text {means $x=\pm 3$}  
+]]> 
+</script> Since we
+require that <strong>square-root is a function</strong>, we must have only one output
+value when we plug in <script type="math/tex"> <![CDATA[ 
+9 
+]]> 
+</script>. We choose the positive square-root, meaning that
+<script type="math/tex; mode=display"> <![CDATA[ 
+ \sqrt {9} =3.  
+]]> 
+</script>
+</div>
+<div class="theorem-like problem-environment example" id="problem26"><a 
+ id="x1-79r22"></a>Consider the function <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x) = x^2.  
+]]> 
+</script> Does <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> have an inverse? If so, what is it? If not, attempt to
+restrict the domain of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> and ﬁnd an inverse on the restricted domain. <div class="theorem-like problem-environment explanation" id="problem27"><a 
+ id="x1-80r23"></a>In
+this case <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> is not one-to-one. However, it is one-to-one on the interval <script type="math/tex"> <![CDATA[ 
+[0,\infty ) 
+]]> 
+</script>.
+Hence we can ﬁnd an inverse of <script type="math/tex"> <![CDATA[ 
+f(x)=x^2 
+]]> 
+</script> on this interval. We plug <script type="math/tex"> <![CDATA[ 
+f^{-1}(x) 
+]]> 
+</script> into <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> and write
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+        f(f^{-1}(x)) &= \left(f^{-1}(x)\right)^2\\
+        x &= \left(f^{-1}(x)\right)^2.
+      \end{align*} 
+]]> 
+</script>
+Since the domain of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> is <script type="math/tex"> <![CDATA[ 
+[0, \infty ) 
+]]> 
+</script>, we know that <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> is positive. This means we can take the
+square-root of each side of the equation to ﬁnd that <script type="math/tex; mode=display"> <![CDATA[ 
+ \sqrt {x} = f^{-1}(x).  
+]]> 
+</script> <div class="image-environment">  <img 
+src="./digInInversesOfFunctions-figure7.svg" alt="PIC"  
+ />
+</div>
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem28"><a 
+ id="x1-81r24"></a>Consider the function <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x) = x^3.  
+]]> 
+</script> Does <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> have an inverse? If so, what is it? If not, attempt to
+restrict the domain of <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> and ﬁnd an inverse on the restricted domain. <div class="theorem-like problem-environment explanation" id="problem29"><a 
+ id="x1-82r25"></a>In this case <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> is
+one-to-one. We may write <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      f(f^{-1}(x) &= \left(f^{-1}(x)\right)^3\\
+    x &= \left(f^{-1}(x)\right)^3\\
+    \sqrt[3]{x} = f^{-1}(x).
+  \end{align*} 
+]]> 
+</script>
+For your viewing pleasure we give a graph of <script type="math/tex"> <![CDATA[ 
+y=f(x)=x^3 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+y=f^{-1}(x)= \sqrt [3]{x} 
+]]> 
+</script>. Note, the graph of <script type="math/tex"> <![CDATA[ 
+f^{-1} 
+]]> 
+</script> is the image
+                                                                  
+
+                                                                  
+of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> after being ﬂipped over the line <script type="math/tex"> <![CDATA[ 
+y=x 
+]]> 
+</script>. <div class="image-environment">  <img 
+src="./digInInversesOfFunctions-figure8.svg" alt="PIC"  
+ />
+</div>
+</div>
+</div>
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

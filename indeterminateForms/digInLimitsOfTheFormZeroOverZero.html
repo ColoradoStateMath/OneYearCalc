@@ -1,0 +1,418 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+<title>Limits  of  the  form  zero  over
+                                                                  
+
+                                                                  
+zero</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInLimitsOfTheFormZeroOverZero.tex" /> 
+<meta name="date" content="2016-07-26 20:25:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Understand what is meant by the form of a limit."/> 
+<meta name="learning-outcome" content="Calculate limits of the form zero over zero."/> 
+<meta name="learning-outcome" content="Identify determinate and indeterminate forms."/> 
+<meta name="learning-outcome" content="Distinguish between determinate and indeterminate forms."/> 
+<meta name="learning-outcome" content="Discuss why infinity is not a number."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                              
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 15--><p class="noindent" >We want to evaluate limits where the Limit Laws do not directly apply.
+</p></div>
+<div class="maketitle"></div>
+<!--l. 20--><p class="noindent" >In the last section, we were interested in the limits we could compute using continuity
+and the limit laws. What about limits that cannot be directly computed
+using these methods? Let&#x2019;s think about an example. Consider <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 2}\frac {x^2-3x+2}{x-2}.  
+]]> 
+</script> Here <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 2}\left (x^2-3x+2\right ) = 0\qquad \text {and}\qquad \lim _{x\to 2}\left (x-2\right ) = 0  
+]]> 
+</script> in
+light of this, you may think that the limit is one or zero. <strong>Not so fast</strong>. This
+limit is of an <em>indeterminate form</em>. What does this mean? Read on, young
+mathematician.
+</p>
+<div class="theorem-like problem-environment definition" id="problem1"><a 
+ id="x1-58r1"></a>A limit <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to a} \frac {f(x)}{g(x)}  
+]]> 
+</script> is said to be of the form <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script> if <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to a} f(x) = 0\qquad \text {and}\qquad \lim _{x\to a} g(x) =0.  
+]]> 
+</script>
+</div>
+<div class="problem-environment question" id="problem2"><a 
+ id="x1-59r2"></a> Which of the following limits are of the form <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script>? <div class="select-all" id="problem3"><a 
+ id="x1-60r3"></a> <span class="choice correct" id="choice1"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to 0}\frac {\sin (x)}{x} 
+]]> 
+</script></span> <span class="choice" id="choice2"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to 0}\frac {\cos (x)}{x} 
+]]> 
+</script></span> <span class="choice" id="choice3"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to 0}\frac {x^2-3x+2}{x-2} 
+]]> 
+</script></span> <span class="choice correct" id="choice4"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to 2}\frac {x^2-3x+2}{x-2} 
+]]> 
+</script></span> <span class="choice" id="choice5"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to 3}\frac {x^2-3x+2}{x-3} 
+]]> 
+</script></span>
+</div>
+</div>
+<div class="theorem-like problem-environment warning" id="problem4"><a 
+ id="x1-61r4"></a>The symbol <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script> is <strong>not</strong> the number <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script> divided by <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>. It is simply short-hand and means that
+a limit <script type="math/tex"> <![CDATA[ 
+\lim _{x\to a} \frac {f(x)}{g(x)} 
+]]> 
+</script> has the property that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to a} f(x) = 0\qquad \text {and}\qquad \lim _{x\to a} g(x) =0.  
+]]> 
+</script>
+</div>
+<!--l. 67--><p class="noindent" >Let&#x2019;s consider an example with the function above:
+</p>
+<div class="theorem-like problem-environment example" id="problem5"><a 
+ id="x1-62r5"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 2}\frac {x^2-3x+2}{x-2}  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem6"><a 
+ id="x1-63r6"></a>This limit is of the form <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script>. However, note that if we assume <script type="math/tex"> <![CDATA[ 
+x\ne \answer [given]{2} 
+]]> 
+</script>, then we can
+write <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {x^2-3x+2}{x-2} = \frac {(x-2)\answer [given]{(x-1)}}{(x-2)} = \answer [given]{x-1}.  
+]]> 
+</script> <div class="image-environment">  <img 
+src="./digInLimitsOfTheFormZeroOverZero-figure0.svg" alt="PIC"  
+ />
+  <img 
+src="./digInLimitsOfTheFormZeroOverZero-figure1.svg" alt="PIC"  
+ />
+</div>
+This means that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 2}\frac {x^2-3x+2}{x-2} = \lim _{x\to 2} (x-1).  
+]]> 
+</script> But now, the limit is in a form on which we can use the limit laws!
+We have <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 2} (x-1) =\answer [given]{1} 
+]]> 
+</script>. Hence <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 2}\frac {x^2-3x+2}{x-2} = \answer [given]{1}.  
+]]> 
+</script>
+</div>
+</div>
+<!--l. 125--><p class="noindent" >Lets consider some more examples of the form <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script>.
+</p>
+<div class="theorem-like problem-environment example" id="problem7"><a 
+ id="x1-64r7"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 1}\frac {x-1}{x^2+2x-3}.  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem8"><a 
+ id="x1-65r8"></a>First note that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 1}\left (x-1\right )=0 \qquad \text {and}\qquad \lim _{x\to 1}\left (x^2+2x-3\right ) = 0  
+]]> 
+</script> Hence this limit is of the form <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script>, which tells us we can likely
+cancel a factor going to <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script> out of the numerator and denominator. Since <script type="math/tex"> <![CDATA[ 
+\answer [given]{(x-1)} 
+]]> 
+</script> is a factor going
+to <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script> in the numerator, let&#x2019;s see if we can factor a <script type="math/tex"> <![CDATA[ 
+\answer [given]{(x-1)} 
+]]> 
+</script> out of the denominator as well.
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      \lim_{x\to1}\frac{x-1}{x^2+2x-3}&=\lim_{x\to1}\frac{x-1}{(x-1)\answer[given]{(x+3)}} \\
+      &=\lim_{x\to1}\frac{1}{\answer[given]{x+3}}\\
+      &=\frac{1}{4}.
+    \end{align*} 
+]]> 
+</script>
+</div>
+                                                                  
+
+                                                                  
+</div>
+<div class="theorem-like problem-environment example" id="problem9"><a 
+ id="x1-66r9"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 1} \frac {\frac {1}{x+1}-\frac {3}{x+5}}{x-1}.  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem10"><a 
+ id="x1-67r10"></a>We ﬁnd the form of this limit by looking at the limits of the
+numerator and denominator separately <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 1}\left (\frac {1}{x+1}-\frac {3}{x+5}\right )=0\qquad \text {and}\qquad \lim _{x\to 1}\left (x-1\right )=0.  
+]]> 
+</script> Our limit is therefore of the form
+<script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script> and we can probably factor a term going to <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script> out of both the numerator
+and denominator. <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 1} \frac {\frac {1}{x+1}-\frac {3}{x+5}}{x-1}  
+]]> 
+</script> When looking at the denominator, we hope that this
+term is <script type="math/tex"> <![CDATA[ 
+(x-1) 
+]]> 
+</script>. Unfortunately, it is not immediately obvious how to factor an <script type="math/tex"> <![CDATA[ 
+(x-1) 
+]]> 
+</script>
+out of the numerator. In order to simplify the numerator, we will “clear
+denominators.” by multiplying by <script type="math/tex; mode=display"> <![CDATA[ 
+ 1 = \frac {(x+1)(x+5)}{(x+1)(x+5)}  
+]]> 
+</script> this will allow us to cancel immediately
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+  \lim_{x\to 1}& \frac{\frac{1}{x+1}-\frac{3}{x+5}}{x-1}  \cdot \frac{(x+1)(x+5)}{(x+1)(x+5)} \\
+  &= \lim_{x\to 1}\frac{(x+5)-3(x+1)}{(x+1)(x+5)(x-1)}.
+\end{align*} 
+]]> 
+</script>
+<!--l. 181--><p class="noindent" >Now we will multiply out the numerator. Note that we do not want to multiply out
+the denominator because we already have an <script type="math/tex"> <![CDATA[ 
+(x-1) 
+]]> 
+</script> factored out of the denominator and
+that was the goal.
+</p>
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\lim_{x\to 1}\frac{(x+5)-3(x+1)}{(x+1)(x+5)(x-1)} &= \lim_{x\to 1}\frac{x+5-3x-3}{(x+1)(x+5)(x-1)} \\
+&= \lim_{x\to 1}\frac{-2x+2}{(x+1)(x+5)(x-1)}\\
+&= \lim_{x\to 1}\frac{-2(x-1)}{(x+1)(x+5)(x-1)}\\
+&= \lim_{x\to 1}\frac{-2}{(x+1)(x+5)}.
+\end{align*} 
+]]> 
+</script>
+<!--l. 192--><p class="noindent" >We now have canceled, and can apply the usual Limit Laws. Hence
+</p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\lim_{x\to 1} \frac{\frac{1}{x+1}-\frac{3}{x+5}}{x-1}&=\lim_{x\to
+  1}\frac{-2}{(x+1)(x+5)}\\
+&= \frac{-2}{((1)+1)((1)+5)} \\
+&=\answer[given]{\frac{-1}{6}}.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 202--><p class="noindent" >Finally, we&#x2019;ll look at one more example.
+</p>
+<div class="theorem-like problem-environment example" id="problem11"><a 
+ id="x1-68r11"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to -1} \frac {\sqrt {x+5}-2}{x+1}.  
+]]> 
+</script>
+<div class="theorem-like problem-environment explanation" id="problem12"><a 
+ id="x1-69r12"></a>Note that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to -1} \left (\sqrt {x+5}-2\right )=0\qquad \text {and}\qquad \lim _{x\to -1} \left (x+1\right ) =0.  
+]]> 
+</script> Our limit is therefore of the form <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script> and we can probably factor a term
+going to <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script> out of both the numerator and denominator. We suspect from looking at
+the denominator that this term is <script type="math/tex"> <![CDATA[ 
+(x+1) 
+]]> 
+</script>. Unfortunately, it is not immediately obvious how
+to factor an <script type="math/tex"> <![CDATA[ 
+(x+1) 
+]]> 
+</script> out of the numerator.
+                                                                  
+
+                                                                  
+<!--l. 221--><p class="noindent" >We will use an algebraic technique called <strong>multiplying by the conjugate</strong>. This
+technique is useful when you are trying to simplify an expression that looks like <script type="math/tex; mode=display"> <![CDATA[ 
+ \sqrt {\text {something} \pm \text {something else}}.  
+]]> 
+</script> It
+takes advantage of the diﬀerence of squares rule <script type="math/tex; mode=display"> <![CDATA[ 
+ a^2-b^2=(a-b)(a+b).  
+]]> 
+</script> In our case, we will use <script type="math/tex"> <![CDATA[ 
+a=\sqrt {x+5} 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+b=2 
+]]> 
+</script>. Write
+</p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\lim_{x\to-1} \frac{\sqrt{x+5}-2}{x+1}&=
+\lim_{x\to-1} \frac{\left(\sqrt{x+5}-2\right)}{(x+1)} \cdot \frac{\left(\sqrt{x+5}+2\right)}{\left(\sqrt{x+5}+2\right)} \\
+&=\lim_{x\to-1} \frac{\answer[given]{\left(\sqrt{x+5}\right)^2-2^2}}{(x+1)\left(\sqrt{x+5}+2\right)} \\
+&=\lim_{x\to-1} \frac{x+5-4}{(x+1)\left(\sqrt{x+5}+2\right)} \\
+&=\lim_{x\to-1} \frac{(x+1)}{(x+1)\left(\sqrt{x+5}+2\right)} \\
+&=\lim_{x\to-1} \frac{1}{\sqrt{x+5}+2}\\
+&= \frac{1}{\sqrt{-1+5}+2}\\
+&=\answer[given]{\frac{1}{4}}.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 245--><p class="noindent" >All of the examples in this section are limits of the form <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script>. When you come across a
+limit of the form <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script>, you should try to use algebraic techniques to come up with a
+continuous function whose limit you can evaluate.
+</p><!--l. 250--><p class="noindent" >Notice that we solved multiple examples of limits of the form <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script> and we got
+diﬀerent answers each time. This tells us that just knowing that the form of
+the limit is <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script> is not enough to compute the limit. The moral of the story is
+</p>
+<div class="center" 
+>
+<!--l. 254--><p class="noindent" >
+</p><!--l. 255--><p class="noindent" ><strong>Limits of the form <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script> can take any value.</strong></p></div>
+<div class="theorem-like problem-environment definition" id="problem13"><a 
+ id="x1-70r13"></a>A form that give us no information about the value of the limit is called an
+<strong>indeterminate form</strong>.
+<!--l. 262--><p class="noindent" >A forms that give information about the value of the limit is called a <strong>determinate
+form</strong>.
+</div>
+</p><!--l. 266--><p class="noindent" >Finally, you may ﬁnd it distressing that we introduced a form, namely <script type="math/tex"> <![CDATA[ 
+\relax \boldsymbol {\tfrac {0}{0}} 
+]]> 
+</script>,
+only to end up saying they give no information on the value of the limit.
+But this is precisely what makes indeterminate forms interesting… they&#x2019;re a
+mystery!
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

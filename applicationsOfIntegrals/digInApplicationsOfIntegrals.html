@@ -1,0 +1,489 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Applications of integrals</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInApplicationsOfIntegrals.tex" /> 
+<meta name="date" content="2016-07-26 20:09:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Define the average value of a function."/> 
+<meta name="learning-outcome" content="Find the average value of a function."/> 
+<meta name="learning-outcome" content="State the Mean Value Theorem for integrals."/> 
+<meta name="learning-outcome" content="Use the Mean Value Theorem for integrals."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                              
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 13--><p class="noindent" >We give more contexts to understand integrals.
+</p></div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a 
+ id="x1-1000"></a>Velocity and displacement, speed and distance</h3>
+<!--l. 21--><p class="noindent" >Some values include “direction” that is relative to some ﬁxed point.
+</p>
+<div class="theorem-like problem-environment definition" id="problem1"><a 
+ id="x1-1001r1"></a>
+     <ul class="itemize1">
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+v(t) 
+]]> 
+</script> is the <strong>velocity</strong> of an object at time <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>. This represents the “change in
+     position” at time <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>.
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+s(t) 
+]]> 
+</script> is the <strong>position</strong> of an object at time <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>. This gives location with respect to
+     the origin. If we can assume that <script type="math/tex"> <![CDATA[ 
+s(a) = 0 
+]]> 
+</script>, then <script type="math/tex; mode=display"> <![CDATA[ 
+ s(t) = \int _a^t v(x) \d x.  
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+s(b) -s(a) 
+]]> 
+</script> is the <strong>displacement</strong>, the distance between the starting and ﬁnishing
+     locations.</li></ul>
+<!--l. 36--><p class="noindent" ></div>
+</p><!--l. 38--><p class="noindent" >On the other hand <em>speed</em> and <em>distance</em> are values without “direction.”
+</p>
+<div class="theorem-like problem-environment definition" id="problem2"><a 
+ id="x1-1002r2"></a>
+     <ul class="itemize1">
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+|v(t)| 
+]]> 
+</script> is the <strong>speed</strong>.
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int _a^b |v(t)| \d t 
+]]> 
+</script> is the <strong>distance</strong> traveled.</li></ul>
+<!--l. 46--><p class="noindent" ></div>
+</p>
+<div class="problem-environment question" id="problem3"><a 
+ id="x1-1003r3"></a> Consider a particle whose velocity at time <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script> is given by <script type="math/tex"> <![CDATA[ 
+v(t) = \sin (t) 
+]]> 
+</script>.
+<div class="image-environment">  <img 
+src="./digInApplicationsOfIntegrals-figure0.svg" alt="PIC"  
+ />
+</div>
+What is the displacement of the particle from <script type="math/tex"> <![CDATA[ 
+t=0 
+]]> 
+</script> to <script type="math/tex"> <![CDATA[ 
+t=\pi  
+]]> 
+</script>? That is, compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _0^\pi \sin (t) \d t \begin {prompt}= \answer [given]{2}\end {prompt}  
+]]> 
+</script> What is the
+displacement of the particle from <script type="math/tex"> <![CDATA[ 
+t=0 
+]]> 
+</script> to <script type="math/tex"> <![CDATA[ 
+t=2\pi  
+]]> 
+</script>? That is, compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _0^{2\pi } \sin (t) \d t \begin {prompt}= \answer [given]{0}\end {prompt}  
+]]> 
+</script> What is the distance
+traveled by the particle from <script type="math/tex"> <![CDATA[ 
+t=0 
+]]> 
+</script> to <script type="math/tex"> <![CDATA[ 
+t=\pi  
+]]> 
+</script>? That is, compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _0^\pi \left | \sin (t) \right | \d t \begin {prompt}= \answer [given]{2}\end {prompt}  
+]]> 
+</script> What is the distance traveled
+by the particle from <script type="math/tex"> <![CDATA[ 
+t=0 
+]]> 
+</script> to <script type="math/tex"> <![CDATA[ 
+t=2\pi  
+]]> 
+</script>? That is, compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _0^{2\pi } \left | \sin (t) \right | \d t \begin {prompt}=\answer [given]{4}\end {prompt}  
+]]> 
+</script>
+                                                                  
+
+                                                                  
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-2000"></a>Average value</h3>
+<!--l. 95--><p class="noindent" >Conceptualizing deﬁnite integrals as “signed area” works great as long as
+one can actually visualize the “area.” In some cases, a better metaphor for
+integrals comes from the idea of <em>average value</em>. Looking back to your days as
+an even younger mathematician, you may recall the idea of an <em>average</em>: <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {f_1+f_2+\dots +f_n}{n} = \frac {1}{n}\sum _{k=1}^n f_i  
+]]> 
+</script> If
+we want to know the average value of a function, a naive approach might
+be to partition the interval <script type="math/tex"> <![CDATA[ 
+[a,b] 
+]]> 
+</script> into <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> equally spaced subintervals, <script type="math/tex; mode=display"> <![CDATA[ 
+ a=x_0 < x_1 < \dots < x_{n}=b  
+]]> 
+</script> and choose
+any <script type="math/tex"> <![CDATA[ 
+x_k^* 
+]]> 
+</script> in <script type="math/tex"> <![CDATA[ 
+[x_i,x_{i+1}] 
+]]> 
+</script>. The average of <script type="math/tex"> <![CDATA[ 
+f(x_1^*) 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+f(x_2^*) 
+]]> 
+</script>, …, <script type="math/tex"> <![CDATA[ 
+f(x_n^*) 
+]]> 
+</script> is: <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {f(x_1^*) + f(x_2^*) + \dots + f(x_n^*)}{n} = \frac 1n\sum _{k=1}^n f(x_k^*).  
+]]> 
+</script> Multiply this last expression by <script type="math/tex"> <![CDATA[ 
+1 = \frac {(b-a)}{(b-a)} 
+]]> 
+</script>:
+</p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+  \frac1n \sum_{k=1}^n f(x_k^*)\frac{(b-a)}{(b-a)} &= \sum_{k=1}^n f(x_k^*)\frac1n \frac{(b-a)}{(b-a)} \\
+  &= \frac{1}{b-a} \sum_{k=1}^n f(x_k^*)\frac{b-a}n  \\
+  &=\frac{1}{b-a} \sum_{k=1}^n f(x_k^*)\Delta x
+\end{align*} 
+]]> 
+</script>
+where <script type="math/tex"> <![CDATA[ 
+\Delta x = (b-a)/n 
+]]> 
+</script>. Ah! On the right we have a Riemann Sum! Now take the limit as <script type="math/tex"> <![CDATA[ 
+n\to \infty  
+]]> 
+</script>: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{n\to \infty } \frac {1}{b-a} \sum _{k=1}^n f(x_k^*)\Delta x = \frac {1}{b-a} \int _a^b f(x)\d x.  
+]]> 
+</script> This leads
+us to our next deﬁnition:
+<div class="theorem-like problem-environment definition" id="problem4"><a 
+ id="x1-2001r4"></a>Let <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> be continuous on <script type="math/tex"> <![CDATA[ 
+[a,b] 
+]]> 
+</script>. The <strong>average value</strong> of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> on <script type="math/tex"> <![CDATA[ 
+[a,b] 
+]]> 
+</script> is given by <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {1}{b-a}\int _a^b f(x)\d x.  
+]]> 
+</script>
+</div>
+<!--l. 135--><p class="noindent" >The average value of a function gives the height of a single rectangle whose area is
+equal to <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _a^b f(x) \d x  
+]]> 
+</script> </p><div class="image-environment">  <img 
+src="./digInApplicationsOfIntegrals-figure1.svg" alt="PIC"  
+ />
+</div>
+<!--l. 166--><p class="noindent" >An application of this deﬁnition is given in the next example.
+</p>
+<div class="theorem-like problem-environment example" id="problem5"><a 
+ id="x1-2002r5"></a>An object moves back and forth along a straight line with a velocity given by <script type="math/tex"> <![CDATA[ 
+v(t) = (t-1)^2 
+]]> 
+</script> on <script type="math/tex"> <![CDATA[ 
+[0,3] 
+]]> 
+</script>,
+where <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script> is measured in seconds and <script type="math/tex"> <![CDATA[ 
+v(t) 
+]]> 
+</script> is measured in ft/s.
+<!--l. 174--><p class="noindent" >What is the average velocity of the object? </p><div class="theorem-like problem-environment explanation" id="problem6"><a 
+ id="x1-2003r6"></a>By our deﬁnition, the average velocity is:
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\frac{1}{3-0}\int_0^3 (t-1)^2\d t &=\frac13 \int_0^3 t^2-2t+1\d t\\
+&= \frac13\eval{\frac{t^3}{3}-t^2+t}_0^3\\
+&= 1\text{ ft/s}.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 187--><p class="noindent" >When we take the average of a ﬁnite set of values, it does not matter how we order
+those values. When we are taking the average value of a function, however, we need
+to be more careful.
+</p><!--l. 191--><p class="noindent" >For instance, there are at least two diﬀerent ways to make sense of a vague phrase
+like “The average height of a point on the unit semi circle” </p><div class="image-environment">  <img 
+src="./digInApplicationsOfIntegrals-figure2.svg" alt="PIC"  
+ />
+                                                                  
+
+                                                                  
+</div>
+One way we can make sense of “The average height of a point on the unit
+semi circle” is to compute the average value of the function <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x) =\sqrt {1-x^2}  
+]]> 
+</script> on the interval
+<script type="math/tex"> <![CDATA[ 
+[-1,1] 
+]]> 
+</script>.
+<div class="theorem-like problem-environment example" id="problem7"><a 
+ id="x1-2004r7"></a>Compute the average value of the function <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x) =\sqrt {1-x^2}  
+]]> 
+</script> on the interval <script type="math/tex"> <![CDATA[ 
+[-1,1] 
+]]> 
+</script>. <div class="theorem-like problem-environment explanation" id="problem8"><a 
+ id="x1-2005r8"></a>By deﬁnition, we wish to
+compute <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {1}{2}\int _{-1}^1 \sqrt {1-x^2} \d x.  
+]]> 
+</script> Computing this integral geometrically, we ﬁnd the average value to be
+<script type="math/tex"> <![CDATA[ 
+\answer [given]{\frac {\pi }{4}} 
+]]> 
+</script>.
+</div>
+</div> Another way we can make sense of “The average height of a point on the unit semi
+circle” is the average value of the function <script type="math/tex; mode=display"> <![CDATA[ 
+ g(\theta ) =\sin (\theta )  
+]]> 
+</script> on <script type="math/tex"> <![CDATA[ 
+[0,\pi ] 
+]]> 
+</script>, since <script type="math/tex"> <![CDATA[ 
+\sin (\theta ) 
+]]> 
+</script> is the height of the point on
+the unit circle at the angle <script type="math/tex"> <![CDATA[ 
+\theta  
+]]> 
+</script>. <div class="theorem-like problem-environment example" id="problem9"><a 
+ id="x1-2006r9"></a>Compute the average value of the function <script type="math/tex; mode=display"> <![CDATA[ 
+ g(\theta ) =\sin (\theta )  
+]]> 
+</script> on the
+interval <script type="math/tex"> <![CDATA[ 
+[0,\pi ] 
+]]> 
+</script>. <div class="theorem-like problem-environment explanation" id="problem10"><a 
+ id="x1-2007r10"></a>By deﬁnition, we wish to compute <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {1}{\pi } \int _0^\pi \sin (\theta ) \d \theta .  
+]]> 
+</script> Computing this integral geometrically,
+we ﬁnd the average value to be <script type="math/tex"> <![CDATA[ 
+\answer [given]{\frac {2}{\pi }} 
+]]> 
+</script>.
+</div>
+</div>
+<!--l. 258--><p class="noindent" >See if you can understand intuitively why the average using <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> should be larger than
+the average using <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script>.
+</p>
+<h3 class="sectionHead"><a 
+ id="x1-3000"></a>Mean value theorem for integrals</h3>
+<!--l. 270--><p class="noindent" >Just as we have a Mean Value Theorem for Derivatives, we also have a Mean Value
+Theorem for Integrals.
+</p>
+<div class="theorem-like problem-environment theorem" id="problem11"><a 
+ id="x1-3001r11"></a><span class="theorem-like-title">The Mean Value Theorem for integrals</span> Let <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> be continuous on <script type="math/tex"> <![CDATA[ 
+[a,b] 
+]]> 
+</script>. There exists a value <script type="math/tex"> <![CDATA[ 
+c 
+]]> 
+</script>
+in <script type="math/tex"> <![CDATA[ 
+[a,b] 
+]]> 
+</script> such that <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _a^bf(x)\d x = f(c)(b-a).  
+]]> 
+</script>
+</div>
+<!--l. 282--><p class="noindent" >This is an existential statement. The Mean Value Theorem for Integrals tells
+us:
+     </p><div class="quote">
+     <!--l. 286--><p class="noindent" ><strong>The average value of a continuous function is in the range
+     of the function.</strong></p></div>
+<!--l. 289--><p class="noindent" >We demonstrate the principles involved in this version of the Mean Value Theorem in
+the following example.
+</p>
+<div class="theorem-like problem-environment example" id="problem12"><a 
+ id="x1-3002r12"></a>Consider <script type="math/tex"> <![CDATA[ 
+\int _0^\pi \sin x \d x 
+]]> 
+</script>. Find a value <script type="math/tex"> <![CDATA[ 
+c 
+]]> 
+</script> guaranteed by the Mean Value Theorem. <div class="theorem-like problem-environment explanation" id="problem13"><a 
+ id="x1-3003r13"></a>We ﬁrst need to
+evaluate <script type="math/tex"> <![CDATA[ 
+\int _0^\pi \sin x\d x 
+]]> 
+</script>. <script type="math/tex; mode=display"> <![CDATA[ 
+ \int _0^\pi \sin x\d x =\eval {-\cos x}_0^\pi = 2.  
+]]> 
+</script> Thus we seek a value <script type="math/tex"> <![CDATA[ 
+c 
+]]> 
+</script> in <script type="math/tex"> <![CDATA[ 
+[0,\pi ] 
+]]> 
+</script> such that <script type="math/tex"> <![CDATA[ 
+\pi \sin c =2 
+]]> 
+</script>. <script type="math/tex; mode=display"> <![CDATA[ 
+ \pi \sin c = 2\ \ \Rightarrow \ \ \sin c = 2/\pi \ \ \Rightarrow \ \ c = \arcsin (2/\pi ) \approx 0.69.  
+]]> 
+</script>
+<!--l. 304--><p class="noindent" >A graph of <script type="math/tex"> <![CDATA[ 
+\sin x 
+]]> 
+</script> is sketched along with a rectangle with height <script type="math/tex"> <![CDATA[ 
+\sin (0.69) 
+]]> 
+</script> are pictured below. The
+area of the rectangle is the same as the area under <script type="math/tex"> <![CDATA[ 
+\sin x 
+]]> 
+</script> on <script type="math/tex"> <![CDATA[ 
+[0,\pi ] 
+]]> 
+</script>. </p><div class="image-environment">  <img 
+src="./digInApplicationsOfIntegrals-figure3.svg" alt="PIC"  
+ />
+</div>
+                                                                  
+
+                                                                  
+</div>
+</div> </body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

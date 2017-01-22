@@ -1,0 +1,452 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Basic rules of diﬀerentiation</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInBasicRulesOfDifferentiation.tex" /> 
+<meta name="date" content="2016-07-26 20:40:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Use ``shortcut'' rules to find and use derivatives."/> 
+<meta name="learning-outcome" content="Use the definition of the derivative to develop shortcut rules to find the derivatives of constants, constant multiples, powers of $x$, and sums of functions"/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                           
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 16--><p class="noindent" >We derive the constant rule, power rule, and sum rule.
+</p></div>   <div class="maketitle"></div>
+It is tedious to compute a limit every time we need to know the derivative of a
+function. Fortunately, we can develop a small collection of examples and rules that
+allow us to quickly compute the derivative of almost any function we are
+likely to encounter. We will start simply and build up to more complicated
+examples.
+<h3 class="sectionHead"><a 
+ id="x1-1000"></a>The constant rule</h3>
+<!--l. 29--><p class="noindent" >The simplest examples of functions, hence the best place to start our investigation,
+are constant functions. Recall that derivatives measure the rate of change of a
+function at a given point. This means the derivative of a constant function is zero.
+Here are some ways to think about this situation. </p>
+     <ul class="itemize1">
+     <li class="itemize">The constant function plots a horizontal line—so the slope of the tangent
+     line is <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>.
+     </li>
+     <li class="itemize">If <script type="math/tex"> <![CDATA[ 
+s(t) 
+]]> 
+</script> represents the position of an object with respect to time and <script type="math/tex"> <![CDATA[ 
+s(t) 
+]]> 
+</script> is constant,
+     then the object is not moving, so its velocity is zero. Hence <script type="math/tex"> <![CDATA[ 
+\dd {t} s(t) = 0 
+]]> 
+</script>.
+     </li>
+     <li class="itemize">If <script type="math/tex"> <![CDATA[ 
+v(t) 
+]]> 
+</script> represents the velocity of an object with respect to time and <script type="math/tex"> <![CDATA[ 
+v(t) 
+]]> 
+</script> is constant,
+     then the object&#x2019;s acceleration is zero. Hence <script type="math/tex"> <![CDATA[ 
+\dd {t} v(t) = 0 
+]]> 
+</script>.</li></ul>
+<!--l. 44--><p class="noindent" >The examples above lead us to our next theorem. To gain intuition, you should
+compute the derivative of <script type="math/tex"> <![CDATA[ 
+f(x) = 6 
+]]> 
+</script> using the limit deﬁnition of the derivative.
+</p>
+<div class="theorem-like problem-environment theorem" id="problem1"><a 
+ id="x1-1001r1"></a><span class="theorem-like-title">The constant rule</span> Given a constant <script type="math/tex"> <![CDATA[ 
+c 
+]]> 
+</script>, <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx c = 0.  
+]]> 
+</script>
+<div class="theorem-like problem-environment explanation" id="problem2"><a 
+ id="x1-1002r2"></a>From the limit deﬁnition of the derivative, write
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\ddx c &= \lim_{h\to 0}\frac{c-c}{\answer[given]{h}}\\
+&= \lim_{h\to 0} \frac{0}{h}\\
+&= \lim_{h\to 0} 0 = 0.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<div class="problem-environment question" id="problem3"><a 
+ id="x1-1003r3"></a> What is <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx e  
+]]> 
+</script> equal to? <div class="problem-environment hint" id="problem4"><a 
+ id="x1-1004r4"></a> Remember, <script type="math/tex; mode=display"> <![CDATA[ 
+ e = 2.718281828459045\dots .  
+]]> 
+</script>
+</div> It equals <script type="math/tex"> <![CDATA[ 
+\answer [given]{0} 
+]]> 
+</script>. 
+                                                                  
+
+                                                                  
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-2000"></a>The power rule</h3>
+<!--l. 84--><p class="noindent" >Next, let&#x2019;s examine derivatives of powers of a single variable. To gain intuition, you
+should compute the derivative of <script type="math/tex"> <![CDATA[ 
+f(x) = x^3 
+]]> 
+</script> using the limit deﬁnition of the derivative. Before
+computing this derivative, we should recall the <em>Binomial Theorem</em>.
+</p>
+<div class="theorem-like problem-environment theorem" id="problem5"><a 
+ id="x1-2001r5"></a><span class="theorem-like-title">Binomial Theorem</span> If <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> is a nonnegative integer, then <script type="math/tex; mode=display"> <![CDATA[ 
+ (a+b)^n = a^nb^0 + \binom {n}{1} a^{n-1}b^1 + \dots + \binom {n}{n-1} a^{1}b^{n-1} + a^{0}b^n  
+]]> 
+</script> where <script type="math/tex; mode=display"> <![CDATA[ 
+ \binom {n}{k} = \frac {n!}{k!(n-k)!}.  
+]]> 
+</script>
+</div> The Binomial Theorem tells us the pattern of the coeﬃcients for the expanded form
+of <script type="math/tex; mode=display"> <![CDATA[ 
+ (a+b)^n,  
+]]> 
+</script> which will help us prove our next derivative rule.
+<div class="theorem-like problem-environment example" id="problem6"><a 
+ id="x1-2002r6"></a>Expand <script type="math/tex"> <![CDATA[ 
+(x+h)^3 
+]]> 
+</script> using the Binomial Theorem. <div class="theorem-like problem-environment explanation" id="problem7"><a 
+ id="x1-2003r7"></a>We apply the Binomial
+Theorem to the expression in question, then simplify.
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+(x+h)^3 &= x^3h^0 + \binom{3}{1} x^{3-1}h^1 + \binom{3}{2} x^{3-2}h^2 + x^{0}h^3\\
+  & = x^3 + \answer[given]{3} x^2 h + \answer[given]{3} xh^2 + h^3
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<div class="theorem-like problem-environment theorem" id="problem8"><a 
+ id="x1-2004r8"></a><span class="theorem-like-title">The power rule</span> For any real number <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script>, <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx x^n = n x^{n-1}.  
+]]> 
+</script>
+<div class="theorem-like problem-environment explanation" id="problem9"><a 
+ id="x1-2005r9"></a>At this point we will only prove this theorem for values of <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> which are positive
+integers. Later we will give the complete explanation. From the limit deﬁnition of the
+derivative, write with me <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx x^n = \lim _{ h\to 0} \frac {(\answer [given]{x+ h})^n-x^n}{h}.  
+]]> 
+</script> Expand the term <script type="math/tex"> <![CDATA[ 
+(x+h)^n 
+]]> 
+</script>: <div class="image-environment">  <img 
+src="./digInBasicRulesOfDifferentiation-figure0.svg" alt="PIC"  
+ />
+</div>
+Note that we are using the Binomial Theorem to write <script type="math/tex"> <![CDATA[ 
+\binom {n}{k} 
+]]> 
+</script> for the coeﬃcients. Canceling
+the terms <script type="math/tex"> <![CDATA[ 
+x^n 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+-x^n 
+]]> 
+</script>, and noting <script type="math/tex"> <![CDATA[ 
+\binom {n}{1}= n 
+]]> 
+</script>, write with me <div class="image-environment">  <img 
+src="./digInBasicRulesOfDifferentiation-figure1.svg" alt="PIC"  
+ />
+</div>
+<!--l. 149--><p class="noindent" >Since every term but the ﬁrst has a factor of <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script>, we see <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx x^n = \answer [given]{nx^{n-1}}.  
+]]> 
+</script>
+</div>
+</div>
+</p><!--l. 156--><p class="noindent" >Let&#x2019;s consider several examples. We begin with something basic.
+</p>
+<div class="theorem-like problem-environment example" id="problem10"><a 
+ id="x1-2006r10"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx x^{13}  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem11"><a 
+ id="x1-2007r11"></a>Applying the power rule, we write <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx x^{13} = \answer [given]{13x^{12}}.  
+]]> 
+</script>
+</div>
+</div>
+<!--l. 171--><p class="noindent" >Sometimes, it is not as obvious that one should apply the power rule.
+</p>
+<div class="theorem-like problem-environment example" id="problem12"><a 
+ id="x1-2008r12"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx \frac {1}{x^4}  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem13"><a 
+ id="x1-2009r13"></a>Applying the power rule, we write <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx \frac {1}{x^4} = \ddx x^{-4} = \answer [given]{-4x^{-5}}.  
+]]> 
+</script>
+</div>
+</div>
+                                                                  
+
+                                                                  
+<!--l. 186--><p class="noindent" >The power rule also applies to radicals once we rewrite them as exponents.
+</p>
+<div class="theorem-like problem-environment example" id="problem14"><a 
+ id="x1-2010r14"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx \sqrt [5]{x}  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem15"><a 
+ id="x1-2011r15"></a>Applying the power rule, we write <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx \sqrt [5]{x} = \ddx x^{1/5} = \answer [given]{\frac {x^{-4/5}}{5}}.  
+]]> 
+</script>
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-3000"></a>The sum rule</h3>
+<!--l. 208--><p class="noindent" >We want to be able to take derivatives of functions “one piece at a time.” The <em>sum
+rule</em> allows us to do exactly this. The sum rule says that we can add the
+rates of change of two functions to obtain the rate of change of the sum of
+both functions. For example, viewing the derivative as the velocity of an
+object, the sum rule states that to ﬁnd the velocity of a person walking on a
+moving bus, we add the velocity of the bus and the velocity of the walking
+person.
+</p>
+<div class="theorem-like problem-environment theorem" id="problem16"><a 
+ id="x1-3001r16"></a><span class="theorem-like-title">The sum rule</span> If <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+g(x) 
+]]> 
+</script> are diﬀerentiable and <script type="math/tex"> <![CDATA[ 
+c 
+]]> 
+</script> is a constant, then
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd 
+class="enumerate-enumitem"><a 
+ id="x1-30021"></a> <script type="math/tex"> <![CDATA[ 
+\ddx \big ( f(x) + g(x)\big ) = f'(x) + g'(x) 
+]]> 
+</script>,
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd 
+class="enumerate-enumitem"><script type="math/tex"> <![CDATA[ 
+\ddx \big ( f(x) - g(x)\big ) = f'(x) - g'(x) 
+]]> 
+</script>,
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd 
+class="enumerate-enumitem"><script type="math/tex"> <![CDATA[ 
+\ddx \big (c\cdot f(x)\big ) = c\cdot f'(x) 
+]]> 
+</script>.</dd></dl>
+<div class="theorem-like problem-environment explanation" id="problem17"><a 
+ id="x1-3005r17"></a>We will only prove part <a 
+href="#x1-30021">(a)<!--tex4ht:ref: SR:1 --></a> above; the rest are similar. Write with me <div class="image-environment">  <img 
+src="./digInBasicRulesOfDifferentiation-figure2.svg" alt="PIC"  
+ />
+</div>
+</div>
+</div>
+<div class="problem-environment question" id="problem18"><a 
+ id="x1-3006r18"></a> Using diﬀerent notation for the derivative can be confusing. Which of the following
+are the same as part (a) of the Sum Rule? <div class="select-all" id="problem19"><a 
+ id="x1-3007r19"></a> <span class="choice correct" id="choice1"><script type="math/tex"> <![CDATA[ 
+(f(x) + g(x))' = f'(x) + g'(x) 
+]]> 
+</script></span> <span class="choice correct" id="choice2"><script type="math/tex"> <![CDATA[ 
+(f(x) + g(x))' = \ddx f(x) + \ddx g(x) 
+]]> 
+</script></span> <span class="choice" id="choice3"><script type="math/tex"> <![CDATA[ 
+\ddx f(x) + \ddx g(x) = f'(x) + g'(x) 
+]]> 
+</script></span> <span class="choice" id="choice4"><script type="math/tex"> <![CDATA[ 
+(f'(x) + g(x))' = \ddx ( f(x) + g(x)) 
+]]> 
+</script></span>
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem20"><a 
+ id="x1-3008r20"></a>Suppose we have two functions, <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script>, and we know that <script type="math/tex"> <![CDATA[ 
+f'(2) = 6 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+g'(2) = -3 
+]]> 
+</script>. What is the slope of <script type="math/tex"> <![CDATA[ 
+f(x) + g(x) 
+]]> 
+</script>
+at <script type="math/tex"> <![CDATA[ 
+x = 2 
+]]> 
+</script>? <div class="theorem-like problem-environment explanation" id="problem21"><a 
+ id="x1-3009r21"></a>Using the sum rule, the slope of <script type="math/tex"> <![CDATA[ 
+f(x) + g(x) 
+]]> 
+</script> at <script type="math/tex"> <![CDATA[ 
+x = 2 
+]]> 
+</script> is the sum <script type="math/tex"> <![CDATA[ 
+f'(2) + g'(2) 
+]]> 
+</script>. In this case, we have
+<script type="math/tex"> <![CDATA[ 
+f'(x) + g'(x) = \answer [given]{3} 
+]]> 
+</script>.
+</div>
+</div>
+<!--l. 264--><p class="noindent" >We now have the tools to work some more complicated examples.
+</p>
+<div class="theorem-like problem-environment example" id="problem22"><a 
+ id="x1-3010r22"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx \left ( x^5+\frac {1}{x}\right )  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem23"><a 
+ id="x1-3011r23"></a>Write with me <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\ddx \left(x^5+\frac{1}{x}\right) &= \ddx x^5 + \ddx x^{-1} \\
+&=\answer[given]{5x^4 - x^{-2}}.
+                                                                  
+
+                                                                  
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem24"><a 
+ id="x1-3012r24"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx \left (\frac {3}{\sqrt [3]{x}}-2\sqrt {x}+\frac {1}{x^7}\right )  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem25"><a 
+ id="x1-3013r25"></a>Write with me <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+   \ddx &\left(\frac{3}{\sqrt[3]{x}}-2\sqrt{x}+\frac{1}{x^7}\right)\\
+  &= 3\ddx x^{-1/3} -2\ddx x^{1/2}+\ddx x^{-7}\\
+  &=\answer[given]{-x^{-4/3} - x^{-1/2}-7x^{-8}}.
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

@@ -1,0 +1,512 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>More than one rate</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInMoreThanOneRate.tex" /> 
+<meta name="date" content="2016-07-26 20:35:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Solve basic related rates word problems."/> 
+<meta name="learning-outcome" content="Understand the process of solving related rates problems."/> 
+<meta name="learning-outcome" content="Calculate derivatives of expressions with multiple variables implicitly."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                  
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 13--><p class="noindent" >Here we work abstract related rates problems.
+</p></div>   <div class="maketitle"></div>
+Suppose we have two variables <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+y 
+]]> 
+</script> which are both changing with respect to time. A
+<em>related rates</em> problem is a problem where we know one rate at a given instant, and
+wish to ﬁnd the other.
+<!--l. 22--><p class="noindent" >Here the chain rule is key: If <script type="math/tex"> <![CDATA[ 
+y 
+]]> 
+</script> is written in terms of <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>, and we are given <script type="math/tex"> <![CDATA[ 
+\dd [x]{t} 
+]]> 
+</script>, then it is easy
+to ﬁnd <script type="math/tex"> <![CDATA[ 
+\dd [y]{t} 
+]]> 
+</script> using the chain rule: <script type="math/tex; mode=display"> <![CDATA[ 
+ \dd [y]{t}=y'(x(t))\cdot x'(t).  
+]]> 
+</script> In many cases, particularly the interesting ones, our
+functions will be related in some other way. Nevertheless, in each case we&#x2019;ll use the
+power of the chain rule to help us ﬁnd the desired rate. In this section, we will work
+several abstract examples, so we can emphasize the mathematical concepts involved.
+In each of the examples below, we will follow essentially the same plan of
+attack:
+     </p><dl class="description"><dt class="description">
+<strong>Draw a picture.</strong> </dt><dd 
+class="description">If possible, draw a schematic picture with all the relevant
+     information.
+     </dd><dt class="description">
+<strong>Find equations.</strong> </dt><dd 
+class="description">We want equations that relate all relevant functions.
+     </dd><dt class="description">
+<strong>Diﬀerentiate the equations.</strong> </dt><dd 
+class="description">Here we will often use implicit diﬀerentiation.
+     </dd><dt class="description">
+<strong>Evaluate and solve.</strong> </dt><dd 
+class="description">Evaluate each equation at all known desired values and
+     solve for the relevant rate.</dd></dl>
+<h3 class="sectionHead"><a 
+ id="x1-1000"></a>Formulas</h3>
+<!--l. 50--><p class="noindent" >One way to combine several functions is with a known formula.
+</p>
+<div class="theorem-like problem-environment example" id="problem1"><a 
+ id="x1-1001r1"></a>Imagine an expanding circle. If we know that the perimeteter is expanding at a rate
+of <script type="math/tex"> <![CDATA[ 
+4 
+]]> 
+</script> m/s, what rate is the area changing when the radius is <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> meters? <div class="theorem-like problem-environment explanation" id="problem2"><a 
+ id="x1-1002r2"></a>To start, we
+<strong>draw a picture</strong>. <div class="image-environment">  <img 
+src="./digInMoreThanOneRate-figure0.svg" alt="PIC"  
+ />
+</div>
+We must <strong>ﬁnd equations</strong> that combine relevant functions. Here we use the
+common formulas for perimeter and area <script type="math/tex; mode=display"> <![CDATA[ 
+ P = \answer [given]{2\cdot \pi \cdot r} \qquad \text {and}\qquad A = \answer [given]{\pi \cdot r^2}.  
+]]> 
+</script> Next we imagine that <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+r 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+P 
+]]> 
+</script>
+are functions of time <script type="math/tex; mode=display"> <![CDATA[ 
+ P(t) = 2\cdot \pi \cdot r(t) \qquad \text {and}\qquad A(t) = \pi \cdot r(t)^2.  
+]]> 
+</script> and we <strong>diﬀerentiate the equations</strong> using implicit
+diﬀerentiation, treating all functions as functions of <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script> <script type="math/tex; mode=display"> <![CDATA[ 
+ P'(t) = 2\cdot \pi \cdot r'(t) \qquad \text {and}\qquad A'(t) = 2\cdot \pi \cdot r(t) \cdot r'(t).  
+]]> 
+</script> Now we <strong>evaluate
+and solve</strong>. We know <script type="math/tex"> <![CDATA[ 
+P'(t) = \answer [given]{4} 
+]]> 
+</script> and that <script type="math/tex"> <![CDATA[ 
+r(t) = \answer [given]{3} 
+]]> 
+</script>. Hence our equations become <script type="math/tex; mode=display"> <![CDATA[ 
+ 4 = 2\cdot \pi \cdot r'(t) \qquad \text {and}\qquad A'(t) = 2\cdot \pi \cdot 3 \cdot r'(t).  
+]]> 
+</script> We see that
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      4 &= 2\cdot \pi\cdot r'(t)\\
+      2/\pi &= r'(t).
+                                                                  
+
+                                                                  
+    \end{align*} 
+]]> 
+</script>
+and now that <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+         A'(t) &= 2\cdot \pi\cdot 3 \cdot 2/\pi\\
+      &=\answer[given]{12}.
+    \end{align*} 
+]]> 
+</script>
+Hence the area is expanding at a rate of <script type="math/tex"> <![CDATA[ 
+12 
+]]> 
+</script> m/s.
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-2000"></a>Right triangles</h3>
+<!--l. 120--><p class="noindent" >A common way to combine functions is through facts related to right triangles.
+</p>
+<div class="theorem-like problem-environment example" id="problem3"><a 
+ id="x1-2001r3"></a>Imagine an expanding right triangle. If one leg has a ﬁxed length of <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> m, one leg is
+increasing with a rate of <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script> m/s, and the hypotenuse is expanding to accomidate the
+expanding leg, at what rate is the hypotenuse expanding when both legs are <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> m long?
+<div class="theorem-like problem-environment explanation" id="problem4"><a 
+ id="x1-2002r4"></a>To start, we <strong>draw a picture</strong>. <div class="image-environment">  <img 
+src="./digInMoreThanOneRate-figure1.svg" alt="PIC"  
+ />
+</div>
+<!--l. 149--><p class="noindent" >We must <strong>ﬁnd equations</strong> that combines relevant functions. Here we use the
+Pythagorean Theorem. <script type="math/tex; mode=display"> <![CDATA[ 
+ c^2 = a^2 + b^2  
+]]> 
+</script> Imagining <script type="math/tex"> <![CDATA[ 
+c 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+b 
+]]> 
+</script> as being functions of time <script type="math/tex; mode=display"> <![CDATA[ 
+ c(t)^2 = a^2 + b(t)^2  
+]]> 
+</script> we are now able
+to <strong>diﬀerentiate the equation</strong> using implicit diﬀerentiation, treating all functions
+as functions of <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>, note <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script> is constant, <script type="math/tex; mode=display"> <![CDATA[ 
+ 2\cdot c(t)\cdot c'(t) = 2\cdot b(t)\cdot b'(t).  
+]]> 
+</script> Now we <strong>evaluate and solve</strong>. We know that <script type="math/tex"> <![CDATA[ 
+b'(t) = 2 
+]]> 
+</script> and
+that <script type="math/tex"> <![CDATA[ 
+b(t) = 3 
+]]> 
+</script> <script type="math/tex; mode=display"> <![CDATA[ 
+ 2\cdot c(t)\cdot c'(t) = \answer [given]{12}  
+]]> 
+</script> However, we still need to know <script type="math/tex"> <![CDATA[ 
+c(t) 
+]]> 
+</script> when <script type="math/tex"> <![CDATA[ 
+b(t) = 3 
+]]> 
+</script>. Here we use the Pythagorean Theorem,
+</p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+    c(t)^2 &= 3^2 + 3^2\\
+    &=\answer[given]{18},
+    \end{align*} 
+]]> 
+</script>
+and so we see that <script type="math/tex"> <![CDATA[ 
+c(t) = 3\sqrt {2} 
+]]> 
+</script>. We may now write <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+         6\sqrt{2}\cdot c'(t) &= 12 \\
+      c'(t) &= \sqrt{2}.
+    \end{align*} 
+]]> 
+</script>
+Hence <script type="math/tex"> <![CDATA[ 
+c(t) 
+]]> 
+</script> is growing at a rate of <script type="math/tex"> <![CDATA[ 
+\answer [given]{\sqrt {2}} 
+]]> 
+</script> m/s.
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-3000"></a>Angular rates</h3>
+<!--l. 188--><p class="noindent" >We can also investigate problems involving angular rates.
+</p>
+<div class="theorem-like problem-environment example" id="problem5"><a 
+ id="x1-3001r5"></a>Imagine an expanding right triangle. If one leg has a ﬁxed length of <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> m, one
+leg is increasing with a rate of <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script> m/s, and the hypotenuse is expanding to
+accomidate the expanding leg, at what rate is the angle attached to the ﬁxed
+leg changing when both legs are <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> m long? <div class="theorem-like problem-environment explanation" id="problem6"><a 
+ id="x1-3002r6"></a>To start, we <strong>draw a picture</strong>.
+<div class="image-environment">  <img 
+src="./digInMoreThanOneRate-figure2.svg" alt="PIC"  
+ />
+                                                                  
+
+                                                                  
+</div>
+<!--l. 218--><p class="noindent" >We must <strong>ﬁnd equations</strong> that combines relevant functions. Here we note that <script type="math/tex; mode=display"> <![CDATA[ 
+ \tan (\theta ) = \answer [given]{\frac {a}{b}}  
+]]> 
+</script>
+Imagining <script type="math/tex"> <![CDATA[ 
+\theta  
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+b 
+]]> 
+</script> as being functions of time <script type="math/tex; mode=display"> <![CDATA[ 
+ \tan (\theta (t)) = \frac {a}{b(t)}  
+]]> 
+</script> we are now able to <strong>diﬀerentiate the
+equation</strong> using implicit diﬀerentiation, treating all functions as functions of <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>, note
+<script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script> is constant, <script type="math/tex; mode=display"> <![CDATA[ 
+ \sec ^2(\theta (t))\theta '(t) = \frac {-a\cdot b'(t)}{b(t)^2}.  
+]]> 
+</script> Now we <strong>evaluate and solve</strong>. We know that <script type="math/tex"> <![CDATA[ 
+a=3 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+b'(t) = 2 
+]]> 
+</script>, and that <script type="math/tex"> <![CDATA[ 
+b(t) = 3 
+]]> 
+</script>
+</p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+    \sec^2(\theta(t))\cdot \theta'(t) &= \frac{-3\cdot 2}{3^2}\\
+    &= \frac{-6}{9}\\
+    &= \frac{-2}{3}.
+    \end{align*} 
+]]> 
+</script>
+However, we still need to know <script type="math/tex"> <![CDATA[ 
+\sec ^2(\theta ) 
+]]> 
+</script>. Here we use the Pythagorean Theorem,
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+    c^2(t) &= 3^2 + 3^2\\
+    &=\answer[given]{18},
+    \end{align*} 
+]]> 
+</script>
+and so we see that <script type="math/tex"> <![CDATA[ 
+c(t) = 3\sqrt {2} 
+]]> 
+</script>. Now <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+         \sec^2(\theta) &= \frac{\mathrm{hypotenuse}^2}{\mathrm{adjacent}^2}\\
+      &= \frac{\left(3\sqrt{2}\right)^2}{3^2}\\
+      &= \answer[given]{2}.
+    \end{align*} 
+]]> 
+</script>
+Hence <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+         \sec^2(\theta(t))\cdot \theta'(t) &= \frac{-2}{3}\\
+      2\cdot \theta'(t) &= \frac{-2}{3}\\
+      \theta'(t) &= \frac{-1}{3}.
+    \end{align*} 
+]]> 
+</script>
+So when <script type="math/tex"> <![CDATA[ 
+a=b=3 
+]]> 
+</script>, the angle is changing at <script type="math/tex"> <![CDATA[ 
+\answer [given]{-1/3} 
+]]> 
+</script> radians per second.
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-4000"></a>Similar triangles</h3>
+<!--l. 267--><p class="noindent" >Finally, facts about similar triangles are often useful when solving related rates
+problems.
+</p>
+<div class="theorem-like problem-environment example" id="problem7"><a 
+ id="x1-4001r7"></a>Imagine two right triangles that share an angle: <div class="image-environment">  <img 
+src="./digInMoreThanOneRate-figure3.svg" alt="PIC"  
+ />
+</div>
+If <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> is growing from the vertex with a rate of <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> m/s, what rate is the area of the smaller
+triangle changing when <script type="math/tex"> <![CDATA[ 
+x = 5 
+]]> 
+</script>? <div class="theorem-like problem-environment explanation" id="problem8"><a 
+ id="x1-4002r8"></a>Despite the fact that a nice picture is given, we should start
+as we always do and <strong>draw a picture</strong>. Note, we&#x2019;ve added information to the picture:
+<div class="image-environment">  <img 
+src="./digInMoreThanOneRate-figure4.svg" alt="PIC"  
+ />
+</div>
+<!--l. 324--><p class="noindent" >We must <strong>ﬁnd equations</strong> that combines relevant functions. In this case
+                                                                  
+
+                                                                  
+there are two. The ﬁrst is the formula for the area of a triangle: <script type="math/tex; mode=display"> <![CDATA[ 
+ A = \answer [given]{(1/2) \cdot x \cdot h}  
+]]> 
+</script> The second
+uses the fact that the larger triangle is similar to the smaller triangle,
+meaning that the proportions of the sides are the same, <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {x}{h} = \answer [given]{\frac {6}{3}}\qquad \text {so}\qquad x = \answer [given]{2}\cdot h  
+]]> 
+</script> Imagining <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script>
+as functions of time we may write <script type="math/tex; mode=display"> <![CDATA[ 
+ A(t) = (1/2) \cdot x(t) \cdot h(t) \qquad \text {and}\qquad x(t) = 2\cdot h(t).  
+]]> 
+</script> We are now able to <strong>diﬀerentiate the
+equations</strong> using implicit diﬀerentiation, treating all functions as functions of <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>,
+</p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      A'(t) &= (1/2) \cdot x'(t) \cdot h(t) +  (1/2) \cdot x(t) \cdot h'(t),\\
+      x'(t) &= 2\cdot h'(t).
+    \end{align*} 
+]]> 
+</script>
+Now we <strong>evaluate and solve</strong>. We know that <script type="math/tex"> <![CDATA[ 
+x(t) = 5 
+]]> 
+</script> and that <script type="math/tex"> <![CDATA[ 
+x'(t) = 3 
+]]> 
+</script>. Since <script type="math/tex; mode=display"> <![CDATA[ 
+ 5=x(t) = 2\cdot h(t)\qquad \text {and}\qquad 3=x'(t)= 2\cdot h'(t)  
+]]> 
+</script> we see that <script type="math/tex"> <![CDATA[ 
+h(t) = 5/2 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+h'(t) = 3/2 
+]]> 
+</script>. Hence
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      A'(t) &= (1/2) \cdot 3 \cdot (5/2) + (1/2) \cdot 5 \cdot (3/2)\\
+      &= 15/4 + 15/4\\
+      &= \answer[given]{15/2}.
+    \end{align*} 
+]]> 
+</script>
+Hence the area is changing at a rate of <script type="math/tex"> <![CDATA[ 
+15/2 
+]]> 
+</script> <script type="math/tex"> <![CDATA[ 
+\text {m}^2/\text {s} 
+]]> 
+</script>.
+</div>
+</div> </body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

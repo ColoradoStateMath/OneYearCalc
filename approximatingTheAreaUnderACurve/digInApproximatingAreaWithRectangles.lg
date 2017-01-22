@@ -1,0 +1,34 @@
+htfcss: cmti  font-style: italic;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmtt font-family: monospace;
+File: digInApproximatingAreaWithRectangles.html
+File: digInApproximatingAreaWithRectangles.tmp
+Font_Css("4"): .small-caps{font-variant: small-caps; }
+Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
+Font_Css("12"): .htf-calligraphy {font-family:cursive}
+Font_Css("14"): .htf-italic {font-style: italic;}
+Font_Css("16"): .htf-bold {font-weight: bold;}
+Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+File: ./digInApproximatingAreaWithRectangles-figure0.svg
+File: ./digInApproximatingAreaWithRectangles-figure1.svg
+File: ./digInApproximatingAreaWithRectangles-figure2.svg
+File: ./digInApproximatingAreaWithRectangles-figure3.svg
+File: ./digInApproximatingAreaWithRectangles-figure4.svg
+File: ./digInApproximatingAreaWithRectangles-figure5.svg
+File: ./digInApproximatingAreaWithRectangles-figure6.svg
+File: ./digInApproximatingAreaWithRectangles-figure7.svg
+File: ./digInApproximatingAreaWithRectangles-figure8.svg
+File: ./digInApproximatingAreaWithRectangles-figure9.svg
+File: ./digInApproximatingAreaWithRectangles-figure10.svg
+File: ./digInApproximatingAreaWithRectangles-figure11.svg
+File: ./digInApproximatingAreaWithRectangles-figure12.svg
+File: ./digInApproximatingAreaWithRectangles-figure13.svg
+File: ./digInApproximatingAreaWithRectangles-figure14.svg
+File: ./digInApproximatingAreaWithRectangles-figure15.svg
+File: ./digInApproximatingAreaWithRectangles-figure16.svg
+--- characters ---
+Font("cmr","10","10","100")
+Font("cmtt","10","10","100")
+Font("cmbx","10","10","100")
+Font("cmti","10","10","100")

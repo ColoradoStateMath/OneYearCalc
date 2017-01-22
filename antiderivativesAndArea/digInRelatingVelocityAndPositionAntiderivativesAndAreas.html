@@ -1,0 +1,459 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+<title>Relating velocity and position, antiderivatives and
+                                                                  
+
+                                                                  
+areas</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInRelatingVelocityAndPositionAntiderivativesAndAreas.tex" /> 
+<meta name="date" content="2016-07-26 20:08:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Interpert the product of rate and time as area."/> 
+<meta name="learning-outcome" content="Approximate position from velocity."/> 
+<meta name="learning-outcome" content="Recognize Riemann sums."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                             
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 16--><p class="noindent" >We see a connection between approximating antiderivatives and approximating
+areas.
+</p></div>   <div class="maketitle"></div>
+A central theme of this course has been that we can often gain a better
+understanding of a function by looking at its derivative, and then working backwards.
+This has been our approach to max/min problems, curve sketching, linear
+approximation, and so on. So antiderivatives have really been important to us all
+along. We have a geometric interpretation of the derivative as the slope of a
+tangent line at a point. We have not yet found a geometric interpretation of
+antiderivatives.
+<h3 class="sectionHead"><a 
+ id="x1-1000"></a>More than one perspective</h3>
+<!--l. 32--><p class="noindent" >We&#x2019;ll start with a question:
+</p>
+<div class="problem-environment question" id="problem1"><a 
+ id="x1-1001r1"></a> Suppose you are in slow traﬃc moving at <script type="math/tex"> <![CDATA[ 
+4 
+]]> 
+</script> mph from <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script>pm to <script type="math/tex"> <![CDATA[ 
+5 
+]]> 
+</script>pm. How far have you
+traveled? <script type="math/tex; mode=display"> <![CDATA[ 
+ \answer {12}\ \text {miles}.  
+]]> 
+</script> 
+<div class="problem-environment hint" id="problem2"><a 
+ id="x1-1002r2"></a> A fancy way of saying this is that <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> is a line of slope <script type="math/tex"> <![CDATA[ 
+4 
+]]> 
+</script>, and we are looking for the rise
+corresponding to a run of <script type="math/tex"> <![CDATA[ 
+5-2= 3 
+]]> 
+</script>.
+</div>
+</div>
+<!--l. 48--><p class="noindent" >Now we move to a seemingly unrelated question:
+</p>
+<div class="problem-environment question" id="problem3"><a 
+ id="x1-1003r3"></a> What is the area of the region bounded by the graph of <script type="math/tex"> <![CDATA[ 
+f(x) = 4 
+]]> 
+</script>, the horizontal axis, and the
+vertical lines <script type="math/tex"> <![CDATA[ 
+x=2 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+x=5 
+]]> 
+</script>? <script type="math/tex; mode=display"> <![CDATA[ 
+ \answer {12}  
+]]> 
+</script> 
+<div class="problem-environment hint" id="problem4"><a 
+ id="x1-1004r4"></a> <div class="image-environment">  <img 
+src="./digInRelatingVelocityAndPositionAntiderivativesAndAreas-figure0.svg" alt="PIC"  
+ />
+</div>
+</div> <div class="problem-environment hint" id="problem5"><a 
+ id="x1-1005r5"></a> This is a rectangle with height <script type="math/tex"> <![CDATA[ 
+4 
+]]> 
+</script> and width <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script>, so the area is <script type="math/tex"> <![CDATA[ 
+12 
+]]> 
+</script>.
+</div>
+</div>
+<!--l. 87--><p class="noindent" >The fact that these two answers are the same is the germ of one of the most
+“fundamental” ideas in all of calculus. However, before we can step ahead, we might
+ﬁrst look back to our even younger days of being mathematicians.
+</p><!--l. 91--><p class="noindent" >Recall that there are (at least!) two basic models of multiplication: A “rate times
+time” perspective and an “area” perspective. For instance, we could interpret <script type="math/tex; mode=display"> <![CDATA[ 
+ 4\times 3  
+]]> 
+</script> as an
+answer to the question:
+     </p><div class="quote">
+     <!--l. 99--><p class="noindent" >If I am going <script type="math/tex"> <![CDATA[ 
+4 \textrm {mph} 
+]]> 
+</script> for <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> hours, how far have I traveled?</p></div>
+                                                                  
+
+                                                                  
+<!--l. 102--><p class="noindent" >or as the answer to the question
+     </p><div class="quote">
+     <!--l. 104--><p class="noindent" >What is the area of a rectangle with height <script type="math/tex"> <![CDATA[ 
+4 
+]]> 
+</script> and width <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script>?</p></div>
+<!--l. 106--><p class="noindent" >In what follows below, we will leverage these two diﬀerent notions to gain insight into
+our study of functions.
+</p>
+<h3 class="sectionHead"><a 
+ id="x1-2000"></a>From position to area</h3>
+<!--l. 112--><p class="noindent" >Suppose you have a continuous function <script type="math/tex"> <![CDATA[ 
+v(t) 
+]]> 
+</script> representing the velocity of some object at
+time <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>. We know that velocity is the change in position over time. If we wanted to
+recover the position of the object, we could approximate a graph by taking
+values of <script type="math/tex"> <![CDATA[ 
+v(t) 
+]]> 
+</script> and projecting the position via a small amount of time. Let&#x2019;s say
+this twice more: <script type="math/tex; mode=display"> <![CDATA[ 
+ \text {change in position} = \text {velocity} \times \text {change in time}  
+]]> 
+</script> letting <script type="math/tex"> <![CDATA[ 
+s(t) 
+]]> 
+</script> be position, we see this translates <strong>directly</strong> into
+the language of diﬀerentials, since <script type="math/tex"> <![CDATA[ 
+s'(t) = v(t) 
+]]> 
+</script>, <script type="math/tex; mode=display"> <![CDATA[ 
+ \d s = v(t) \d t.  
+]]> 
+</script> Suppose we want to know how far we
+have traveled over the time interval <script type="math/tex"> <![CDATA[ 
+[0,10] 
+]]> 
+</script>. One way to proceed would be to cut
+the interval <script type="math/tex"> <![CDATA[ 
+[0,10] 
+]]> 
+</script> into equal sized sections, we&#x2019;ll say ﬁve sections to keep things
+easy. Now we need to know the velocity of our object at those times. We&#x2019;ll
+describe <script type="math/tex"> <![CDATA[ 
+v(t) 
+]]> 
+</script> with the following table: <script type="math/tex; mode=display"> <![CDATA[ 
+ \begin {array}{c|c} t & v(t) \\ \hline 0 & 6 \\ 2 & 6 \\ 4 & 4 \\ 6 & 0 \\ 8 & -6 \end {array}  
+]]> 
+</script> </p><div class="theorem-like problem-environment example" id="problem6"><a 
+ id="x1-2001r6"></a>Assuming <script type="math/tex"> <![CDATA[ 
+s(0) = 0 
+]]> 
+</script>, make an approximate graph of <script type="math/tex"> <![CDATA[ 
+y=s(t) 
+]]> 
+</script>
+with a piecewise linear function using the idea of diﬀerentials with <script type="math/tex"> <![CDATA[ 
+dt = 2 
+]]> 
+</script>. <div class="theorem-like problem-environment explanation" id="problem7"><a 
+ id="x1-2002r7"></a>Our
+table from before gives us all the information we need! At <script type="math/tex"> <![CDATA[ 
+t=0 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+s'(0) = v(0) = \answer [given]{6} 
+]]> 
+</script>, so starting
+with the point <script type="math/tex"> <![CDATA[ 
+(0,0) 
+]]> 
+</script> we attach a segment of slope <script type="math/tex"> <![CDATA[ 
+\answer [given]{6} 
+]]> 
+</script> over an interval of length <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script>:
+<div class="image-environment">  <img 
+src="./digInRelatingVelocityAndPositionAntiderivativesAndAreas-figure1.svg" alt="PIC"  
+ />
+</div>
+At <script type="math/tex"> <![CDATA[ 
+t=2 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+s'(2) = v(2) = \answer [given]{6} 
+]]> 
+</script>, so we attach a segment of slope <script type="math/tex"> <![CDATA[ 
+\answer [given]{6} 
+]]> 
+</script> over the next interval of length <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script>:
+<div class="image-environment">  <img 
+src="./digInRelatingVelocityAndPositionAntiderivativesAndAreas-figure2.svg" alt="PIC"  
+ />
+</div>
+At <script type="math/tex"> <![CDATA[ 
+t=4 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+s'(4) = v(4) = \answer [given]{4} 
+]]> 
+</script>, so we attach a segment of slope <script type="math/tex"> <![CDATA[ 
+\answer [given]{4} 
+]]> 
+</script> over the next interval of length <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script>:
+<div class="image-environment">  <img 
+src="./digInRelatingVelocityAndPositionAntiderivativesAndAreas-figure3.svg" alt="PIC"  
+ />
+</div>
+At <script type="math/tex"> <![CDATA[ 
+t=6 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+s'(6) = v(6) = \answer [given]{0} 
+]]> 
+</script>, so we attach a segment of slope <script type="math/tex"> <![CDATA[ 
+\answer [given]{0} 
+]]> 
+</script> over the next interval of length <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script>:
+<div class="image-environment">  <img 
+src="./digInRelatingVelocityAndPositionAntiderivativesAndAreas-figure4.svg" alt="PIC"  
+ />
+</div>
+At <script type="math/tex"> <![CDATA[ 
+t=8 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+s'(8) = v(8) = \answer [given]{-6} 
+]]> 
+</script>, so we attach a segment of slope <script type="math/tex"> <![CDATA[ 
+\answer [given]{-6} 
+]]> 
+</script> over the next interval of length <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script>:
+<div class="image-environment">  <img 
+src="./digInRelatingVelocityAndPositionAntiderivativesAndAreas-figure5.svg" alt="PIC"  
+ />
+</div>
+This gives us a plot of the approximate position of our object.
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem8"><a 
+ id="x1-2003r8"></a>Use your approximation above with a step-size of <script type="math/tex"> <![CDATA[ 
+dt=2 
+]]> 
+</script> to estimate <script type="math/tex"> <![CDATA[ 
+s(10) 
+]]> 
+</script>. <div class="theorem-like problem-environment explanation" id="problem9"><a 
+ id="x1-2004r9"></a>If we label our graph
+above, we will have a much easier time solving this problem: <div class="image-environment">  <img 
+src="./digInRelatingVelocityAndPositionAntiderivativesAndAreas-figure6.svg" alt="PIC"  
+ />
+</div>
+So <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+         s(10) &\approx v(0)\cdot 2 + v(2)\cdot 2 + v(4) \cdot 2 + v(6)\cdot 2 + v(8)\cdot 2\\
+                                                                  
+
+                                                                  
+      &= 6\cdot 2 + 6\cdot 2 + 4 \cdot 2 + 0 \cdot 2 +(-6)\cdot 2\\
+      &=\answer[given]{20}.
+    \end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 360--><p class="noindent" >Hmmm. Let&#x2019;s look at our answer from the previous question again: <script type="math/tex; mode=display"> <![CDATA[ 
+ v(0)\cdot 2 + v(2)\cdot 2 + v(4) \cdot 2 + v(6)\cdot 2 + v(8)\cdot 2  
+]]> 
+</script>
+     </p><div class="quote">
+     <!--l. 365--><p class="noindent" ><strong>This is a Riemann sum!</strong></p></div>
+<!--l. 367--><p class="noindent" >When we exclaim (with great excitement!) that “this is a Riemann sum,” we are
+really saying that we are in a situation where we may view <script type="math/tex; mode=display"> <![CDATA[ 
+ \text {rate}\times \text {time}  
+]]> 
+</script> as <script type="math/tex; mode=display"> <![CDATA[ 
+ \text {height}\times \text {width}  
+]]> 
+</script> Check it out:
+here <script type="math/tex"> <![CDATA[ 
+n=5 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+\Delta t = 2 
+]]> 
+</script>, and we are looking at left-endpoints! Here is a suggestive graph of <script type="math/tex"> <![CDATA[ 
+y=v(t) 
+]]> 
+</script>:
+</p><div class="image-environment">  <img 
+src="./digInRelatingVelocityAndPositionAntiderivativesAndAreas-figure7.svg" alt="PIC"  
+ />
+</div>
+<!--l. 423--><p class="noindent" >Here is the upshot: When we are computing values of antiderivatives, we are
+simultaneously computing areas between curves and the horizontal axis!
+</p>
+<h3 class="sectionHead"><a 
+ id="x1-3000"></a>On the notation for antiderivatives</h3>
+<!--l. 427--><p class="noindent" >Let&#x2019;s look at our approximation of <script type="math/tex"> <![CDATA[ 
+s(t) 
+]]> 
+</script> we found above, we&#x2019;ll include the actual plot of <script type="math/tex"> <![CDATA[ 
+s(t) 
+]]> 
+</script>
+as well, shown as a dashed curve: </p><div class="image-environment">  <img 
+src="./digInRelatingVelocityAndPositionAntiderivativesAndAreas-figure8.svg" alt="PIC"  
+ />
+</div>
+At each step we are computing <script type="math/tex; mode=display"> <![CDATA[ 
+ \d s = v(t)\d t  
+]]> 
+</script> and adding it to the previous result: <div class="image-environment">  <img 
+src="./digInRelatingVelocityAndPositionAntiderivativesAndAreas-figure9.svg" alt="PIC"  
+ />
+</div>
+<!--l. 499--><p class="noindent" >If we wanted to, we could take a smaller step-size (our value for <script type="math/tex"> <![CDATA[ 
+dt 
+]]> 
+</script>) and gain better,
+and better, approximations of <script type="math/tex"> <![CDATA[ 
+s(t) 
+]]> 
+</script>: </p><div class="image-environment">  <img 
+src="./digInRelatingVelocityAndPositionAntiderivativesAndAreas-figure10.svg" alt="PIC"  
+ />
+</div>
+At this point, we can explain the notation for antiderivatives. If we “sum” all of the
+“<script type="math/tex"> <![CDATA[ 
+\d s 
+]]> 
+</script>,” we ﬁnd the value of position. Hence <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+   \d s &= v(t) \d t\\
+  \text{``sum'' } \d s &= \text{``sum'' } v(t) \d t\\
+  \int \d s &= \int v(t) \d t\\
+  s(t) &= \int v(t) \d t,
+\end{align*} 
+]]> 
+</script>
+thus we see that an antiderivative is, essentially, a sum.
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

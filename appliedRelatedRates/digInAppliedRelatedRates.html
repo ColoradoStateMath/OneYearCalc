@@ -1,0 +1,756 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Applied related rates</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInAppliedRelatedRates.tex" /> 
+<meta name="date" content="2016-07-26 20:10:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Identify word problems as related rates problems."/> 
+<meta name="learning-outcome" content="Solve related rates word problems."/> 
+<meta name="learning-outcome" content="Translate word problems into mathematical expressions."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                 
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 13--><p class="noindent" >We work related rates problems in context.
+</p></div>   <div class="maketitle"></div>
+Now we are ready to work related rates problems in context. Just as before, we are
+going to follow essentially the same plan of attack in each problem.
+     <dl class="description"><dt class="description">
+<strong>Draw a picture.</strong> </dt><dd 
+class="description">If possible, draw a schematic picture with all the relevant
+     information.
+     </dd><dt class="description">
+<strong>Find equations.</strong> </dt><dd 
+class="description">We want equations that relate all relevant functions.
+     </dd><dt class="description">
+<strong>Diﬀerentiate the equations.</strong> </dt><dd 
+class="description">Here we will often use implicit diﬀerentiation.
+     </dd><dt class="description">
+<strong>Evaluate and solve.</strong> </dt><dd 
+class="description">Evaluate each equation at all known desired values and
+     solve for the relevant rate.</dd></dl>
+<h3 class="sectionHead"><a 
+ id="x1-1000"></a>Formulas</h3>
+<div class="theorem-like problem-environment example" id="problem1"><a 
+ id="x1-1001r1"></a>A hand-tossed pizza crust starts oﬀ as a ball of dough with a volume of <script type="math/tex"> <![CDATA[ 
+400\pi \, \text {cm}^3 
+]]> 
+</script>. First, the
+cook stretches the dough to the shape of a cylinder of radius <script type="math/tex"> <![CDATA[ 
+12 
+]]> 
+</script> cm. Next the cook
+tosses the dough.
+<!--l. 44--><p class="noindent" >If during tossing, the dough maintains the shape of a cylinder and the radius is
+increasing at a rate of <script type="math/tex"> <![CDATA[ 
+15 
+]]> 
+</script> cm/min, how fast is its thickness changing when the radius is <script type="math/tex"> <![CDATA[ 
+20 
+]]> 
+</script>
+cm? </p><div class="theorem-like problem-environment explanation" id="problem2"><a 
+ id="x1-1002r2"></a>To start, <strong>draw a picture</strong>. Here we see a cylinder that represents our pizza
+dough. <div class="image-environment">  <img 
+src="./digInAppliedRelatedRates-figure0.svg" alt="PIC"  
+ />
+</div>
+Next we need to <strong>ﬁnd equations</strong>. We see that we have <script type="math/tex; mode=display"> <![CDATA[ 
+ 400\pi = \answer [given]{\pi \cdot r^2 \cdot h},  
+]]> 
+</script> which immediately simpliﬁes
+to <script type="math/tex; mode=display"> <![CDATA[ 
+ 400 = r^2 \cdot h.  
+]]> 
+</script> Imagining that <script type="math/tex"> <![CDATA[ 
+r 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script> are functions of time, we now may write <script type="math/tex; mode=display"> <![CDATA[ 
+ 400 = r(t)^2 \cdot h(t)  
+]]> 
+</script> and so we may
+now <strong>diﬀerentiate the equation</strong> using implicit diﬀerentiation, treating all functions
+as functions of <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>, <script type="math/tex; mode=display"> <![CDATA[ 
+ 0 = 2\cdot r(t) \cdot r'(t) \cdot h(t) + r(t)^2 \cdot h'(t).  
+]]> 
+</script> Now we&#x2019;ll <strong>evaluate and solve</strong>. We know that <script type="math/tex"> <![CDATA[ 
+r(t) = \answer [given]{20} 
+]]> 
+</script> cm and that <script type="math/tex"> <![CDATA[ 
+r'(t) = \answer [given]{15} 
+]]> 
+</script>
+cm/min. Moreover, we can now ﬁnd <script type="math/tex"> <![CDATA[ 
+h(t) 
+]]> 
+</script> as we have <script type="math/tex; mode=display"> <![CDATA[ 
+ 400 = r(t)^2 \cdot h(t) \qquad {meaning}\qquad h(t) = \frac {400}{r(t)^2}.  
+]]> 
+</script> Since <script type="math/tex"> <![CDATA[ 
+20^2 = 400 
+]]> 
+</script>, we see that <script type="math/tex"> <![CDATA[ 
+h(t) = 1 
+]]> 
+</script>. Substituting in,
+we see <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      0 &= 2\cdot 20 \cdot 15 \cdot 1 + 20^2 \cdot h'(t),\\
+    -2\cdot 20 \cdot 15  &= 20^2 \cdot h'(t),\\
+    \frac{-2\cdot 20 \cdot 15}{20^2}  &= h'(t)\\
+    -1.5  &= h'(t).
+  \end{align*} 
+]]> 
+</script>
+Hence the thickness of the dough is changing at a rate of <script type="math/tex"> <![CDATA[ 
+\answer [given]{-1.5} 
+]]> 
+</script> cm/min.
+</div>
+</div>
+                                                                  
+
+                                                                  
+<div class="theorem-like problem-environment example" id="problem3"><a 
+ id="x1-1003r3"></a>Consider a melting snowball. We will assume that the rate that the snowball is
+melting is proportional to its surface area. Show that the radius of the snowball is
+changing at a constant rate.
+<div class="theorem-like problem-environment explanation" id="problem4"><a 
+ id="x1-1004r4"></a>To start, <strong>draw a picture</strong>. <div class="image-environment">  <img 
+src="./digInAppliedRelatedRates-figure1.svg" alt="PIC"  
+ />
+</div>
+Next we need to <strong>ﬁnd equations</strong>. The equations we&#x2019;ll use are <script type="math/tex; mode=display"> <![CDATA[ 
+ V = \answer [given]{(4/3) \cdot \pi \cdot r^3} \qquad \text {and}\qquad A = \answer [given]{4\cdot \pi \cdot r^2}.  
+]]> 
+</script> Now the key words are
+“the rate that the snowball is melting is proportional to its surface area.” From this
+we have the following equation: <div class="image-environment">  <img 
+src="./digInAppliedRelatedRates-figure2.svg" alt="PIC"  
+ />
+</div>
+So we need to know <script type="math/tex"> <![CDATA[ 
+V' 
+]]> 
+</script>. We know <script type="math/tex"> <![CDATA[ 
+V = \frac {4}{3}\cdot \pi \cdot r^3 
+]]> 
+</script>. If we imagine <script type="math/tex"> <![CDATA[ 
+r 
+]]> 
+</script> as a function of <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>, we can write volume
+as a function of <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>: <script type="math/tex; mode=display"> <![CDATA[ 
+ V(t) = \frac {4}{3}\cdot \pi \cdot r(t)^3  
+]]> 
+</script> so <script type="math/tex; mode=display"> <![CDATA[ 
+ V'(t) = 4\cdot \pi \cdot r(t)^2 \cdot r'(t).  
+]]> 
+</script> Now we&#x2019;ll <strong>evaluate and solve</strong>. We now know <script type="math/tex; mode=display"> <![CDATA[ 
+ V'(t) = 4\cdot \pi \cdot r(t)^2 \cdot r'(t) = k\cdot 4\cdot \pi \cdot r(t)^2 = k\cdot A(t).  
+]]> 
+</script> So
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+  4\cdot \pi \cdot r(t)^2 \cdot r'(t) &=  k\cdot 4\cdot
+  \pi \cdot r(t)^2\\
+  r'(t) = k.
+  \end{align*} 
+]]> 
+</script>
+Hence the radius is changing at a constant rate.
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-2000"></a>Right triangles</h3>
+<div class="theorem-like problem-environment example" id="problem5"><a 
+ id="x1-2001r5"></a>A plane is ﬂying directly away from you at <script type="math/tex"> <![CDATA[ 
+500 
+]]> 
+</script> mph at an altitude of <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> miles. How fast is
+the plane&#x2019;s distance from you increasing at the moment when the plane is ﬂying over
+a point on the ground <script type="math/tex"> <![CDATA[ 
+4 
+]]> 
+</script> miles from you?
+<div class="theorem-like problem-environment explanation" id="problem6"><a 
+ id="x1-2002r6"></a>To start, <strong>draw a picture</strong>. <div class="image-environment">  <img 
+src="./digInAppliedRelatedRates-figure3.svg" alt="PIC"  
+ />
+</div>
+Next we need to <strong>ﬁnd equations</strong>. By the Pythagorean Theorem we know that <script type="math/tex; mode=display"> <![CDATA[ 
+ p^2+3^2=s^2.  
+]]> 
+</script>
+Imagining that <script type="math/tex"> <![CDATA[ 
+p 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+s 
+]]> 
+</script> are functions of time, we now <strong>diﬀerentiate the equation</strong>.
+Write <script type="math/tex; mode=display"> <![CDATA[ 
+ 2\cdot p(t)\cdot p'(t) = 2\cdot s(t) \cdot s'(t).  
+]]> 
+</script> Now we&#x2019;ll <strong>evaluate and solve</strong>. We are interested in the time at which <script type="math/tex"> <![CDATA[ 
+p(t)=\answer [given]{4} 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+p'(t) = \answer [given]{500} 
+]]> 
+</script>.
+Additionally, at this time we know that <script type="math/tex"> <![CDATA[ 
+4^2+9=s^2 
+]]> 
+</script>, so <script type="math/tex"> <![CDATA[ 
+s(t)=\answer [given]{5} 
+]]> 
+</script>. Putting together all the information we
+get <script type="math/tex; mode=display"> <![CDATA[ 
+ 2(4)(500)=2(5)s'(t),  
+]]> 
+</script> thus <script type="math/tex"> <![CDATA[ 
+s'(t)=\answer [given]{400} 
+]]> 
+</script> mph.
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem7"><a 
+ id="x1-2003r7"></a>A road running north to south crosses a road going east to west at the point <script type="math/tex"> <![CDATA[ 
+P 
+]]> 
+</script>. Cyclist
+<script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> is riding north along the ﬁrst road, and cyclist <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> is riding east along the second road.
+At a particular time, cyclist <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> is <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> kilometers to the north of <script type="math/tex"> <![CDATA[ 
+P 
+]]> 
+</script> and traveling at <script type="math/tex"> <![CDATA[ 
+20 
+]]> 
+</script> km/hr,
+while cyclist <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> is <script type="math/tex"> <![CDATA[ 
+4 
+]]> 
+</script> kilometers to the east of <script type="math/tex"> <![CDATA[ 
+P 
+]]> 
+</script> and traveling at <script type="math/tex"> <![CDATA[ 
+15 
+]]> 
+</script> km/hr. How fast is the
+distance between the two cyclists changing?
+<div class="theorem-like problem-environment explanation" id="problem8"><a 
+ id="x1-2004r8"></a>We start the same way we always do, we <strong>draw a picture</strong>. <div class="image-environment">  <img 
+src="./digInAppliedRelatedRates-figure4.svg" alt="PIC"  
+ />
+</div>
+Here <script type="math/tex"> <![CDATA[ 
+a(t) 
+]]> 
+</script> is the distance of cyclist <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> north of <script type="math/tex"> <![CDATA[ 
+P 
+]]> 
+</script> at time <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+b(t) 
+]]> 
+</script> the distance of cyclist <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> east of <script type="math/tex"> <![CDATA[ 
+P 
+]]> 
+</script>
+at time <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+c(t) 
+]]> 
+</script> is the distance from cyclist <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> to cyclist <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> at time <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>.
+<!--l. 258--><p class="noindent" >We must <strong>ﬁnd equations</strong>. By the Pythagorean Theorem, <script type="math/tex; mode=display"> <![CDATA[ 
+ c(t)^2=a(t)^2+b(t)^2.  
+]]> 
+</script> Now we can <strong>diﬀerentiate
+                                                                  
+
+                                                                  
+the equation</strong>. Taking derivatives we get <script type="math/tex; mode=display"> <![CDATA[ 
+ 2c(t)c'(t)=2a(t)a'(t)+2b(t)b'(t).  
+]]> 
+</script> Now we can <strong>evaluate and solve</strong>. We
+know that <script type="math/tex"> <![CDATA[ 
+a(t) = \answer [given]{3} 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+a'(t) = \answer [given]{20} 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+b(t) = \answer [given]{4} 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+b'(t) = \answer [given]{15} 
+]]> 
+</script>. Hence by the Pythagorean Theorem, <script type="math/tex"> <![CDATA[ 
+c(t) = \answer [given]{5} 
+]]> 
+</script>. So <script type="math/tex; mode=display"> <![CDATA[ 
+ 2\cdot 5 \cdot c'(t) = 2 \cdot 3\cdot 20 + 2 \cdot 4 \cdot 15  
+]]> 
+</script> solving for <script type="math/tex"> <![CDATA[ 
+c'(t) 
+]]> 
+</script> we ﬁnd <script type="math/tex"> <![CDATA[ 
+c'(t) = \answer [given]{24} 
+]]> 
+</script>
+km/hr.
+</div>
+</div>
+</p>
+<h3 class="sectionHead"><a 
+ id="x1-3000"></a>Angular rates</h3>
+<div class="theorem-like problem-environment example" id="problem9"><a 
+ id="x1-3001r9"></a>A swing consists of a board at the end of a <script type="math/tex"> <![CDATA[ 
+10 
+]]> 
+</script> ft long rope. Think of the board as a
+point <script type="math/tex"> <![CDATA[ 
+P 
+]]> 
+</script> at the end of the rope, and let <script type="math/tex"> <![CDATA[ 
+Q 
+]]> 
+</script> be the point of attachment at the other end.
+Suppose that the swing is directly below <script type="math/tex"> <![CDATA[ 
+Q 
+]]> 
+</script> at time <script type="math/tex"> <![CDATA[ 
+t=0 
+]]> 
+</script>, and is being pushed by someone
+who walks at 6 ft/sec from left to right. What is the angular speed of the rope in
+rad/sec after 1 sec?
+<div class="theorem-like problem-environment explanation" id="problem10"><a 
+ id="x1-3002r10"></a>To start, <strong>draw a picture</strong>. <div class="image-environment">  <img 
+src="./digInAppliedRelatedRates-figure5.svg" alt="PIC"  
+ />
+</div>
+Now we must <strong>ﬁnd equations</strong>. From the right triangle in our picture, we see <script type="math/tex; mode=display"> <![CDATA[ 
+ \sin (\theta )=\answer [given]{x/10}.  
+]]> 
+</script> We can
+now <strong>diﬀerentiate the equation</strong>. Taking derivatives we obtain <script type="math/tex; mode=display"> <![CDATA[ 
+ \cos (\theta )\cdot \theta '(t)=0.1 x'(t).  
+]]> 
+</script> Now we can
+<strong>evaluate and solve</strong>. When <script type="math/tex"> <![CDATA[ 
+t=1 
+]]> 
+</script> sec, the person was pushed by someone who
+walks <script type="math/tex"> <![CDATA[ 
+6 
+]]> 
+</script> ft/sec. Hence we have a <script type="math/tex"> <![CDATA[ 
+6-8-10 
+]]> 
+</script> right triangle, with <script type="math/tex"> <![CDATA[ 
+x'(t) = \answer [given]{6} 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+\cos \theta =8/10 
+]]> 
+</script>. Thus <script type="math/tex; mode=display"> <![CDATA[ 
+ (8/10) \theta '(t) =\answer [given]{6/10},  
+]]> 
+</script> and so <script type="math/tex"> <![CDATA[ 
+\theta '(t)=\answer [given]{3/4} 
+]]> 
+</script>
+rad/sec.
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem11"><a 
+ id="x1-3003r11"></a>The Palace of Westminster in London has a large clock tower. The minute
+hand is <script type="math/tex"> <![CDATA[ 
+4.2 
+]]> 
+</script> meters long and the hour hand is <script type="math/tex"> <![CDATA[ 
+2.7 
+]]> 
+</script> meters long. At what rate is the
+distance between the tip of the hands is changing when the clock strikes <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> pm?
+<div class="problem-environment hint" id="problem12"><a 
+ id="x1-3004r12"></a> Recall the <em>Law of Cosines</em>: Given a triangle with sides lengths <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+b 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+c 
+]]> 
+</script>,
+<div class="image-environment">  <img 
+src="./digInAppliedRelatedRates-figure6.svg" alt="PIC"  
+ />
+</div>
+we then have <script type="math/tex; mode=display"> <![CDATA[ 
+ c^2 = a^2 + b^2 -2ab\cos (\theta ).  
+]]> 
+</script>
+</div>
+<div class="theorem-like problem-environment explanation" id="problem13"><a 
+ id="x1-3005r13"></a>To start, we <strong>draw a picture</strong>. <div class="image-environment">  <img 
+src="./digInAppliedRelatedRates-figure7.svg" alt="PIC"  
+ />
+</div>
+Now we must <strong>ﬁnd equations</strong> that combine relevant functions. Initially we might
+suppose that <script type="math/tex; mode=display"> <![CDATA[ 
+ d^2 = m^2 + h^2;  
+]]> 
+</script> however, here <script type="math/tex"> <![CDATA[ 
+\theta  
+]]> 
+</script> is function of time, so this relationship only holds for
+certain times. Hence we must use the Law of Cosines to write <script type="math/tex; mode=display"> <![CDATA[ 
+ d^2 = \answer [given]{m^2 + h^2} - 2mh\cos (\theta ).  
+]]> 
+</script> To ﬁnd <script type="math/tex"> <![CDATA[ 
+\theta  
+]]> 
+</script>, imagine we
+are measuring the angle starting at “twelve o&#x2019;clock” with <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script> being measured in hours.
+Then letting <script type="math/tex"> <![CDATA[ 
+\theta _m 
+]]> 
+</script> be the angle made by the minute hand and <script type="math/tex"> <![CDATA[ 
+\theta _h 
+]]> 
+</script> be the angle made by the
+hour hand we have <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+         \theta_m(t) &= \answer[given]{2\pi \cdot t},\\
+      \theta_h(t) &= \frac{2\pi}{12}\cdot t =\frac{\pi}{6}\cdot t.
+    \end{align*} 
+]]> 
+</script>
+Finally since <script type="math/tex"> <![CDATA[ 
+\theta  
+]]> 
+</script> is decreasing, as the minute hand is traveling faster than the
+hour hand, <script type="math/tex; mode=display"> <![CDATA[ 
+ \theta (t) = \theta _h(t) - \theta _m(t).  
+]]> 
+</script> On the other hand, <script type="math/tex"> <![CDATA[ 
+m 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script> are constants. We may now write <script type="math/tex; mode=display"> <![CDATA[ 
+ d(t)^2 = m^2 + h^2 - 2mh\cos (\theta (t)).  
+]]> 
+</script> If
+<strong>diﬀerentiate the equations</strong> using implicit diﬀerentiation we ﬁnd <script type="math/tex; mode=display"> <![CDATA[ 
+ \theta '(t) = \answer [given]{\frac {\pi }{6}-2\pi }  
+]]> 
+</script> and <script type="math/tex; mode=display"> <![CDATA[ 
+ 2\cdot d(t) \cdot d'(t) = 2mh\sin (\theta (t))\cdot \theta '(t).  
+]]> 
+</script> Now we
+                                                                  
+
+                                                                  
+<strong>evaluate and solve</strong>. We know that <script type="math/tex"> <![CDATA[ 
+m=4.2 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+h=2.7 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+\theta '(t) = \frac {-11\pi }{6} 
+]]> 
+</script>, and since the time is <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> pm, <script type="math/tex"> <![CDATA[ 
+\theta (t) = \pi /2 
+]]> 
+</script>. Thus <script type="math/tex; mode=display"> <![CDATA[ 
+ d(t) \cdot d'(t) = \answer [given]{4.2}\cdot 2.7\cdot \frac {-11\pi }{6}.  
+]]> 
+</script>
+on the other hand <script type="math/tex; mode=display"> <![CDATA[ 
+ d(t) = \sqrt {4.2^2 + 2.7^2}  
+]]> 
+</script> and so <script type="math/tex; mode=display"> <![CDATA[ 
+ d'(t) = \frac {4.2\cdot 2.7\cdot \frac {-11\pi }{6}}{\sqrt {4.2^2 + 2.7^2}}.  
+]]> 
+</script> This is the desired rate in units of meters per
+hour.
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-4000"></a>Similar triangles</h3>
+<div class="theorem-like problem-environment example" id="problem14"><a 
+ id="x1-4001r14"></a>It is night. Someone who is <script type="math/tex"> <![CDATA[ 
+6 
+]]> 
+</script> feet tall is walking away from a street light at a rate of <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script>
+feet per second. The street light is <script type="math/tex"> <![CDATA[ 
+15 
+]]> 
+</script> feet tall. The person casts a shadow on the
+ground in front of them. How fast is the length of the shadow growing when the
+person is <script type="math/tex"> <![CDATA[ 
+7 
+]]> 
+</script> feet from the street light?
+<div class="theorem-like problem-environment explanation" id="problem15"><a 
+ id="x1-4002r15"></a>To start, <strong>draw a picture</strong>. <div class="image-environment">  <img 
+src="./digInAppliedRelatedRates-figure8.svg" alt="PIC"  
+ />
+</div>
+Here <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script> is the variable and <script type="math/tex"> <![CDATA[ 
+t_0 
+]]> 
+</script> is the speciﬁc time when <script type="math/tex"> <![CDATA[ 
+p(t_0) = 7 
+]]> 
+</script>.
+<!--l. 482--><p class="noindent" >Now we need to <strong>ﬁnd equations</strong>. We use the fact that we have similar triangles to write:
+</p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      \frac{s(t)+p(t)}{\answer[given]{15}} &= \frac{s(t)}{\answer[given]{6}},\\
+      6\cdot s(t) + 6 \cdot p(t) &= 15\cdot s(t),\\
+      6\cdot p(t) &=9\cdot s(t),\\
+      2\cdot p(t) &=3 \cdot s(t). \\
+    \end{align*} 
+]]> 
+</script>
+Now we must <strong>diﬀerentiate the equation</strong>. We should use implicit diﬀerentiation,
+and treat each of the variables as functions of <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>. Write <script type="math/tex; mode=display"> <![CDATA[ 
+ 2\cdot p'(t) =3 \cdot s'(t)  
+]]> 
+</script> At this point we <strong>evaluate
+and solve</strong>. Since the person is waling at a rate of <script type="math/tex"> <![CDATA[ 
+3 
+]]> 
+</script> feet per second, we may write <script type="math/tex; mode=display"> <![CDATA[ 
+ 2\cdot 3 = 3 \cdot s'(t),  
+]]> 
+</script>
+and cancel to see that <script type="math/tex"> <![CDATA[ 
+s'(t) = \answer [given]{2} 
+]]> 
+</script>, meaning the shadow is growing at a rate of <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script> feet per
+second.
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem16"><a 
+ id="x1-4003r16"></a>Water is poured into a conical container at the rate of 10 cm<script type="math/tex"> <![CDATA[ 
+{}^3 
+]]> 
+</script>/sec. The cone points
+directly down, and it has a height of 30 cm and a base radius of 10 cm. How fast is
+the water level rising when the water is 4 cm deep?
+<div class="theorem-like problem-environment explanation" id="problem17"><a 
+ id="x1-4004r17"></a>To start, <strong>draw a picture</strong>. <div class="image-environment">  <img 
+src="./digInAppliedRelatedRates-figure9.svg" alt="PIC"  
+ />
+</div>
+Note, no attempt was made to draw this picture to scale, rather we want all of the
+relevant information to be available to the mathematician.
+<!--l. 540--><p class="noindent" >Now we need to <strong>ﬁnd equations</strong>. The formula for the volume of a cone tells us that <script type="math/tex; mode=display"> <![CDATA[ 
+ V = \frac {\pi }{3} r^2 h.  
+]]> 
+</script>
+Also the dimensions of the cone of water must have the same proportions as those of
+the container. That is, because of similar triangles, <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {r}{h}=\frac {10}{30} \qquad \text {so}\qquad r=\answer [given]{h/3}.  
+]]> 
+</script> Now we must <strong>diﬀerentiate the
+equation</strong>. We should use implicit diﬀerentiation, and treat each of the variables as
+functions of <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>. Write <script type="math/tex; mode=display"> <![CDATA[ 
+ \dd [V]{t} = \frac {\pi }{3}\left (2rh \dd [r]{t} + r^2 \dd [h]{t}\right ) \qquad \text {and}\qquad \dd [r]{t} = \frac {1}{3}\cdot \dd [h]{t}.  
+]]> 
+</script> At this point we <strong>evaluate and solve</strong>. We plug in <script type="math/tex"> <![CDATA[ 
+\dd [V]{t} = \answer [given]{10} 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+r = \answer [given]{4/3} 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+\dd [r]{t} = \frac {1}{3}\cdot \dd [h]{t} 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+h=\answer [given]{4} 
+]]> 
+</script>. Write
+</p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+10 &= \frac{\pi}{3}\left(2\cdot \frac{4}{3}\cdot 4 \cdot\frac{1}{3}\cdot\dd[h]{t} + \left(\frac{4}{3}\right)^2 \dd[h]{t}\right)\\
+10 &= \frac{\pi}{3}\left(\frac{32}{9}\dd[h]{t} + \frac{16}{9} \dd[h]{t}\right)\\
+                                                                  
+
+                                                                  
+10 &= \frac{16\pi}{9}\dd[h]{t}\\
+\frac{90}{16\pi} &= \dd[h]{t}.
+\end{align*} 
+]]> 
+</script>
+Thus, <script type="math/tex"> <![CDATA[ 
+\dd [h]{t}=\answer [given]{\frac {90}{16\pi }} 
+]]> 
+</script> cm/sec.
+</div>
+</div>
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

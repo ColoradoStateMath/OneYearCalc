@@ -1,0 +1,680 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>The limit laws</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInLimitLaws.tex" /> 
+<meta name="date" content="2016-07-26 20:27:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Calculate limits using the limit laws."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                      
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 10--><p class="noindent" >We give basic laws for working with limits.
+</p></div>   <div class="maketitle"></div>
+In this section, we present a handful of rules called the <em>Limit Laws</em> that allow us to
+ﬁnd limits of various combinations of functions.
+<div class="theorem-like problem-environment theorem" id="problem1"><a 
+ id="x1-58r1"></a><span class="theorem-like-title">Limit Laws</span> Suppose that <script type="math/tex"> <![CDATA[ 
+\lim _{x\to a}f(x)=L 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+\lim _{x\to a}g(x)=M 
+]]> 
+</script>.
+     <dl class="description"><dt class="description">
+Sum/Diﬀerence Law </dt><dd 
+class="description"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to a} (f(x) \pm g(x)) = \lim _{x\to a}f(x) \pm \lim _{x\to a}g(x)=L \pm M 
+]]> 
+</script>.
+     </dd><dt class="description">
+Product Law </dt><dd 
+class="description"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to a} (f(x)g(x)) = \lim _{x\to a}f(x)\cdot \lim _{x\to a}g(x)=LM 
+]]> 
+</script>.
+     </dd><dt class="description">
+Quotient Law </dt><dd 
+class="description"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to a} \frac {f(x)}{g(x)} = \frac {\lim _{x\to a}f(x)}{\lim _{x\to a}g(x)}=\frac {L}{M} 
+]]> 
+</script>, if <script type="math/tex"> <![CDATA[ 
+M\ne 0 
+]]> 
+</script>.</dd></dl>
+<!--l. 30--><p class="noindent" ></div>
+</p>
+<div class="problem-environment question" id="problem2"><a 
+ id="x1-59r2"></a> True or false: If <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script> are continuous functions on an interval <script type="math/tex"> <![CDATA[ 
+I 
+]]> 
+</script>, then <script type="math/tex"> <![CDATA[ 
+f\pm g 
+]]> 
+</script> is continuous on
+<script type="math/tex"> <![CDATA[ 
+I 
+]]> 
+</script>. <div class="multiple-choice" id="problem3"><a 
+ id="x1-60r3"></a> <span class="choice correct" id="choice1">True</span> <span class="choice" id="choice2">False</span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback4">This follows from the Sum/Diﬀerence Law. </div>
+</div>
+<div class="problem-environment question" id="problem5"><a 
+ id="x1-61r4"></a> True or false: If <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script> are continuous functions on an interval <script type="math/tex"> <![CDATA[ 
+I 
+]]> 
+</script>, then <script type="math/tex"> <![CDATA[ 
+f/g 
+]]> 
+</script> is continuous on
+<script type="math/tex"> <![CDATA[ 
+I 
+]]> 
+</script>. <div class="multiple-choice" id="problem6"><a 
+ id="x1-62r5"></a> <span class="choice" id="choice3">True</span> <span class="choice correct" id="choice4">False</span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback7">In this case, <script type="math/tex"> <![CDATA[ 
+f/g 
+]]> 
+</script> will not be continuous for <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> where <script type="math/tex"> <![CDATA[ 
+g(x) = 0 
+]]> 
+</script>. </div>
+</div>
+<div class="theorem-like problem-environment example" id="problem8"><a 
+ id="x1-63r6"></a>Compute the following limit using limit laws: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 1}(5x^2+3x-2)  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem9"><a 
+ id="x1-64r7"></a>Well, get out your pencil and write
+with me: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 1} (5x^2+3x-2) = \lim _{x\to 1} 5x^2 + \lim _{x\to 1} \answer [given]{3x} - \lim _{x\to 1}2  
+]]> 
+</script> by the Sum/Diﬀerence Law. So now <script type="math/tex; mode=display"> <![CDATA[ 
+ = 5\lim _{x\to 1} x^2 + 3\lim _{x\to 1} x - \lim _{x\to 1}\answer [given]{2}  
+]]> 
+</script> by the Product Law. Finally by
+continuity of <script type="math/tex"> <![CDATA[ 
+x^k 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+k 
+]]> 
+</script>, <script type="math/tex; mode=display"> <![CDATA[ 
+ = 5(1)^2 + 3(1) - 2 =\answer [given]{6}.  
+]]> 
+</script> We can check our answer by looking at the graph of <script type="math/tex"> <![CDATA[ 
+y=f(x) 
+]]> 
+</script>: <script type="math/tex; mode=display"> <![CDATA[ 
+ \graph {5x^2+3x-2}  
+]]> 
+</script> 
+</div>
+</div>
+<!--l. 85--><p class="noindent" >We can generalize the example above to get the following theorems.
+</p>
+<div class="theorem-like problem-environment theorem" id="problem10"><a 
+ id="x1-65r8"></a><span class="theorem-like-title">Continuity of Polynomial Functions</span> All polynomial functions, meaning functions of
+the form <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0  
+]]> 
+</script> where <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> is a whole number and each <script type="math/tex"> <![CDATA[ 
+a_i 
+]]> 
+</script> is a real number, are continuous for all
+real numbers.
+</div>
+<div class="theorem-like problem-environment theorem" id="problem11"><a 
+ id="x1-66r9"></a><span class="theorem-like-title">Continuity of Rational Functions</span> Let <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script> be polynomials. Then a rational function,
+meaning an expression of the form <script type="math/tex; mode=display"> <![CDATA[ 
+ h=\frac {f}{g}  
+]]> 
+</script> is continuous for all real numbers except where <script type="math/tex"> <![CDATA[ 
+g(x)=0 
+]]> 
+</script>.
+                                                                  
+
+                                                                  
+That is, rational functions are continuous wherever they are deﬁned. <div class="theorem-like problem-environment explanation" id="problem12"><a 
+ id="x1-67r10"></a>Let <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script> be a real
+number such that <script type="math/tex"> <![CDATA[ 
+g(a)\neq 0 
+]]> 
+</script>. Then, since <script type="math/tex"> <![CDATA[ 
+g(x) 
+]]> 
+</script> is continuous at <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+\lim _{x\to a} g(x) \neq 0 
+]]> 
+</script>. Therefore, write with me, <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x \to a} h(x) = \lim _{x\to a} \frac {f(x)}{g(x)}  
+]]> 
+</script> and
+now by the Quotient Law, <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {\lim _{x\to a} f(x)}{ \lim _{x\to a} g(x)}  
+]]> 
+</script> and by the continuity of polynomials we may
+now set <script type="math/tex"> <![CDATA[ 
+x=a 
+]]> 
+</script> <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {f(a)}{g(a)}=h(a).  
+]]> 
+</script> Since we have shown that <script type="math/tex"> <![CDATA[ 
+\lim _{x\to a} h(x) = h(a) 
+]]> 
+</script>, we have shown that <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script> is continuous at
+<script type="math/tex"> <![CDATA[ 
+x=a 
+]]> 
+</script>.
+</div>
+</div>
+<div class="problem-environment question" id="problem13"><a 
+ id="x1-68r11"></a> Where is <script type="math/tex"> <![CDATA[ 
+f(x) = \frac {x^2-3x+2}{x-2} 
+]]> 
+</script> continuous? <div class="multiple-choice" id="problem14"><a 
+ id="x1-69r12"></a> <span class="choice" id="choice5">for all real numbers</span> <span class="choice" id="choice6">at <script type="math/tex"> <![CDATA[ 
+x=2 
+]]> 
+</script></span> <span class="choice correct" id="choice7">for all real numbers, except <script type="math/tex"> <![CDATA[ 
+x=2 
+]]> 
+</script></span>
+<span class="choice" id="choice8">impossible to say</span>
+</div>
+</div>
+<!--l. 135--><p class="noindent" >Now, we give basic rules for how limits interact with composition of functions.
+</p>
+<div class="theorem-like problem-environment theorem" id="problem15"><a 
+ id="x1-70r13"></a><span class="theorem-like-title">Composition Limit Law</span> If <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> is continuous at <script type="math/tex"> <![CDATA[ 
+x = \lim _{x\to a} g(x) 
+]]> 
+</script>, then <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to a} f(g(x)) = f(\lim _{x\to a} g(x)).  
+]]> 
+</script>
+</div>
+<!--l. 145--><p class="noindent" >Because the limit of a continuous function is the same as the function value, we can
+now pass limits inside continuous functions.
+</p>
+<div class="theorem-like problem-environment corollary" id="problem16"><a 
+ id="x1-71r14"></a><span class="theorem-like-title">Continuity of Composite Functions</span> If <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script> is continuous at <script type="math/tex"> <![CDATA[ 
+x=a 
+]]> 
+</script>, then <script type="math/tex"> <![CDATA[ 
+f(g(x)) 
+]]> 
+</script> is continuous at
+<script type="math/tex"> <![CDATA[ 
+x=a 
+]]> 
+</script>.
+</div>
+<div class="theorem-like problem-environment example" id="problem17"><a 
+ id="x1-72r15"></a>Compute the following limit using limit laws: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x \to 0} \sqrt {\cos (x)}  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem18"><a 
+ id="x1-73r16"></a>By continuity of <script type="math/tex"> <![CDATA[ 
+x^k 
+]]> 
+</script>, assuming <script type="math/tex"> <![CDATA[ 
+\lim _{x \to 0} \cos (x) >0 
+]]> 
+</script>, <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x \to 0} \sqrt {\cos (x)} = \sqrt {\lim _{x \to 0} \cos (x)},  
+]]> 
+</script> and now
+since cosine is continuous for all real numbers, <script type="math/tex; mode=display"> <![CDATA[ 
+ \sqrt {\cos (0)} = \sqrt {1} = 1.  
+]]> 
+</script>
+</div>
+</div>
+<!--l. 169--><p class="noindent" >Many of the Limit Laws and theorems about continuity in this section might seem
+like they should be obvious. You may be wondering why we spent an entire section
+on these theorems. The answer is that these theorems will tell you exactly
+when it is easy to ﬁnd the value of a limit, and exactly what to do in those
+cases.
+</p><!--l. 175--><p class="noindent" >The most important thing to learn from this section is whether the limit laws can be
+applied for a certain problem, and when we need to do something more interesting.
+We will begin discussing those more interesting cases in the next section. For now, we
+end this section with a question:
+</p>
+<h3 class="sectionHead"><a 
+ id="x1-1000"></a>A list of questions</h3>
+<!--l. 183--><p class="noindent" >Let&#x2019;s try this out.
+</p>
+<div class="problem-environment question" id="problem19"><a 
+ id="x1-1001r17"></a> Can this limit be directly computed by limit laws? <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 2}\frac {x^2+3x+2}{x+2}  
+]]> 
+</script> <div class="multiple-choice" id="problem20"><a 
+ id="x1-1002r18"></a> <span class="choice correct" id="choice9">yes</span> <span class="choice" id="choice10">no</span>
+                                                                  
+
+                                                                  
+</div> <div class="problem-environment question" id="problem21"><a 
+ id="x1-1003r19"></a> Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 2}\frac {x^2+3x+2}{x+2}\begin {prompt} =\answer {3}\end {prompt}  
+]]> 
+</script> <div class="feedback" data-feedback="attempt" id="feedback22">Since <script type="math/tex"> <![CDATA[ 
+f(x)=\frac {x^2+3x+2}{x+2} 
+]]> 
+</script> is a rational function, and the denominator does not equal <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>, we
+see that <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> is continuous at <script type="math/tex"> <![CDATA[ 
+x=2 
+]]> 
+</script>. Thus, to ﬁnd this limit, it suﬃces to plug <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script> into <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script>. </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem23"><a 
+ id="x1-1004r20"></a> Can this limit be directly computed by limit laws? <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 2}\frac {x^2-3x+2}{x-2}  
+]]> 
+</script> <div class="multiple-choice" id="problem24"><a 
+ id="x1-1005r21"></a> <span class="choice" id="choice11">yes</span> <span class="choice correct" id="choice12">no</span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback25"><script type="math/tex"> <![CDATA[ 
+f(x) = \frac {x^2-3x+2}{x-2} 
+]]> 
+</script> is a rational function, but the denominator <script type="math/tex"> <![CDATA[ 
+x-2 
+]]> 
+</script> equals <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script> when <script type="math/tex"> <![CDATA[ 
+x=2 
+]]> 
+</script>. None of our current
+theorems address the situation when the denominator of a fraction approaches <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>. </div>
+</div>
+<div class="problem-environment question" id="problem26"><a 
+ id="x1-1006r22"></a> Can this limit be directly computed by limit laws? <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0} x\sin (1/x)  
+]]> 
+</script> <div class="multiple-choice" id="problem27"><a 
+ id="x1-1007r23"></a> <span class="choice" id="choice13">yes</span> <span class="choice correct" id="choice14">no</span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback28">If we are trying to use limit laws to compute this limit, we would ﬁrst have
+to use the Product Law to say that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0}x\sin (1/x)= \lim _{x\to 0} x \cdot \lim _{x\to 0} \sin (1/x).  
+]]> 
+</script> We are only allowed to use this law
+if both limits exist, so we must check this ﬁrst. We know from continuity
+that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0}x=0.  
+]]> 
+</script> However, we also know that <script type="math/tex"> <![CDATA[ 
+\sin (1/x) 
+]]> 
+</script> oscillates “wildly” as <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> approaches <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>, and
+so the limit <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0} \sin (1/x)  
+]]> 
+</script>does not exist. Therefore, we cannot use the Product Law. </div>
+</div>
+<div class="problem-environment question" id="problem29"><a 
+ id="x1-1008r24"></a> Can this limit be directly computed by limit laws? <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0} \cot (x^3)  
+]]> 
+</script> <div class="multiple-choice" id="problem30"><a 
+ id="x1-1009r25"></a> <span class="choice" id="choice15">yes</span> <span class="choice correct" id="choice16">no</span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback31">Notice that <script type="math/tex; mode=display"> <![CDATA[ 
+ \cot (x^3) = \frac {\cos (x^3)}{\sin (x^3)}.  
+]]> 
+</script> If we are trying to use limit laws to compute this limit, we
+would like to use the Quotient Law to say that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0} \frac {\cos (x^3)}{\sin (x^3)} = \frac {\lim _{x\to 0} \cos (x^3)}{\lim _{x\to 0} \sin (x^3)}.  
+]]> 
+</script> We are only allowed to
+use this law if both limits exist and the denominator is not <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>. We suspect
+that the limit on on the denominator might equal <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>, so we check this limit.
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      \lim_{x\to 0} \sin(x^3) &= \sin(\lim_{x\to 0}x^3)\\
+      &=\sin(0) \\
+      &=0.
+  \end{align*} 
+]]> 
+</script>
+This means that the denominator is zero and hence we cannot use the Quotient Law. </div>
+</div>
+<div class="problem-environment question" id="problem32"><a 
+ id="x1-1010r26"></a> Can this limit be directly computed by limit laws? <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0}\sec ^2(e^x-1)  
+]]> 
+</script> <div class="multiple-choice" id="problem33"><a 
+ id="x1-1011r27"></a> <span class="choice correct" id="choice17">yes</span> <span class="choice" id="choice18">no</span>
+</div> <div class="problem-environment question" id="problem34"><a 
+ id="x1-1012r28"></a> Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0}\sec ^2(e^x-1)\begin {prompt} =\answer {1}\end {prompt}  
+]]> 
+</script> <div class="feedback" data-feedback="attempt" id="feedback35">Notice that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0} \sec ^2(e^x-1) = \lim _{x\to 0} \frac {1}{\cos ^2(e^x-1)}.  
+]]> 
+</script> If we are trying to use Limit Laws to compute this limit, we
+would now have to use the Quotient Law to say that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0} \frac {1}{\cos ^2(e^x-1)} = \frac { \lim _{x\to 0}1}{ \lim _{x\to 0}\cos ^2(e^x-1)}.  
+]]> 
+</script> We are only allowed to use this
+law if both limits exist and the denominator is not <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>. Let&#x2019;s check the denominator and
+numerator separately. First we&#x2019;ll compute the limit of the denominator:
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+        \lim_{x\to 0}\cos^2(e^x-1) &= \cos^2(\lim_{x\to 0}(e^x-1))\\
+        &=\cos^2(\lim_{x\to 0}(e^x)-\lim_{x\to 0}(1))\\
+        &=\cos^2(1-1)\\
+                                                                  
+
+                                                                  
+        &= \cos^2(0)\\
+        &=1
+      \end{align*} 
+]]> 
+</script>
+Therefore, the limit in the denominator exists and does not equal <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>. We can use
+the Quotient Law, so we will compute the limit of the numerator: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0}1=1  
+]]> 
+</script> Hence <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac { \lim _{x\to 0}1}{ \lim _{x\to 0}\cos ^2(e^x-1)} = \frac {1}{1}=1  
+]]> 
+</script> </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem36"><a 
+ id="x1-1013r29"></a> Can this limit be directly computed by limit laws? <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 1}{(x-1)\cdot \csc (\ln (x))}  
+]]> 
+</script> <div class="multiple-choice" id="problem37"><a 
+ id="x1-1014r30"></a> <span class="choice" id="choice19">yes</span> <span class="choice correct" id="choice20">no</span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback38">If we are trying to use limit laws to compute this limit, we would
+have to use the Product Law to say that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 1}{(x-1)\cdot \csc (\ln (x))}= \lim _{x\to 1}{(x-1)\cdot \lim _{x\to 1}\csc (\ln (x))}.  
+]]> 
+</script> We are only allowed to
+use this law if both limits exist. Let&#x2019;s check each limit separately.
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      \lim_{x\to 1} (x-1) &= \lim_{x\to 1} (x)-\lim_{x\to 1}(1)\\
+      &=1-1\\
+      &=0.
+    \end{align*} 
+]]> 
+</script>
+So this limit exists. Now we check the other factor. Notice that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 1}\csc (\ln (x)) = \frac {1}{\sin (\ln (x))}.  
+]]> 
+</script> If we are trying to
+use limit laws to compute this limit, we would now have to use the Quotient Law to
+say that <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {1}{\sin (\ln (x))} = \frac {\lim _{x\to 1}1}{\lim _{x\to 1}\sin (\ln (x))}.  
+]]> 
+</script> We are only allowed to use this law if both limits exist and the denominator
+does not equal <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>. The limit in the numerator deﬁnitely exists, so lets check the limit in
+the denominator. <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+     \lim_{x\to 1}\sin(\ln(x)) &= \sin(\lim_{x\to 1}\ln(x))\\
+   &=\sin(\ln(1))\\
+   &= \sin(0)\\
+   &= 0
+  \end{align*} 
+]]> 
+</script>
+Since the denominator is <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>, we cannot apply the Quotient Law. </div>
+</div>
+<div class="problem-environment question" id="problem39"><a 
+ id="x1-1015r31"></a> Can this limit be directly computed by limit laws? <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0} x\ln x  
+]]> 
+</script> <div class="multiple-choice" id="problem40"><a 
+ id="x1-1016r32"></a> <span class="choice" id="choice21">yes</span> <span class="choice correct" id="choice22">no</span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback41">If we are trying to use limit laws to compute this limit, we would have to use the
+Product Law to say that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0} x\ln x =\lim _{x\to 0} x \cdot \lim _{x\to 0}\ln x.  
+]]> 
+</script> We are only allowed to use this law if both limits exist. We
+know <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 0} x = 0 
+]]> 
+</script>, but what about <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 0}\ln x 
+]]> 
+</script>? We do not know how to ﬁnd <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 0}\ln x 
+]]> 
+</script> using limit laws because <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script> is
+not in the domain of <script type="math/tex"> <![CDATA[ 
+\ln x 
+]]> 
+</script>. </div>
+</div>
+<div class="problem-environment question" id="problem42"><a 
+ id="x1-1017r33"></a> Can this limit be directly computed by limit laws? <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0}\frac {2^x-1}{3^{x-1}}  
+]]> 
+</script> <div class="multiple-choice" id="problem43"><a 
+ id="x1-1018r34"></a> <span class="choice correct" id="choice23">yes</span> <span class="choice" id="choice24">no</span>
+</div> <div class="problem-environment question" id="problem44"><a 
+ id="x1-1019r35"></a> Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0}\frac {2^x-1}{3^{x-1}}\begin {prompt} =\answer {0}\end {prompt}  
+]]> 
+</script> <div class="feedback" data-feedback="attempt" id="feedback45">If we are trying to use limit laws to compute this limit, we would have to
+use the Quotient Law to say that <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0}\frac {2^x-1}{3^{x-1}} = \frac {\lim _{x\to 0}(2^x-1)}{\lim _{x\to 0}(3^{x-1})}.  
+]]> 
+</script> We are only allowed to use this law if both limits exist
+and the denominator does not equal <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>. Let&#x2019;s check each limit separately, starting with
+the denominator <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+             \lim_{x\to 0}(3^{x-1}) &=3^{\lim_{x\to0}(x-1)}\\
+                                                                  
+
+                                                                  
+        &=3^{-1}\\
+        &=\frac{1}{3}
+      \end{align*} 
+]]> 
+</script>
+<!--l. 438--><p class="noindent" >On the other hand the limit in the numerator is
+</p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+        \lim_{x\to 0}(2^x-1) &=\lim_{x\to0}(2^x)-\lim_{x\to0}(1)\\
+        &=1-1\\
+        &=0
+      \end{align*} 
+]]> 
+</script>
+The limits in both the numerator and denominator exist and the limit in the
+denominator does not equal <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script>, so we can use the Quotient Law. We ﬁnd: <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {\lim _{x\to 0}(2^x-1)}{\lim _{x\to 0}(3^{x-1})} =\frac {0}{\frac {1}{3}}=0.  
+]]> 
+</script> </div>
+</div>
+</div>
+<div class="problem-environment question" id="problem46"><a 
+ id="x1-1020r36"></a> Can this limit be directly computed by limit laws? <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0}(1+x)^{1/x}  
+]]> 
+</script> <div class="multiple-choice" id="problem47"><a 
+ id="x1-1021r37"></a> <span class="choice" id="choice25">yes</span> <span class="choice correct" id="choice26">no</span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback48">We do not have any limit laws for functions of the form <script type="math/tex"> <![CDATA[ 
+f(x)^{g(x)} 
+]]> 
+</script>, so we cannot compute this
+limit. </div>
+</div>
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

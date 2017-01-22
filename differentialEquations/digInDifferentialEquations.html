@@ -1,0 +1,414 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Diﬀerential equations</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInDifferentialEquations.tex" /> 
+<meta name="date" content="2016-07-26 20:21:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Define a differential equation."/> 
+<meta name="learning-outcome" content="Verify solutions to differential equations."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 12--><p class="noindent" >We study equations with that relate functions with their rates.
+</p></div>   <div class="maketitle"></div>
+A <em>diﬀerential equation</em> is simply an equation with a derivative in it. Here is an
+example: <script type="math/tex; mode=display"> <![CDATA[ 
+ a\cdot f''(x) + b\cdot f'(x) + c\cdot f(x) = g(x).  
+]]> 
+</script> <div class="problem-environment question" id="problem1"><a 
+ id="x1-58r1"></a> What is a diﬀerential equation? <div class="multiple-choice" id="problem2"><a 
+ id="x1-59r2"></a> <span class="choice" id="choice1">An equation that you take the derivative
+of.</span> <span class="choice correct" id="choice2">An equation that relates the rate of a function to other values.</span> <span class="choice" id="choice3">It is a formula for
+the slope of a tangent line at a given point.</span>
+</div>
+</div>
+<!--l. 30--><p class="noindent" >When a mathematician solves a diﬀerential equation, they are ﬁnding <em>functions</em>
+satisfying the equation. </p><div class="problem-environment question" id="problem3"><a 
+ id="x1-60r3"></a> Which of the following functions solve the diﬀerential
+equation <script type="math/tex; mode=display"> <![CDATA[ 
+ f''(x) = -f(x)?  
+]]> 
+</script> <div class="select-all" id="problem4"><a 
+ id="x1-61r4"></a> <span class="choice" id="choice4"><script type="math/tex"> <![CDATA[ 
+e^x 
+]]> 
+</script></span> <span class="choice correct" id="choice5"><script type="math/tex"> <![CDATA[ 
+\sin (x) 
+]]> 
+</script></span> <span class="choice correct" id="choice6"><script type="math/tex"> <![CDATA[ 
+\cos (x) 
+]]> 
+</script></span>
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-1000"></a>Exponential growth and decay</h3>
+<!--l. 51--><p class="noindent" >A function <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> exhibits <strong>exponential growth</strong> if its growth rate is proportional to its
+value. As a diﬀerential equation, this means <script type="math/tex; mode=display"> <![CDATA[ 
+ f'(x) = k f(x)\qquad \text {for some constant of proportionality $k$.}  
+]]> 
+</script> We claim that this diﬀerential
+equation is solved by <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x) = Ae^{kx},  
+]]> 
+</script> where <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+k 
+]]> 
+</script> are constants. Check it out, if <script type="math/tex"> <![CDATA[ 
+f(x) = Ae^{kx} 
+]]> 
+</script>, then
+</p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+f'(x) &= Ak e^{kx}\\
+&= k\left(Ae^{kx} \right)\\
+&= k f(x).
+\end{align*} 
+]]> 
+</script>
+<div class="theorem-like problem-environment example" id="problem5"><a 
+ id="x1-1001r5"></a>A culture of yeast starts with <script type="math/tex"> <![CDATA[ 
+100 
+]]> 
+</script> cells. After <script type="math/tex"> <![CDATA[ 
+160 
+]]> 
+</script> minutes, there are <script type="math/tex"> <![CDATA[ 
+350 
+]]> 
+</script> cells. Assuming that
+the growth rate of the yeast is proportional to the number of yeast cells present,
+estimate when the culture will have <script type="math/tex"> <![CDATA[ 
+1000 
+]]> 
+</script> cells.
+<div class="theorem-like problem-environment explanation" id="problem6"><a 
+ id="x1-1002r6"></a>Since the growth rate of the yeast is proportional to the number of yeast cells
+present, we have the following diﬀerential equation <script type="math/tex; mode=display"> <![CDATA[ 
+ p'(t) = k p(t)  
+]]> 
+</script> where <script type="math/tex"> <![CDATA[ 
+p(t) 
+]]> 
+</script> is the population of the
+yeast culture at time <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script> with <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script> measured in minutes. We know that this diﬀerential
+equation is solved by the function <script type="math/tex; mode=display"> <![CDATA[ 
+ p(t) = A e^{kt}  
+]]> 
+</script> where <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+k 
+]]> 
+</script> are yet to be determined constants.
+Since <script type="math/tex; mode=display"> <![CDATA[ 
+ 100 = p(0) = Ae^{k\cdot 0}  
+]]> 
+</script> we see that <script type="math/tex"> <![CDATA[ 
+A = 100 
+]]> 
+</script>. So <script type="math/tex; mode=display"> <![CDATA[ 
+ p(t) = 100 e^{kt}.  
+]]> 
+</script> Now we must ﬁnd <script type="math/tex"> <![CDATA[ 
+k 
+]]> 
+</script>. Since we know that <script type="math/tex; mode=display"> <![CDATA[ 
+ \answer [given]{350} = p(160) = 100e^{k\cdot 160}  
+]]> 
+</script> we need to solve for <script type="math/tex"> <![CDATA[ 
+k 
+]]> 
+</script>.
+Write <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+350 &= 100 e^{k\cdot 160}\\
+3.5 &= e^{k\cdot 160}\\
+\ln(3.5) &= k\cdot 160\\
+\ln(3.5)/160 &= k.
+\end{align*} 
+]]> 
+</script>
+Hence <script type="math/tex; mode=display"> <![CDATA[ 
+ p(t) = 100 e^{t\ln (3.5)/160} = 100 \cdot 3.5^{t/160}.  
+]]> 
+</script> To ﬁnd out when the culture has 1000 cells, write <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+1000 &= 100 \cdot 3.5^{t/160}\\
+                                                                  
+
+                                                                  
+10 &= 3.5^{t/160}\\
+\ln(10) &= \frac{t\ln(3.5)}{160}\\
+\frac{160\ln(10)}{\ln(3.5)} &= t.
+\end{align*} 
+]]> 
+</script>
+From this we ﬁnd that after approximately <script type="math/tex"> <![CDATA[ 
+294 
+]]> 
+</script> minutes, there are around <script type="math/tex"> <![CDATA[ 
+1000 
+]]> 
+</script> yeast cells
+present.
+</div>
+</div>
+<!--l. 122--><p class="noindent" >It is worth seeing an example of exponential decay as well. Consider this: Living
+tissue contains two types of carbon, a stable isotope carbon-12 and a radioactive
+(unstable) isotope carbon-14. While an organism is alive, the ratio of one isotope of
+carbon to the other is always constant. When the organism dies, the ratio
+changes as the radioactive isotope decays. This is the basis of radiocarbon
+dating.
+</p>
+<div class="theorem-like problem-environment example" id="problem7"><a 
+ id="x1-1003r7"></a>The half-life of carbon-14 (the time it takes for half of an amount of carbon-14 to
+decay) is about 5730 years. Moreover, the rate of decay of carbon-14 is proportional
+to the amount of carbon-14.
+<!--l. 135--><p class="noindent" >If we ﬁnd a bone with <script type="math/tex"> <![CDATA[ 
+1/70 
+]]> 
+</script>th of the amount of carbon-14 we would expect to ﬁnd in a
+living organism, approximately how old is the bone?
+</p>
+<div class="theorem-like problem-environment explanation" id="problem8"><a 
+ id="x1-1004r8"></a>Since the rate of decay of carbon-14 is proportional to the amount of carbon-14
+present, we can model this situation with the diﬀerential equation <script type="math/tex; mode=display"> <![CDATA[ 
+ f'(t) = k f(t).  
+]]> 
+</script> We know that this
+diﬀerential equation is solved by the function deﬁned by <script type="math/tex; mode=display"> <![CDATA[ 
+ f(t) = A e^{kt}  
+]]> 
+</script> where <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+k 
+]]> 
+</script> are yet to be
+determined constants. Since the half-life of carbon-14 is about <script type="math/tex"> <![CDATA[ 
+5730 
+]]> 
+</script> years we write <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {1}{2} = e^{k 5730}.  
+]]> 
+</script>
+Solving this equation for <script type="math/tex"> <![CDATA[ 
+k 
+]]> 
+</script>, gives <script type="math/tex; mode=display"> <![CDATA[ 
+ k = \frac {-\ln (2)}{5730}.  
+]]> 
+</script> Since we currently have <script type="math/tex"> <![CDATA[ 
+1/70 
+]]> 
+</script>th of the original amount of
+carbon-14 we write <script type="math/tex; mode=display"> <![CDATA[ 
+ \answer [given]{\frac {1}{70}} = 1\cdot e^{\frac {-\ln (2)t}{5730}}.  
+]]> 
+</script> Solving this equation for <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>, we ﬁnd <script type="math/tex"> <![CDATA[ 
+t \approx -35121 
+]]> 
+</script>. This means that the bone is
+approximately <script type="math/tex"> <![CDATA[ 
+35121 
+]]> 
+</script> years old.
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-2000"></a>Infectious diseases</h3>
+<!--l. 175--><p class="noindent" >There are many models for the spread of infectious diseases. Perhaps the most basic
+is the following: <script type="math/tex; mode=display"> <![CDATA[ 
+ \mathrm {infect}'(t) = k\cdot \mathrm {infect}(t)\cdot (P-\mathrm {infect}(t))  
+]]> 
+</script> where <script type="math/tex"> <![CDATA[ 
+k 
+]]> 
+</script> is a constant, <script type="math/tex"> <![CDATA[ 
+\mathrm {infect}(t) 
+]]> 
+</script> is the number of people infected by
+the disease on day <script type="math/tex"> <![CDATA[ 
+t 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+P 
+]]> 
+</script> is the size of the population vulnerable to the
+disease.
+</p><!--l. 184--><p class="noindent" >What this is saying is that the rate that the infectious disease spreads is proportional
+to the product of the infected by the uninfected: </p><div class="image-environment">  <img 
+src="./digInDifferentialEquations-figure0.svg" alt="PIC"  
+ />
+</div>
+<!--l. 198--><p class="noindent" >Why might this make a good model? We expect the rate that disease is spreading to
+                                                                  
+
+                                                                  
+be largest when <script type="math/tex; mode=display"> <![CDATA[ 
+ \mathrm {infect}(t) \approx P/2.  
+]]> 
+</script> The product <script type="math/tex; mode=display"> <![CDATA[ 
+ \mathrm {infect}(t)\cdot (P-\mathrm {infect}(t))  
+]]> 
+</script> is largest when <script type="math/tex"> <![CDATA[ 
+\mathrm {infect}(t) = P/2 
+]]> 
+</script>. Finally we add the constant of
+proportionality as a scale factor.
+</p>
+<div class="theorem-like problem-environment example" id="problem9"><a 
+ id="x1-2001r9"></a>Suppose your calculus class has had a freak outbreak of the <em>math-philia</em>. Some facts:
+We have around <script type="math/tex"> <![CDATA[ 
+200 
+]]> 
+</script> students in our class, we are now on the <script type="math/tex"> <![CDATA[ 
+23 
+]]> 
+</script>rd day of the outbreak, and
+currently <script type="math/tex"> <![CDATA[ 
+100 
+]]> 
+</script> students are infected. Using the diﬀerential equation <script type="math/tex; mode=display"> <![CDATA[ 
+ \mathrm {infect}'(t) = k\cdot \mathrm {infect}(t)\cdot (P-\mathrm {infect}(t))  
+]]> 
+</script> we can model the
+spread of <em>math-philia</em> by setting <script type="math/tex"> <![CDATA[ 
+k=0.001 
+]]> 
+</script>. What is <script type="math/tex"> <![CDATA[ 
+\mathrm {infect}'(23) 
+]]> 
+</script>?
+<div class="theorem-like problem-environment explanation" id="problem10"><a 
+ id="x1-2002r10"></a>Here all we need to do is substitute all of the necessary information into the
+diﬀerential equation. We know <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      t &= \answer[given]{23},\\
+    P &= \answer[given]{200},\\
+    \mathrm{infect}(23) &= \answer[given]{100},\\
+    k&= 0.001.
+    \end{align*} 
+]]> 
+</script>
+So <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+         \mathrm{infect}'(t) &= k\cdot \mathrm{infect}(t)\cdot (P-\mathrm{infect}(t))\\
+      &= 0.001\cdot 100\cdot(200-100)\\
+      &=\answer[given]{10}.
+    \end{align*} 
+]]> 
+</script>
+Hence on day <script type="math/tex"> <![CDATA[ 
+23 
+]]> 
+</script>, we expect the disease to be spreading at a rate of <script type="math/tex"> <![CDATA[ 
+\answer [given]{10} 
+]]> 
+</script> newly infected
+people per day.
+</div>
+</div>
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

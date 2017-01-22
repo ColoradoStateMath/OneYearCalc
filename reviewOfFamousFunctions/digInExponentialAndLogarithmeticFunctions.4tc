@@ -1,0 +1,9 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{What are exponential and logarithmic functions?}}{3}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-2}{Connections between exponential functions and logarithms}}{3}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-3}{What can the graphs look like?}}{3}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-4}{Graphs of exponential functions}}{3}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-5}{Graphs of logarithmic functions}}{4}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-6000}{QQ2-1-6}{Properties of exponential functions and logarithms}}{4}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-7000}{QQ2-1-7}{Properties of exponents}}{4}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-8000}{QQ2-1-8}{Properties of logarithms}}{5}\relax 

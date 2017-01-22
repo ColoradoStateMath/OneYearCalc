@@ -1,0 +1,271 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>A changing circle</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="breakGround.tex" /> 
+<meta name="date" content="2016-07-26 20:34:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Solve related rates word problems."/> 
+<meta name="learning-outcome" content="Calculate derivatives of expressions with multiple variables implicitly."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+\newcommand {\descriptionlabel }[1]{\hspace {\labelsep }\textbf {#1:}}
+</script>
+</div>                                                    
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 13--><p class="noindent" >Two young mathematicians discuss a circle that is changing.
+</p></div>   <div class="maketitle"></div>
+Check out this dialogue between two calculus students (based on a true
+story):
+     <dl class="dialogue"><dt class="actor">
+Devyn </dt><dd 
+class="speech">Riley, I&#x2019;ve been thinking about calculus.
+     </dd><dt class="actor">
+Riley </dt><dd 
+class="speech">YOLO.
+     </dd><dt class="actor">
+Devyn </dt><dd 
+class="speech">Consider a circle of some radius <script type="math/tex"> <![CDATA[ 
+r 
+]]> 
+</script>.
+     </dd><dt class="actor">
+Riley </dt><dd 
+class="speech">Ha! What else would we ever call the “radius?”
+     </dd><dt class="actor">
+Devyn </dt><dd 
+class="speech">Exactly. Now the formula for the perimeter of a circle is?
+     </dd><dt class="actor">
+Riley </dt><dd 
+class="speech"><script type="math/tex"> <![CDATA[ 
+P=2\cdot \pi \cdot r 
+]]> 
+</script> baby.
+     </dd><dt class="actor">
+Devyn </dt><dd 
+class="speech">And its area?
+     </dd><dt class="actor">
+Riley </dt><dd 
+class="speech">You know it&#x2019;s <script type="math/tex"> <![CDATA[ 
+A=\pi \cdot r^2 
+]]> 
+</script>.
+     </dd><dt class="actor">
+Devyn </dt><dd 
+class="speech">Right, but here&#x2019;s what&#x2019;s bugging me: If I know <script type="math/tex"> <![CDATA[ 
+r' 
+]]> 
+</script>, what is <script type="math/tex"> <![CDATA[ 
+P' 
+]]> 
+</script>? What&#x2019;s <script type="math/tex"> <![CDATA[ 
+A' 
+]]> 
+</script>?
+     </dd><dt class="actor">
+Riley </dt><dd 
+class="speech">Oooh. Ouch. Hmmm. I wanna say it&#x2019;s <script type="math/tex; mode=display"> <![CDATA[ 
+ P' = 2\cdot \pi \cdot r' \qquad \text {and}\qquad A' = \pi (r')^2  
+]]> 
+</script> but I&#x2019;m not sure that is right.
+     </dd><dt class="actor">
+Devyn </dt><dd 
+class="speech">Yeah…me too. But I&#x2019;m not sure that&#x2019;s right either. Are we forgetting
+     something?</dd></dl>
+<div class="problem-environment problem" id="problem1"><a 
+ id="x1-59r1"></a> Do you think our young mathematicians above are correct? <div class="multiple-choice" id="problem2"><a 
+ id="x1-60r2"></a> <span class="choice" id="choice1">Yes. <script type="math/tex"> <![CDATA[ 
+P' = 2\cdot \pi \cdot r' 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+A' = \pi (r')^2 
+]]> 
+</script>.</span> <span class="choice correct" id="choice2">No. While <script type="math/tex"> <![CDATA[ 
+P' = 2\cdot \pi \cdot r' 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+A' \ne \pi (r')^2 
+]]> 
+</script>.</span>
+<span class="choice" id="choice3">No. While <script type="math/tex"> <![CDATA[ 
+A' = \pi (r')^2 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+P' \ne 2\cdot \pi \cdot r' 
+]]> 
+</script>.</span> <span class="choice" id="choice4">No. <script type="math/tex"> <![CDATA[ 
+P' \ne 2\cdot \pi \cdot r' 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+A' \ne \pi (r')^2 
+]]> 
+</script>.</span> <span class="choice" id="choice5">There is no way to tell.</span>
+</div>
+</div>
+<div class="problem-environment problem" id="problem3"><a 
+ id="x1-61r3"></a> Set <script type="math/tex"> <![CDATA[ 
+r(t)=3\cdot t 
+]]> 
+</script>. What is <script type="math/tex"> <![CDATA[ 
+r'(t) 
+]]> 
+</script> when <script type="math/tex"> <![CDATA[ 
+r=15 
+]]> 
+</script>? <script type="math/tex"> <![CDATA[ 
+r'(t)=\answer {3} 
+]]> 
+</script> 
+</div>
+                                                                  
+
+                                                                  
+<div class="problem-environment problem" id="problem4"><a 
+ id="x1-62r4"></a> Set <script type="math/tex"> <![CDATA[ 
+r=3\cdot t 
+]]> 
+</script>. Now <script type="math/tex"> <![CDATA[ 
+P(t) = 2\cdot \pi \cdot 3\cdot t 
+]]> 
+</script>. What is <script type="math/tex"> <![CDATA[ 
+P'(t) 
+]]> 
+</script> when <script type="math/tex"> <![CDATA[ 
+r=15 
+]]> 
+</script>? <script type="math/tex"> <![CDATA[ 
+P'(t)=\answer {2\cdot \pi \cdot 3} 
+]]> 
+</script> 
+</div>
+<div class="problem-environment problem" id="problem5"><a 
+ id="x1-63r5"></a> Describe what <script type="math/tex"> <![CDATA[ 
+P' 
+]]> 
+</script> means in this context. <div class="free-response" id="problem6"><a 
+ id="x1-64r6"></a> It describes how fast the perimeter is
+changing at a particular instant in time.
+</div>
+</div>
+<div class="problem-environment problem" id="problem7"><a 
+ id="x1-65r7"></a> Set <script type="math/tex"> <![CDATA[ 
+r=3\cdot t 
+]]> 
+</script>. Now <script type="math/tex"> <![CDATA[ 
+A(t) = \pi \cdot (3\cdot t)^2 
+]]> 
+</script>. What is <script type="math/tex"> <![CDATA[ 
+A'(t) 
+]]> 
+</script> when <script type="math/tex"> <![CDATA[ 
+r=15 
+]]> 
+</script>? <script type="math/tex"> <![CDATA[ 
+A'(t)=\answer {2\cdot \pi \cdot 15\cdot 3} 
+]]> 
+</script> 
+</div>
+<div class="problem-environment problem" id="problem8"><a 
+ id="x1-66r8"></a> Describe what <script type="math/tex"> <![CDATA[ 
+A' 
+]]> 
+</script> means in this context. Does it make sense that <script type="math/tex"> <![CDATA[ 
+A' 
+]]> 
+</script> is positive? <div class="free-response" id="problem9"><a 
+ id="x1-67r9"></a> It
+describes how fast the area is changing. It does make sense that <script type="math/tex"> <![CDATA[ 
+A' 
+]]> 
+</script> is positive, since as
+the radius gets larger, the area should get larger, too.
+</div>
+</div>
+<div class="problem-environment problem" id="problem10"><a 
+ id="x1-68r10"></a> What, if anything, did our two young mathematicians forget about above? <div class="free-response" id="problem11"><a 
+ id="x1-69r11"></a> They
+forgot the chain rule.
+</div>
+</div>
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

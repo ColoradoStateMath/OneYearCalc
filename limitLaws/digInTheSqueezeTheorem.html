@@ -1,0 +1,326 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>The Squeeze Theorem</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInTheSqueezeTheorem.tex" /> 
+<meta name="date" content="2016-07-26 20:30:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Understand the Squeeze Theorem and how it can be used to find limit values."/> 
+<meta name="learning-outcome" content="Calculate limits using the Squeeze Theorem."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 12--><p class="noindent" >The Squeeze theorem allows us to exchange diﬃcult functions for easy functions.
+</p></div>   <div class="maketitle"></div>
+In mathematics, sometimes we can study complex functions by exchanging them for
+simplier functions. The <em>Squeeze Theorem</em> tells us one situation where this is
+possible.
+<div class="theorem-like problem-environment theorem" id="problem1"><a 
+ id="x1-58r1"></a><span class="theorem-like-title">Squeeze Theorem</span> Suppose that <script type="math/tex; mode=display"> <![CDATA[ 
+ g(x) \le f(x) \le h(x)  
+]]> 
+</script> for all <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> close to <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script> but not necessarily equal to <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script>. If <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to a} g(x) = L = \lim _{x\to a} h(x),  
+]]> 
+</script>
+then <script type="math/tex"> <![CDATA[ 
+\lim _{x\to a} f(x) = L 
+]]> 
+</script>.
+</div>
+<div class="problem-environment question" id="problem2"><a 
+ id="x1-59r2"></a> I&#x2019;m thinking of a function <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script>. I know that for all <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> <script type="math/tex; mode=display"> <![CDATA[ 
+ 0 \le f(x) \le x^2.  
+]]> 
+</script> What is <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 0} f(x) 
+]]> 
+</script>? <div class="multiple-choice" id="problem3"><a 
+ id="x1-60r3"></a> <span class="choice" id="choice1"><script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script></span> <span class="choice" id="choice2"><script type="math/tex"> <![CDATA[ 
+f(0) 
+]]> 
+</script></span> <span class="choice correct" id="choice3"><script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script></span> <span class="choice" id="choice4">impossible to
+say</span>
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem4"><a 
+ id="x1-61r4"></a>Consider the function <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x) = \begin {cases} \sqrt [5]{x}\sin \left (\frac {1}{x}\right ) & \text {if $x \ne 0$,}\\ 0 & \text {if $x = 0$,} \end {cases}  
+]]> 
+</script> <div class="image-environment">  <img 
+src="./digInTheSqueezeTheorem-figure0.svg" alt="PIC"  
+ />
+</div>
+Is this function continuous at <script type="math/tex"> <![CDATA[ 
+x=0 
+]]> 
+</script>? <div class="theorem-like problem-environment explanation" id="problem5"><a 
+ id="x1-62r5"></a>We must show that <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 0} f(x) = \answer [given]{0} 
+]]> 
+</script>. Note <script type="math/tex; mode=display"> <![CDATA[ 
+ -|\sqrt [5]{x}|\le f(x) \le |\sqrt [5]{x}|.  
+]]> 
+</script> Since <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0} -|\sqrt [5]{x}| = \answer [given]{0} = \lim _{x\to 0}|\sqrt [5]{x}|,  
+]]> 
+</script> we see by the
+Squeeze Theorem, Theorem, that <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 0} f(x) = \answer [given]{0} 
+]]> 
+</script>. Hence <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> is continuous.
+<!--l. 99--><p class="noindent" >Here we see how the informal deﬁnition of continuity being that you can “draw it”
+without “lifting your pencil” diﬀers from the formal deﬁnition.
+</div>
+</div>
+</p>
+<div class="theorem-like problem-environment example" id="problem6"><a 
+ id="x1-63r6"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{\theta \to 0} \frac {\sin (\theta )}{\theta }  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem7"><a 
+ id="x1-64r7"></a>To compute this limit, use the Squeeze Theorem. First note that we only
+need to examine <script type="math/tex"> <![CDATA[ 
+\theta \in \left (\frac {-\pi }{2}, \frac {\pi }{2}\right ) 
+]]> 
+</script> and for the present time, we&#x2019;ll assume that <script type="math/tex"> <![CDATA[ 
+\theta  
+]]> 
+</script> is positive. Consider
+the diagrams below:
+<div class="image-environment"><!--tex4ht:inline--><div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1" /><col 
+id="TBL-1-2" /><col 
+id="TBL-1-3" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">   <img 
+src="./digInTheSqueezeTheorem-figure1.svg" alt="PIC"  
+ />     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td11">   <img 
+src="./digInTheSqueezeTheorem-figure2.svg" alt="PIC"  
+ />   </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-3"  
+class="td11">   <img 
+src="./digInTheSqueezeTheorem-figure3.svg" alt="PIC"  
+ />      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"  
+class="td11"> Triangle  <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-2"  
+class="td11"> Sector </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-3"  
+class="td11"> Triangle  <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-1"  
+class="td11">          </td>
+</tr></table></div> </div>
+<!--l. 192--><p class="noindent" >From our diagrams above we see that <script type="math/tex; mode=display"> <![CDATA[ 
+ \text {Area of Triangle $A$} \le \text {Area of Sector} \le \text {Area of Triangle $B$}  
+]]> 
+</script> and computing these areas we ﬁnd <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {\cos (\theta )\sin (\theta )}{2} \le \frac {\theta }{2} \le \frac {\tan (\theta )}{2}.  
+]]> 
+</script>
+Multiplying through by <script type="math/tex"> <![CDATA[ 
+2 
+]]> 
+</script>, and recalling that <script type="math/tex"> <![CDATA[ 
+\tan (\theta ) = \frac {\sin (\theta )}{\cos (\theta )} 
+]]> 
+</script> we obtain <script type="math/tex; mode=display"> <![CDATA[ 
+ \cos (\theta )\sin (\theta ) \le \theta \le \frac {\sin (\theta )}{\cos (\theta )}.  
+]]> 
+</script> Dividing through by <script type="math/tex"> <![CDATA[ 
+\sin (\theta ) 
+]]> 
+</script> and
+taking the reciprocals (reversing the inequalities), we ﬁnd <script type="math/tex; mode=display"> <![CDATA[ 
+ \cos (\theta ) \le \frac {\sin (\theta )}{\theta } \le \frac {1}{\cos (\theta )}.  
+]]> 
+</script> Note, <script type="math/tex"> <![CDATA[ 
+\cos (-\theta ) = \cos (\theta ) 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+\frac {\sin (-\theta )}{-\theta } = \frac {\sin (\theta )}{\theta } 
+]]> 
+</script>, so these
+inequalities hold for all <script type="math/tex"> <![CDATA[ 
+\theta \in \left (\frac {-\pi }{2}, \frac {\pi }{2}\right ) 
+]]> 
+</script>. Additionally, we know <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{\theta \to 0}\cos (\theta ) = \answer [given]{1} = \lim _{\theta \to 0}\frac {1}{\cos (\theta )},  
+]]> 
+</script> and so we conclude by the Squeeze
+Theorem, <script type="math/tex"> <![CDATA[ 
+\lim _{\theta \to 0}\frac {\sin (\theta )}{\theta } = \answer [given]{1} 
+]]> 
+</script>.
+</div>
+</div>
+</p><!--l. 221--><p class="noindent" >When solving a problem with the Squeeze Theorem, one must write a sort of
+mathematical poem. You have to tell your friendly reader exactly which functions
+you are using to “squeeze-out” your limit.
+</p>
+<div class="theorem-like problem-environment example" id="problem8"><a 
+ id="x1-65r8"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0} \left (\sin (x) e^{\cos \left (\frac {1}{x^3}\right )}\right )  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem9"><a 
+ id="x1-66r9"></a>Let&#x2019;s graph this function to see what&#x2019;s going on: <div class="image-environment">  <img 
+src="./digInTheSqueezeTheorem-figure4.svg" alt="PIC"  
+ />
+                                                                  
+
+                                                                  
+</div>
+The function <script type="math/tex"> <![CDATA[ 
+\sin (x) e^{\cos \left (\frac {1}{x^3}\right )} 
+]]> 
+</script> has two factors: <div class="image-environment">  <img 
+src="./digInTheSqueezeTheorem-figure5.svg" alt="PIC"  
+ />
+</div>
+Hence we have that when <script type="math/tex"> <![CDATA[ 
+x>0 
+]]> 
+</script> <script type="math/tex; mode=display"> <![CDATA[ 
+ \sin (x) \answer [given]{e^{-1}} \le \sin (x) e^{\cos \left (\frac {1}{x^3}\right )} \le \sin (x) \answer [given]{e}  
+]]> 
+</script> and we see <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0^+} \sin (x) \answer [given]{e^{-1}} = \answer [given]{0} = \lim _{x\to 0^+} \sin (x) \answer [given]{e}  
+]]> 
+</script> and so by the Squeeze theorem, <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0^+}\left (\sin (x)e^{\cos \left (\frac {1}{x^3}\right )}\right )=\answer [given]{0}.  
+]]> 
+</script> In a similar
+fashion, when <script type="math/tex"> <![CDATA[ 
+x<0 
+]]> 
+</script>, <script type="math/tex; mode=display"> <![CDATA[ 
+ \sin (x) \answer [given]{e} \le \sin (x) e^{\cos \left (\frac {1}{x^3}\right )} \le \sin (x) \answer [given]{e^{-1}}  
+]]> 
+</script> and so <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0^-}\sin (x) \answer [given]{e} =\answer [given]{0}=\lim _{x\to 0^-}\sin (x) \answer [given]{e^{-1}},  
+]]> 
+</script> and again by the Squeeze Theorem <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 0^-}\left (\sin (x) e^{\cos \left (\frac {1}{x^3}\right )}\right )=0 
+]]> 
+</script>. Hence we see that
+<script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to 0}\left (\sin (x) e^{\cos \left (\frac {1}{x^3}\right )}\right )=\answer [given]{0}.  
+]]> 
+</script>
+</div>
+</div>
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

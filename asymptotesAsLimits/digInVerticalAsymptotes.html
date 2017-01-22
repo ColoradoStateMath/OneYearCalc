@@ -1,0 +1,305 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Vertical asymptotes</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInVerticalAsymptotes.tex" /> 
+<meta name="date" content="2016-07-26 20:12:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Recognize when a limit is indicating there is a vertical asymptote."/> 
+<meta name="learning-outcome" content="Evaluate the limit as $x$ approaches a point where there is a vertical asymptote."/> 
+<meta name="learning-outcome" content="Match graphs of functions with their equations based on vertical asymptotes."/> 
+<meta name="learning-outcome" content="Discuss what it means for a limit to equal $\infty $."/> 
+<meta name="learning-outcome" content="Define a vertical asymptote."/> 
+<meta name="learning-outcome" content="Understand the relationship between limits and vertical asymptotes."/> 
+<meta name="learning-outcome" content="Find vertical asymptotes of famous functions."/> 
+<meta name="learning-outcome" content="Find vertical asymptotes by looking at a graph."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                 
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 19--><p class="noindent" >We explore functions that “shoot to inﬁnity” at certain points in their domain.
+</p></div>   <div class="maketitle"></div>
+Consider the function <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x) = \frac {1}{(x+1)^2}.  
+]]> 
+</script> <div class="image-environment">  <img 
+src="./digInVerticalAsymptotes-figure0.svg" alt="PIC"  
+ />
+</div>
+While the <script type="math/tex"> <![CDATA[ 
+\lim _{x\to -1} f(x) 
+]]> 
+</script> does not exist, something can still be said.
+<div class="theorem-like problem-environment definition" id="problem1"><a 
+ id="x1-58r1"></a> If <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> grows arbitrarily large as <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> approaches <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script>, we write <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to a} f(x) = \infty  
+]]> 
+</script> and say that the limit of <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script>
+<strong>approaches inﬁnity</strong> as <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> goes to <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script>.
+<!--l. 57--><p class="noindent" >If <script type="math/tex"> <![CDATA[ 
+|f(x)| 
+]]> 
+</script> grows arbitrarily large as <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> approaches <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> is negative, we write <script type="math/tex; mode=display"> <![CDATA[ 
+ \lim _{x\to a} f(x) = -\infty  
+]]> 
+</script> and say that the
+limit of <script type="math/tex"> <![CDATA[ 
+f(x) 
+]]> 
+</script> <strong>approaches negative inﬁnity</strong> as <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> goes to <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script>.
+</div>
+</p>
+<div class="problem-environment question" id="problem2"><a 
+ id="x1-59r2"></a> Which of the following are correct? <div class="select-all" id="problem3"><a 
+ id="x1-60r3"></a> <span class="choice correct" id="choice1"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to -1} \frac {1}{(x+1)^2} = \infty  
+]]> 
+</script></span> <span class="choice" id="choice2"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to -1} \frac {1}{(x+1)^2} \to \infty  
+]]> 
+</script></span> <span class="choice" id="choice3"><script type="math/tex"> <![CDATA[ 
+f(x) = \frac {1}{(x+1)^2} 
+]]> 
+</script>, so <script type="math/tex"> <![CDATA[ 
+f(-1) = \infty  
+]]> 
+</script></span> <span class="choice correct" id="choice4"><script type="math/tex"> <![CDATA[ 
+f(x) = \frac {1}{(x+1)^2} 
+]]> 
+</script>, so as <script type="math/tex"> <![CDATA[ 
+x\to -1 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+f(x) \to \infty  
+]]> 
+</script></span>
+</div>
+</div>
+<!--l. 77--><p class="noindent" >On the other hand, consider the function <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x) = \frac {1}{(x-1)}.  
+]]> 
+</script> </p><div class="image-environment">  <img 
+src="./digInVerticalAsymptotes-figure1.svg" alt="PIC"  
+ />
+</div>
+While the two sides of the limit as <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> approaches <script type="math/tex"> <![CDATA[ 
+1 
+]]> 
+</script> do not agree, we can still consider
+the one-sided limits. We see <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 1^+} f(x) = \infty  
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 1^-} f(x) = -\infty  
+]]> 
+</script>.
+<div class="theorem-like problem-environment definition" id="problem4"><a 
+ id="x1-61r4"></a> If at least one of the following hold:
+     <ul class="itemize1">
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to a} f(x) = \pm \infty  
+]]> 
+</script>,
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to a^+} f(x) = \pm \infty  
+]]> 
+</script>,
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\lim _{x\to a^-} f(x) = \pm \infty  
+]]> 
+</script>,</li></ul>
+<!--l. 112--><p class="noindent" >then the line <script type="math/tex"> <![CDATA[ 
+x=a 
+]]> 
+</script> is a <strong>vertical asymptote</strong> of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script>.
+</div>
+</p>
+<div class="theorem-like problem-environment example" id="problem5"><a 
+ id="x1-62r5"></a>Find the vertical asymptotes of <script type="math/tex; mode=display"> <![CDATA[ 
+ f(x) = \frac {x^2-9x+14}{x^2-5x+6}.  
+]]> 
+</script>
+<div class="theorem-like problem-environment explanation" id="problem6"><a 
+ id="x1-63r6"></a>Start by factoring both the numerator and the denominator:
+<script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {x^2-9x+14}{x^2-5x+6} = \frac {(x-2)(x-7)}{(x-2)(x-3)}  
+]]> 
+</script> Using limits, we must investigate when <script type="math/tex"> <![CDATA[ 
+x\to 2 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+x\to 3 
+]]> 
+</script>. Write
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\lim_{x\to 2} \frac{(x-2)(x-7)}{(x-2)(x-3)} &= \lim_{x\to 2} \frac{(x-7)}{(x-3)}\\
+&= \frac{-5}{-1}\\
+&=5.
+\end{align*} 
+]]> 
+</script>
+Now write <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\lim_{x\to 3} \frac{(x-2)(x-7)}{(x-2)(x-3)} &= \lim_{x\to 3} \frac{(x-7)}{(x-3)}\\
+                                                                  
+
+                                                                  
+&= \lim_{x\to 3}\frac{-4}{x-3}.
+\end{align*} 
+]]> 
+</script>
+Consider the one-sided limits separately. Since <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 3^+} (x-3) 
+]]> 
+</script> approaches <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script> from the right and the
+numerator is negative, <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 3^+} f(x) = -\infty  
+]]> 
+</script>. Since <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 3^-} (x-3) 
+]]> 
+</script> approaches <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script> from the left and the numerator is
+negative, <script type="math/tex"> <![CDATA[ 
+\lim _{x\to 3^-} f(x) = \infty  
+]]> 
+</script>. <div class="image-environment">  <img 
+src="./digInVerticalAsymptotes-figure2.svg" alt="PIC"  
+ />
+</div>
+Hence we have a vertical asymptote at <script type="math/tex"> <![CDATA[ 
+x=3 
+]]> 
+</script>.
+</div>
+</div>
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

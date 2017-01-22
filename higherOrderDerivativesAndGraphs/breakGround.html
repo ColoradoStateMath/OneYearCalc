@@ -1,0 +1,172 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Rates of rates</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="breakGround.tex" /> 
+<meta name="date" content="2016-07-26 20:22:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Define higher order derivatives."/> 
+<meta name="learning-outcome" content="Identify the relationships between the function and its first and second derivatives."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+\newcommand {\descriptionlabel }[1]{\hspace {\labelsep }\textbf {#1:}}
+</script>
+</div>                                                       
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 14--><p class="noindent" >Two young mathematicians look at graph of a function, its ﬁrst derivative, and its
+second derivative.
+</p></div>   <div class="maketitle"></div>
+Check out this dialogue between two calculus students (based on a true
+story):
+     <dl class="dialogue"><dt class="actor">
+Devyn </dt><dd 
+class="speech">Riley, check out this plot: <div class="image-environment">  <img 
+src="./breakGround-figure0.svg" alt="PIC"  
+ />
+     </div>
+     </dd><dt class="actor">
+Riley </dt><dd 
+class="speech">Whoa, that looks cool!
+     </dd><dt class="actor">
+Devyn </dt><dd 
+class="speech">I know! Anyway, someone told me that this was a graph of a function, its
+     derivative, and the derivative of the derivative. Which one is which?
+     </dd><dt class="actor">
+Riley </dt><dd 
+class="speech">Hmmmmm. I&#x2019;m not sure.</dd></dl>
+<div class="problem-environment problem" id="problem1"><a 
+ id="x1-59r1"></a> Which of the following is true? <div class="multiple-choice" id="problem2"><a 
+ id="x1-60r2"></a> <span class="choice" id="choice1">Curve <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> is increasing when curve <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> is positive.</span> <span class="choice" id="choice2">Curve <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script>
+is increasing when curve <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script> is positive.</span> <span class="choice correct" id="choice3">None of the above.</span>
+</div>
+</div>
+<div class="problem-environment problem" id="problem3"><a 
+ id="x1-61r3"></a> Which of the following is true? <div class="multiple-choice" id="problem4"><a 
+ id="x1-62r4"></a> <span class="choice correct" id="choice4">Curve <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> is increasing when curve <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> is positive.</span> <span class="choice" id="choice5">Curve <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script>
+is increasing when curve <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script> is positive.</span> <span class="choice" id="choice6">None of the above.</span>
+</div>
+</div>
+<div class="problem-environment problem" id="problem5"><a 
+ id="x1-63r5"></a> Which of the following is true? <div class="multiple-choice" id="problem6"><a 
+ id="x1-64r6"></a> <span class="choice" id="choice7">Curve <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script> is increasing when curve <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> is positive.</span> <span class="choice correct" id="choice8">Curve <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script>
+is increasing when curve <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> is positive.</span> <span class="choice" id="choice9">None of the above.</span>
+</div>
+</div>
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+

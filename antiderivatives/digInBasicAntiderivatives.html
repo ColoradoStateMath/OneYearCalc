@@ -1,0 +1,507 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Basic antiderivatives</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInBasicAntiderivatives.tex" /> 
+<meta name="date" content="2016-07-26 20:06:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                 
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 9--><p class="noindent" >We introduce antiderivatives.
+</p></div>   <div class="maketitle"></div>
+Computing derivatives is not too diﬃcult. At this point, you should be able to take
+the derivative of almost any function you can write down. However, undoing
+derivatives is much harder. This process of undoing a derivative is called taking an
+<em>antiderivative</em>.
+<div class="theorem-like problem-environment definition" id="problem1"><a 
+ id="x1-58r1"></a>A function <script type="math/tex"> <![CDATA[ 
+F 
+]]> 
+</script> is called an <strong>antiderivative</strong> of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> on an interval if <script type="math/tex; mode=display"> <![CDATA[ 
+ F'(x) = f(x)  
+]]> 
+</script> for all <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> in the
+interval.
+</div>
+<div class="problem-environment question" id="problem2"><a 
+ id="x1-59r2"></a> How many antiderivatives does <script type="math/tex"> <![CDATA[ 
+f(x) = 2x 
+]]> 
+</script> have? <div class="multiple-choice" id="problem3"><a 
+ id="x1-60r3"></a> <span class="choice" id="choice1">none</span> <span class="choice" id="choice2">one</span> <span class="choice correct" id="choice3">inﬁnitely many</span>
+</div> <div class="feedback" data-feedback="attempt" id="feedback4">The functions <script type="math/tex"> <![CDATA[ 
+x^2 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+x^2+1 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+x^2-5 
+]]> 
+</script>, and so on, are all antiderivatives of <script type="math/tex"> <![CDATA[ 
+2x 
+]]> 
+</script>. </div>
+</div>
+<!--l. 48--><p class="noindent" >There are two common ways to notate antiderivatives, either with a capital letter or
+with a funny symbol:
+</p>
+<div class="theorem-like problem-environment definition" id="problem5"><a 
+ id="x1-61r4"></a> The antiderivative is denoted by <script type="math/tex; mode=display"> <![CDATA[ 
+ \int f(x) \d x = F(x)+C,  
+]]> 
+</script> where <script type="math/tex"> <![CDATA[ 
+dx 
+]]> 
+</script> identiﬁes <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> as the variable and <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script> is
+a constant indicating that there are many possible antiderivatives, each
+varying by the addition of a constant. This is often called the <strong>indeﬁnite
+integral</strong>.
+</div>
+<!--l. 62--><p class="noindent" >Fill out these basic antiderivatives. Note each of these examples comes directly from
+our knowledge of basic derivatives.
+</p>
+<div class="theorem-like problem-environment theorem" id="problem6"><a 
+ id="x1-62r5"></a><span class="theorem-like-title">Basic Antiderivatives</span>
+     <ul class="itemize1">
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int k \d x= kx+C 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int x^n \d x= \frac {x^{n+1}}{n+1}+C\qquad (n\ne -1) 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int e^x \d x= e^x + C 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int a^x \d x= \frac {a^x}{\ln (a)}+C 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int \frac {1}{x} \d x= \ln |x|+C 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int \cos (x) \d x = \sin (x) + C 
+]]> 
+</script>
+                                                                  
+
+                                                                  
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int \sin (x) \d x = -\cos (x) + C 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int \tan (x) \d x = -\ln |\cos (x)| + C 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int \sec ^2(x) \d x = \tan (x) + C 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int \csc ^2(x) \d x = -\cot (x) + C 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int \sec (x)\tan (x) \d x = \sec (x) + C 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int \csc (x)\cot (x) \d x = -\csc (x) + C 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int \frac {1}{x^2+1}\d x = \arctan (x) + C 
+]]> 
+</script>
+     </li>
+     <li class="itemize"><script type="math/tex"> <![CDATA[ 
+\int \frac {1}{\sqrt {1-x^2}}\d x= \arcsin (x)+C 
+]]> 
+</script></li></ul>
+<!--l. 107--><p class="noindent" ></div>
+</p><!--l. 109--><p class="noindent" >It may seem that one could simply memorize these antiderivatives and antidiﬀerentiating
+would be as easy as diﬀerentiating. This is <strong>not</strong> the case. The issue comes up when
+trying to combine these functions. When taking derivatives we have the <em>product rule</em>
+and the <em>chain rule</em>. The analogues of these two rules are much more diﬃcult to
+deal with when taking antiderivatives. However, not all is lost. We have the
+following analogue of the sum rule for derivatives and the constant factor
+rule.
+</p>
+<div class="theorem-like problem-environment theorem" id="problem7"><a 
+ id="x1-63r6"></a><span class="theorem-like-title">The Sum Rule for Antiderivatives</span> If <script type="math/tex"> <![CDATA[ 
+F 
+]]> 
+</script> is an antiderivative of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+G 
+]]> 
+</script> is an antiderivative
+of <script type="math/tex"> <![CDATA[ 
+g 
+]]> 
+</script>, then <script type="math/tex"> <![CDATA[ 
+F+G 
+]]> 
+</script> is an antiderivative of <script type="math/tex"> <![CDATA[ 
+f+g 
+]]> 
+</script>.
+</div>
+<div class="theorem-like problem-environment theorem" id="problem8"><a 
+ id="x1-64r7"></a><span class="theorem-like-title">The Constant Factor Rule for Antiderivatives</span> If <script type="math/tex"> <![CDATA[ 
+F 
+]]> 
+</script> is an antiderivative of <script type="math/tex"> <![CDATA[ 
+f 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+k 
+]]> 
+</script> is a
+constant, then <script type="math/tex"> <![CDATA[ 
+kF 
+]]> 
+</script> is an antiderivative of <script type="math/tex"> <![CDATA[ 
+kf 
+]]> 
+</script>.
+</div>
+<!--l. 128--><p class="noindent" >Let&#x2019;s put these rules and our knowledge of basic derivatives to work.
+</p>
+<div class="theorem-like problem-environment example" id="problem9"><a 
+ id="x1-65r8"></a>Find the antiderivative of <script type="math/tex"> <![CDATA[ 
+3 x^7 
+]]> 
+</script>. <div class="theorem-like problem-environment explanation" id="problem10"><a 
+ id="x1-66r9"></a>By the theorems above , we see that
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int 3 x^7 \d x &= 3 \int x^7 \d x\\
+&= 3 \cdot \answer[given]{\frac{x^8}{8}}+C.
+                                                                  
+
+                                                                  
+\end{align*} 
+]]> 
+</script>
+</div>
+</div>
+<!--l. 141--><p class="noindent" >The sum rule for antiderivatives allows us to integrate term-by-term. Let&#x2019;s see an
+example of this.
+</p>
+<div class="theorem-like problem-environment example" id="problem11"><a 
+ id="x1-67r10"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \left (x^4 + 5x^2 - \cos (x)\right ) \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem12"><a 
+ id="x1-68r11"></a>Let&#x2019;s start by simplifying the problem using the sum rule for
+antiderivatives, <script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\int &\left(x^4 + 5x^2 - \cos(x)\right) \d x\\
+&= \int x^4 \d x + 5\int x^2 \d x - \int \cos(x) \d x.
+\end{align*} 
+]]> 
+</script>
+Now we may integrate term-by-term to ﬁnd <script type="math/tex; mode=display"> <![CDATA[ 
+ = \answer [given]{\frac {x^5}{5} + \frac {5x^3}{3} - \sin (x)}+C.  
+]]> 
+</script>
+</div>
+</div>
+<div class="theorem-like problem-environment warning" id="problem13"><a 
+ id="x1-69r12"></a>While the sum rule for antiderivatives allows us to integrate term-by-term, we cannot
+integrate <em>factor-by-factor</em>, meaning that in general <script type="math/tex; mode=display"> <![CDATA[ 
+ \int f(x)g(x) \d x \ne \int f(x) \d x\cdot \int g(x) \d x.  
+]]> 
+</script>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-1000"></a>Computing antiderivatives</h3>
+<!--l. 183--><p class="noindent" >Unfortunately, we cannot tell you how to compute every antiderivative. We advise
+that the mathematician view antiderivatives as a sort of <em>puzzle</em>. Later we will learn a
+hand-full of techniques for computing antiderivatives. However, a robust and simple
+way to compute antiderivatives is guess-and-check.
+Tips for guessing antiderivatives 
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd 
+class="enumerate-enumitem">Make a guess for the antiderivative.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd 
+class="enumerate-enumitem">Take the derivative of your guess.
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd 
+class="enumerate-enumitem">Note  how  the  above  derivative  is  diﬀerent  from  the  function  whose
+     antiderivative you want to ﬁnd.
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd 
+class="enumerate-enumitem">Change your original guess by <strong>multiplying</strong> by constants or by <strong>adding</strong>
+     in new functions.</dd></dl>
+<div class="theorem-like problem-environment template" id="problem14"><a 
+ id="x1-1005r13"></a> If the indeﬁnite integral looks something like <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \mathrm {stuff}' \cdot (\mathrm {stuff})^n \d x  
+]]> 
+</script> guess <script type="math/tex; mode=display"> <![CDATA[ 
+ \mathrm {stuff}^{n+1}  
+]]> 
+</script> where <script type="math/tex"> <![CDATA[ 
+n\ne -1 
+]]> 
+</script>.
+</div>
+<div class="theorem-like problem-environment example" id="problem15"><a 
+ id="x1-1006r14"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \frac {x^3}{\sqrt {x^4 -6}} \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem16"><a 
+ id="x1-1007r15"></a>Start by rewriting the indeﬁnite integral as <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x^3\left (x^4 -6\right )^{-1/2} \d x.  
+]]> 
+</script> Now start with a
+                                                                  
+
+                                                                  
+guess of <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x^3\left (x^4 -6\right )^{-1/2} \d x \approx \left (x^4 -6\right )^{1/2}.  
+]]> 
+</script> Take the derivative of your guess to see if it is correct: <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx \left (x^4 -6\right )^{1/2} = (4/2)x^3\left (x^4 -6\right )^{-1/2}.  
+]]> 
+</script> We&#x2019;re oﬀ
+by a factor of <script type="math/tex"> <![CDATA[ 
+2/4 
+]]> 
+</script>, so multiply our guess by this constant to get the solution,
+<script type="math/tex; mode=display"> <![CDATA[ 
+ \int \frac {x^3}{\sqrt {x^4 -6}} \d x = \answer [given]{(2/4)(x^4 -6)^{1/2}}+C.  
+]]> 
+</script>
+</div>
+</div>
+<div class="theorem-like problem-environment template" id="problem17"><a 
+ id="x1-1008r16"></a> If the indeﬁnite integral looks something like <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \mathrm {junk}\cdot e^{\mathrm {stuff}} \d x  
+]]> 
+</script> guess <script type="math/tex; mode=display"> <![CDATA[ 
+ e^{\mathrm {stuff}} \text { or }\mathrm {junk} \cdot e^{\mathrm {stuff}}.  
+]]> 
+</script>
+</div>
+<div class="theorem-like problem-environment example" id="problem18"><a 
+ id="x1-1009r17"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int xe^{x} \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem19"><a 
+ id="x1-1010r18"></a>We try to guess the antiderivative. Start with a guess of <script type="math/tex; mode=display"> <![CDATA[ 
+ \int xe^x \d x \approx xe^x.  
+]]> 
+</script> Take the
+derivative of your guess to see if it is correct: <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx xe^x = e^x + xe^x.  
+]]> 
+</script> Ah! So we need only subtract <script type="math/tex"> <![CDATA[ 
+e^x 
+]]> 
+</script> from our
+original guess. We now ﬁnd <script type="math/tex; mode=display"> <![CDATA[ 
+ \int xe^x \d x =\answer [given]{xe^x - e^x} + C.  
+]]> 
+</script>
+</div>
+</div>
+<div class="theorem-like problem-environment template" id="problem20"><a 
+ id="x1-1011r19"></a> If the indeﬁnite integral looks something like <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \frac {\mathrm {stuff}'}{\mathrm {stuff}}\d x  
+]]> 
+</script> guess <script type="math/tex; mode=display"> <![CDATA[ 
+ \ln (\mathrm {stuff}).  
+]]> 
+</script>
+</div>
+<div class="theorem-like problem-environment example" id="problem21"><a 
+ id="x1-1012r20"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \frac {2x^2}{7x^3 + 3} \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem22"><a 
+ id="x1-1013r21"></a>We&#x2019;ll start with a guess of <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \frac {2x^2}{7x^3 + 3} \d x \approx \ln (7x^3+3).  
+]]> 
+</script> Take the derivative of your guess to see if it is
+correct: <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx \ln (7x^3+3) = \frac {21x^2}{7x^3 + 3}.  
+]]> 
+</script> We are only oﬀ by a factor of <script type="math/tex"> <![CDATA[ 
+2/21 
+]]> 
+</script>, so we need to multiply our original guess by
+this constant to get the solution, <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \frac {2x^2}{7x^3 + 3} \d x = \answer [given]{(2/21)\ln (7x^3+3)}+C.  
+]]> 
+</script>
+</div>
+</div>
+<div class="theorem-like problem-environment template" id="problem23"><a 
+ id="x1-1014r22"></a> If the indeﬁnite integral looks something like <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \mathrm {junk}\cdot \sin (\mathrm {stuff}) \d x  
+]]> 
+</script> guess <script type="math/tex; mode=display"> <![CDATA[ 
+ \cos (\mathrm {stuff}) \text { or }\mathrm {junk}\cdot \cos (\mathrm {stuff}),  
+]]> 
+</script> likewise if you have <script type="math/tex; mode=display"> <![CDATA[ 
+ \int \mathrm {junk}\cdot \cos (\mathrm {stuff}) \d x  
+]]> 
+</script> guess
+<script type="math/tex; mode=display"> <![CDATA[ 
+ \sin (\mathrm {stuff}) \text { or }\mathrm {junk} \cdot \sin (\mathrm {stuff}).  
+]]> 
+</script>
+</div>
+<div class="theorem-like problem-environment example" id="problem24"><a 
+ id="x1-1015r23"></a>Compute: <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x^4\sin (3x^5+7) \d x  
+]]> 
+</script> <div class="theorem-like problem-environment explanation" id="problem25"><a 
+ id="x1-1016r24"></a>Here we simply try to guess the antiderivative. Start with a guess of <script type="math/tex; mode=display"> <![CDATA[ 
+ \int x^4\sin (3x^5+7)\d x \approx \cos (3x^5+7).  
+]]> 
+</script> To
+see if your guess is correct, take the derivative of <script type="math/tex"> <![CDATA[ 
+\cos (3x^5+7) 
+]]> 
+</script>, <script type="math/tex; mode=display"> <![CDATA[ 
+ \ddx \cos (3x^5+7) = -15x^4\sin (3x^5+7).  
+]]> 
+</script> We are oﬀ by a factor
+of <script type="math/tex"> <![CDATA[ 
+-1/15 
+]]> 
+</script>. Hence we should multiply our original guess by this constant to ﬁnd
+<script type="math/tex; mode=display"> <![CDATA[ 
+ \int x^4\sin (3x^5+7) \d x = \answer [given]{\frac {-\cos (3x^5+7)}{15}} + C.  
+]]> 
+</script>
+</div>
+</div>
+<h3 class="sectionHead"><a 
+ id="x1-2000"></a>Final thoughts</h3>
+<!--l. 364--><p class="noindent" >Computing antiderivatives is a place where insight and rote computation meet.
+We cannot teach you a method that will always work. Moreover, merely
+understanding the examples above will probably not be enough for you to
+become proﬁcient in computing antiderivatives. You must practice, practice,
+practice!
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+
