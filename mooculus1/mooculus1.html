@@ -1,0 +1,335 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+<title>Calculus 1 for Colorado State
+                                                  
+      University</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="mooculus1.tex"> 
+<meta name="date" content="2016-07-27 16:08:00"> 
+<meta name="description" content="xourse"> 
+<meta charset="UTF-8"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="ximera" content="version 0.0.1"> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\activity }[1]{}
+\newcommand {\assignment }[1]{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\?\capitalcedilla }[0]{\UseTextAccent {TS1}\capitalcedilla }
+\newcommand {\?\capitalogonek }[0]{\UseTextAccent {TS1}\capitalogonek }
+\newcommand {\?\capitalgrave }[0]{\UseTextAccent {TS1}\capitalgrave }
+\newcommand {\?\capitalacute }[0]{\UseTextAccent {TS1}\capitalacute }
+\newcommand {\?\capitalcircumflex }[0]{\UseTextAccent {TS1}\capitalcircumflex }
+\newcommand {\?\capitaltilde }[0]{\UseTextAccent {TS1}\capitaltilde }
+\newcommand {\?\capitaldieresis }[0]{\UseTextAccent {TS1}\capitaldieresis }
+\newcommand {\?\capitalhungarumlaut }[0]{\UseTextAccent {TS1}\capitalhungarumlaut }
+\newcommand {\?\capitalring }[0]{\UseTextAccent {TS1}\capitalring }
+\newcommand {\?\capitalcaron }[0]{\UseTextAccent {TS1}\capitalcaron }
+\newcommand {\?\capitalbreve }[0]{\UseTextAccent {TS1}\capitalbreve }
+\newcommand {\?\capitalmacron }[0]{\UseTextAccent {TS1}\capitalmacron }
+\newcommand {\?\capitaldotaccent }[0]{\UseTextAccent {TS1}\capitaldotaccent }
+\newcommand {\?\textcapitalcompwordmark }[0]{\UseTextSymbol {TS1}\textcapitalcompwordmark }
+\newcommand {\?\textascendercompwordmark }[0]{\UseTextSymbol {TS1}\textascendercompwordmark }
+\newcommand {\?\textquotestraightbase }[0]{\UseTextSymbol {TS1}\textquotestraightbase }
+\newcommand {\?\textquotestraightdblbase }[0]{\UseTextSymbol {TS1}\textquotestraightdblbase }
+\newcommand {\?\texttwelveudash }[0]{\UseTextSymbol {TS1}\texttwelveudash }
+\newcommand {\?\textthreequartersemdash }[0]{\UseTextSymbol {TS1}\textthreequartersemdash }
+\newcommand {\?\textdollar }[0]{\UseTextSymbol {TS1}\textdollar }
+\newcommand {\?\textquotesingle }[0]{\UseTextSymbol {TS1}\textquotesingle }
+\newcommand {\?\textasteriskcentered }[0]{\UseTextSymbol {TS1}\textasteriskcentered }
+\newcommand {\?\textfractionsolidus }[0]{\UseTextSymbol {TS1}\textfractionsolidus }
+\newcommand {\?\textminus }[0]{\UseTextSymbol {TS1}\textminus }
+\newcommand {\?\textlbrackdbl }[0]{\UseTextSymbol {TS1}\textlbrackdbl }
+\newcommand {\?\textrbrackdbl }[0]{\UseTextSymbol {TS1}\textrbrackdbl }
+\newcommand {\?\textasciigrave }[0]{\UseTextSymbol {TS1}\textasciigrave }
+\newcommand {\?\texttildelow }[0]{\UseTextSymbol {TS1}\texttildelow }
+\newcommand {\?\textasciibreve }[0]{\UseTextSymbol {TS1}\textasciibreve }
+\newcommand {\?\textasciicaron }[0]{\UseTextSymbol {TS1}\textasciicaron }
+\newcommand {\?\textgravedbl }[0]{\UseTextSymbol {TS1}\textgravedbl }
+\newcommand {\?\textacutedbl }[0]{\UseTextSymbol {TS1}\textacutedbl }
+\newcommand {\?\textdagger }[0]{\UseTextSymbol {TS1}\textdagger }
+\newcommand {\?\textdaggerdbl }[0]{\UseTextSymbol {TS1}\textdaggerdbl }
+\newcommand {\?\textbardbl }[0]{\UseTextSymbol {TS1}\textbardbl }
+\newcommand {\?\textperthousand }[0]{\UseTextSymbol {TS1}\textperthousand }
+\newcommand {\?\textbullet }[0]{\UseTextSymbol {TS1}\textbullet }
+\newcommand {\?\textcelsius }[0]{\UseTextSymbol {TS1}\textcelsius }
+\newcommand {\?\textflorin }[0]{\UseTextSymbol {TS1}\textflorin }
+\newcommand {\?\texttrademark }[0]{\UseTextSymbol {TS1}\texttrademark }
+\newcommand {\?\textcent }[0]{\UseTextSymbol {TS1}\textcent }
+\newcommand {\?\textsterling }[0]{\UseTextSymbol {TS1}\textsterling }
+\newcommand {\?\textyen }[0]{\UseTextSymbol {TS1}\textyen }
+\newcommand {\?\textbrokenbar }[0]{\UseTextSymbol {TS1}\textbrokenbar }
+\newcommand {\?\textsection }[0]{\UseTextSymbol {TS1}\textsection }
+\newcommand {\?\textasciidieresis }[0]{\UseTextSymbol {TS1}\textasciidieresis }
+\newcommand {\?\textcopyright }[0]{\UseTextSymbol {TS1}\textcopyright }
+\newcommand {\?\textordfeminine }[0]{\UseTextSymbol {TS1}\textordfeminine }
+\newcommand {\?\textlnot }[0]{\UseTextSymbol {TS1}\textlnot }
+\newcommand {\?\textregistered }[0]{\UseTextSymbol {TS1}\textregistered }
+\newcommand {\?\textasciimacron }[0]{\UseTextSymbol {TS1}\textasciimacron }
+\newcommand {\?\textdegree }[0]{\UseTextSymbol {TS1}\textdegree }
+\newcommand {\?\textpm }[0]{\UseTextSymbol {TS1}\textpm }
+\newcommand {\?\texttwosuperior }[0]{\UseTextSymbol {TS1}\texttwosuperior }
+\newcommand {\?\textthreesuperior }[0]{\UseTextSymbol {TS1}\textthreesuperior }
+\newcommand {\?\textasciiacute }[0]{\UseTextSymbol {TS1}\textasciiacute }
+\newcommand {\?\textmu }[0]{\UseTextSymbol {TS1}\textmu }
+\newcommand {\?\textparagraph }[0]{\UseTextSymbol {TS1}\textparagraph }
+\newcommand {\?\textperiodcentered }[0]{\UseTextSymbol {TS1}\textperiodcentered }
+\newcommand {\?\textonesuperior }[0]{\UseTextSymbol {TS1}\textonesuperior }
+\newcommand {\?\textordmasculine }[0]{\UseTextSymbol {TS1}\textordmasculine }
+\newcommand {\?\textonequarter }[0]{\UseTextSymbol {TS1}\textonequarter }
+\newcommand {\?\textonehalf }[0]{\UseTextSymbol {TS1}\textonehalf }
+\newcommand {\?\textthreequarters }[0]{\UseTextSymbol {TS1}\textthreequarters }
+\newcommand {\?\texttimes }[0]{\UseTextSymbol {TS1}\texttimes }
+\newcommand {\?\textdiv }[0]{\UseTextSymbol {TS1}\textdiv }
+\newcommand {\?\textcircled }[0]{\CheckEncodingSubset \UseTextAccent {TS1}{\UseTextAccent {OMS}}1\textcircled }
+\newcommand {\?\t }[0]{\CheckEncodingSubset \UseTextAccent {TS1}{\UseTextAccent {OML}}1\t }
+\newcommand {\?\textpertenthousand }[0]{\UseTextSymbol {TS1}\textpertenthousand }
+\newcommand {\rmdefault }[0]{stix}
+\newcommand {\yen  }[0]{\ifmmode \yenmath \else {\fontencoding {TS1}\selectfont \char &#x0022;A5}\fi }
+\newcommand {\circledR  }[0]{\ifmmode \circledRmath \else {\fontencoding {TS1}\selectfont \char &#x0022;AE}\fi }
+\newcommand {\checkmark  }[0]{\ensuremath {\checkmarkmath }}
+\newcommand {\maltese  }[0]{\ensuremath {\maltesemath }}
+\newcommand {\cdots  }[0]{\mathinner {\unicodecdots }}
+\newcommand {\swdefault }[0]{sw}
+\newcommand {\ulcdefault }[0]{ulc}
+\newcommand {\sscdefault }[0]{ssc}
+\newcommand {\gillius }[0]{\fontfamily {\gilliusfamily }\selectfont }
+\newcommand {\gilliuscondensed }[0]{\fontfamily {\gilliuscondensedfamily }\selectfont }
+\newcommand {\DeclareMicrotypeVariants }[1]{}
+\newcommand {\DeclareMicrotypeAlias }[2]{}
+\newcommand {\LoadMicrotypeFile }[1]{}
+\newcommand {\DeclareMicrotypeBabelHook }[2]{}
+\newcommand {\microtypesetup }[1]{}
+\newcommand {\microtypecontext }[1]{}
+\newcommand {\textmicrotypecontext }[2]{#2}
+\newcommand {\lsstyle }[0]{}
+\newcommand {\lslig }[1]{#1}
+\newcommand {\textmicrotypecontext  }[2]{{\microtypecontext {#1}#2}}
+\newcommand {\newrobustcmd }[0]{}
+\newcommand {\csshow }[1]{\begingroup \expandafter \endgroup \expandafter \show \csname #1\endcsname }
+\newcommand {\csmeaning }[1]{\ifcsname #1\endcsname \expandafter \meaning \csname #1\endcsname \else \detokenize {undefined}\fi }
+\newcommand {\ifdefmacro }[0]{}
+\newcommand {\ifdefparam }[0]{}
+\newcommand {\ifdefprotected }[0]{}
+\newcommand {\ifnumequal }[1]{\ifnumcomp {#1}=}
+\newcommand {\ifnumgreater }[1]{\ifnumcomp {#1}&#x003E;}
+\newcommand {\ifnumless }[1]{\ifnumcomp {#1}&#x003C;}
+\newcommand {\ifdimequal }[1]{\ifdimcomp {#1}=}
+\newcommand {\ifdimgreater }[1]{\ifdimcomp {#1}&#x003E;}
+\newcommand {\ifdimless }[1]{\ifdimcomp {#1}&#x003C;}
+\newcommand {\expandonce }[1]{\unexpanded \expandafter {#1}}
+\newcommand {\csexpandonce }[1]{\expandafter \expandonce \csname #1\endcsname }
+\newcommand {\protecting }[0]{}
+\newcommand {\csdef }[1]{\expandafter \def \csname #1\endcsname }
+\newcommand {\csedef }[1]{\expandafter \edef \csname #1\endcsname }
+\newcommand {\csgdef }[1]{\expandafter \gdef \csname #1\endcsname }
+\newcommand {\csxdef }[1]{\expandafter \xdef \csname #1\endcsname }
+\newcommand {\cslet }[2]{\expandafter \let \csname #1\endcsname #2}
+\newcommand {\letcs }[2]{\ifcsdef {#2} {\expandafter \let \expandafter #1\csname #2\endcsname } {\undef #1}}
+\newcommand {\csletcs }[2]{\ifcsdef {#2} {\expandafter \let \csname #1\expandafter \endcsname \csname #2\endcsname } {\csundef {#1}}}
+\newcommand {\csuse }[1]{\ifcsname #1\endcsname \csname #1\expandafter \endcsname \fi }
+\newcommand {\appto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\eappto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{\expandonce #1#2}}}
+\newcommand {\gappto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\expandonce #1\unexpanded {#2}}}}
+\newcommand {\xappto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{\expandonce #1#2}}}
+\newcommand {\preto }[2]{\ifundef {#1} {\edef #1{\unexpanded {#2}}} {\edef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\epreto }[2]{\ifundef {#1} {\edef #1{#2}} {\edef #1{#2\expandonce #1}}}
+\newcommand {\gpreto }[2]{\ifundef {#1} {\xdef #1{\unexpanded {#2}}} {\xdef #1{\unexpanded {#2}\expandonce #1}}}
+\newcommand {\xpreto }[2]{\ifundef {#1} {\xdef #1{#2}} {\xdef #1{#2\expandonce #1}}}
+\newcommand {\csappto }[1]{\expandafter \appto \csname #1\endcsname }
+\newcommand {\cseappto }[1]{\expandafter \eappto \csname #1\endcsname }
+\newcommand {\csgappto }[1]{\expandafter \gappto \csname #1\endcsname }
+\newcommand {\csxappto }[1]{\expandafter \xappto \csname #1\endcsname }
+\newcommand {\cspreto }[1]{\expandafter \preto \csname #1\endcsname }
+\newcommand {\csepreto }[1]{\expandafter \epreto \csname #1\endcsname }
+\newcommand {\csgpreto }[1]{\expandafter \gpreto \csname #1\endcsname }
+\newcommand {\csxpreto }[1]{\expandafter \xpreto \csname #1\endcsname }
+\newcommand {\csnumdef }[1]{\expandafter \numdef \csname #1\endcsname }
+\newcommand {\csnumgdef }[1]{\expandafter \numgdef \csname #1\endcsname }
+\newcommand {\csdimdef }[1]{\expandafter \dimdef \csname #1\endcsname }
+\newcommand {\csdimgdef }[1]{\expandafter \dimgdef \csname #1\endcsname }
+\newcommand {\csgluedef }[1]{\expandafter \gluedef \csname #1\endcsname }
+\newcommand {\csgluegdef }[1]{\expandafter \gluegdef \csname #1\endcsname }
+\newcommand {\mudef }[2]{\ifundef #1{\def #1{0mu}}{}\edef #1{\the \muexpr #2}}
+\newcommand {\csmudef }[1]{\expandafter \mudef \csname #1\endcsname }
+\newcommand {\csmugdef }[1]{\expandafter \mugdef \csname #1\endcsname }
+\newcommand {\listbreak }[0]{}
+\newcommand {\listadd }[2]{\ifblank {#2}{}{\appto #1{#2|}}}
+\newcommand {\listgadd }[2]{\ifblank {#2}{}{\gappto #1{#2|}}}
+\newcommand {\listcsadd }[1]{\expandafter \listadd \csname #1\endcsname }
+\newcommand {\listcseadd }[1]{\expandafter \listeadd \csname #1\endcsname }
+\newcommand {\listcsgadd }[1]{\expandafter \listgadd \csname #1\endcsname }
+\newcommand {\listcsxadd }[1]{\expandafter \listxadd \csname #1\endcsname }
+\newcommand {\dolistloop }[0]{\forlistloop \do }
+\newcommand {\dolistcsloop }[0]{\forlistcsloop \do }
+\newcommand {\AfterPreamble }[0]{\AtBeginDocument }
+\newcommand {\see }[2]{\emph {\seename } #1}
+\newcommand {\seealso }[2]{\emph {\alsoname } #1}
+\newcommand {\seename }[0]{see}
+\newcommand {\alsoname }[0]{see also}
+\newcommand {\printindex }[0]{}
+\newcommand {\dfn }[1]{\textbf {#1}\index {#1}}
+\newcommand {\mdfsetup }[0]{\kvsetkeys {mdf}}
+\newcommand {\mdfcreateextratikz }[0]{}
+\newcommand {\explanation }[0]{\mdfsetup { font=\upshape ,outerlinewidth=3,topline=false,bottomline=false,leftline=true,rightline=false,leftmargin=0,innertopmargin=0pt,innerbottommargin=0pt,skipbelow=\baselineskip ,linecolor=textColor!20!white,fontcolor=textColor,backgroundcolor=background }\begin {mdframed}}
+\newcommand {\dialogue }[0]{\renewcommand \descriptionlabel [1]{\hspace {\labelsep }\textbf {#1:}} \small \begin {description}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+ changed the theorem header of amsthm failed\MessageBreak }}}
+</script>
+                                       
+                                                                                                   
+<div class="maketitle"></div>
+                                                  
+                                                                                                   
+                                                                                                   
+                                                  
+                                                                                                   
+                                                                                                   
+<!--l. 21--><p class="noindent">
+                                                                                                   
+                                                                                                   
+</p><!--l. 21--><p class="noindent">
+                                                                                                   
+                                                                                                   
+                                                                                                   
+                                                                                                   
+</p>
+<h1 class="partHead"><span class="titlemark">Part&#xA0;I<br></span>Pre-requisite Activities (optional)</h1>
+<a class="activity" href="understandingFunctions/titlePage">../understandingFunctions/titlePage.tex</a> <a class="activity" href="understandingFunctions/breakGround">../understandingFunctions/breakGround.tex</a> <a class="activity" href="understandingFunctions/digInForEachInputExactlyOneOutput">../understandingFunctions/digInForEachInputExactlyOneOutput.tex</a> <a class="activity" href="understandingFunctions/digInCompositionOfFunctions">../understandingFunctions/digInCompositionOfFunctions.tex</a> <a class="activity" href="understandingFunctions/digInInversesOfFunctions">../understandingFunctions/digInInversesOfFunctions.tex</a>
+<a class="activity" href="reviewOfFamousFunctions/titlePage">../reviewOfFamousFunctions/titlePage.tex</a> <a class="activity" href="reviewOfFamousFunctions/breakGround">../reviewOfFamousFunctions/breakGround.tex</a> <a class="activity" href="reviewOfFamousFunctions/digInPolynomialFunctions">../reviewOfFamousFunctions/digInPolynomialFunctions.tex</a> <a class="activity" href="reviewOfFamousFunctions/digInRationalFunctions">../reviewOfFamousFunctions/digInRationalFunctions.tex</a> <a class="activity" href="reviewOfFamousFunctions/digInTrigonometricFunctions">../reviewOfFamousFunctions/digInTrigonometricFunctions.tex</a> <a class="activity" href="reviewOfFamousFunctions/digInExponentialAndLogarithmeticFunctions">../reviewOfFamousFunctions/digInExponentialAndLogarithmeticFunctions.tex</a>
+                                                  
+                                                                                                   
+                                                                                                   
+<!--l. 43--><p class="noindent">
+                                                        </p><!--l. 43--><p class="noindent">
+                                                                                                   
+                                                                                                   
+                                                  
+                                                                                                   
+                                                                                                   
+</p><!--l. 43--><p class="noindent">
+                                                                                                   
+                                                                                                   
+</p><!--l. 43--><p class="noindent">
+                                                                                                   
+                                                                                                   
+                                                                                                   
+                                                                                                   
+</p>
+<h1 class="partHead"><span class="titlemark">Part&#xA0;II<br></span>Limits and continuity</h1>
+<a class="activity" href="whatIsALimit/titlePage">../whatIsALimit/titlePage.tex</a> <a class="activity" href="whatIsALimit/breakGround">../whatIsALimit/breakGround.tex</a> <a class="activity" href="whatIsALimit/digInWhatIsALimit">../whatIsALimit/digInWhatIsALimit.tex</a>
+<a class="activity" href="limitLaws/titlePage">../limitLaws/titlePage.tex</a> <a class="activity" href="limitLaws/breakGround">../limitLaws/breakGround.tex</a> <a class="activity" href="limitLaws/digInContinuity">../limitLaws/digInContinuity.tex</a> <a class="activity" href="limitLaws/digInLimitLaws">../limitLaws/digInLimitLaws.tex</a> <a class="activity" href="limitLaws/digInTheSqueezeTheorem">../limitLaws/digInTheSqueezeTheorem.tex</a>
+<a class="activity" href="indeterminateForms/titlePage">../indeterminateForms/titlePage.tex</a> <a class="activity" href="indeterminateForms/breakGround">../indeterminateForms/breakGround.tex</a> <a class="activity" href="indeterminateForms/digInLimitsOfTheFormZeroOverZero">../indeterminateForms/digInLimitsOfTheFormZeroOverZero.tex</a> <a class="activity" href="indeterminateForms/digInLimitsOfTheFormNonZeroOverZero">../indeterminateForms/digInLimitsOfTheFormNonZeroOverZero.tex</a>
+<a class="activity" href="asymptotesAsLimits/titlePage">../asymptotesAsLimits/titlePage.tex</a> <a class="activity" href="asymptotesAsLimits/breakGround">../asymptotesAsLimits/breakGround.tex</a> <a class="activity" href="asymptotesAsLimits/digInVerticalAsymptotes">../asymptotesAsLimits/digInVerticalAsymptotes.tex</a> <a class="activity" href="asymptotesAsLimits/digInHorizontalAsymptotes">../asymptotesAsLimits/digInHorizontalAsymptotes.tex</a>
+<a class="activity" href="continuity/titlePage">../continuity/titlePage.tex</a> <a class="activity" href="continuity/breakGround">../continuity/breakGround.tex</a> <a class="activity" href="continuity/digInContinuityOfPiecewiseFunctions">../continuity/digInContinuityOfPiecewiseFunctions.tex</a> <a class="activity" href="continuity/digInTheIntermediateValueTheorem">../continuity/digInTheIntermediateValueTheorem.tex</a>
+<a class="activity" href="anApplicationOfLimits/titlePage">../anApplicationOfLimits/titlePage.tex</a> <a class="activity" href="anApplicationOfLimits/breakGround">../anApplicationOfLimits/breakGround.tex</a> <a class="activity" href="anApplicationOfLimits/digInInstantaneousVelocity">../anApplicationOfLimits/digInInstantaneousVelocity.tex</a>
+                                                  
+                                                                                                   
+                                                                                                   
+<!--l. 103--><p class="noindent">
+                                                        </p><!--l. 103--><p class="noindent">
+                                                                                                   
+                                                                                                   
+                                                  
+                                                                                                   
+                                                                                                   
+</p><!--l. 103--><p class="noindent">
+                                                                                                   
+                                                                                                   
+</p><!--l. 103--><p class="noindent">
+                                                                                                   
+                                                                                                   
+                                                                                                   
+                                                                                                   
+</p>
+<h1 class="partHead"><span class="titlemark">Part&#xA0;III<br></span>Derivatives</h1>
+<a class="activity" href="definitionOfTheDerivative/titlePage">../definitionOfTheDerivative/titlePage.tex</a> <a class="activity" href="definitionOfTheDerivative/breakGround">../definitionOfTheDerivative/breakGround.tex</a> <a class="activity" href="definitionOfTheDerivative/digInTheDerivativeViaLimits">../definitionOfTheDerivative/digInTheDerivativeViaLimits.tex</a>
+<a class="activity" href="derivativeAsAFunction/titlePage">../derivativeAsAFunction/titlePage.tex</a> <a class="activity" href="derivativeAsAFunction/breakGround">../derivativeAsAFunction/breakGround.tex</a> <a class="activity" href="derivativeAsAFunction/digInTheDerivativeAsAFunction">../derivativeAsAFunction/digInTheDerivativeAsAFunction.tex</a> <a class="activity" href="derivativeAsAFunction/digInDifferentiabilityImpliesContinuity">../derivativeAsAFunction/digInDifferentiabilityImpliesContinuity.tex</a>
+<a class="activity" href="rulesOfDifferentiation/titlePage">../rulesOfDifferentiation/titlePage.tex</a> <a class="activity" href="rulesOfDifferentiation/breakGround">../rulesOfDifferentiation/breakGround.tex</a> <a class="activity" href="rulesOfDifferentiation/digInBasicRulesOfDifferentiation">../rulesOfDifferentiation/digInBasicRulesOfDifferentiation.tex</a> <a class="activity" href="rulesOfDifferentiation/digInTheDerivativeOfSine">../rulesOfDifferentiation/digInTheDerivativeOfSine.tex</a>
+<a class="activity" href="higherOrderDerivativesAndGraphs/titlePage">../higherOrderDerivativesAndGraphs/titlePage.tex</a> <a class="activity" href="higherOrderDerivativesAndGraphs/breakGround">../higherOrderDerivativesAndGraphs/breakGround.tex</a> <a class="activity" href="higherOrderDerivativesAndGraphs/digInHigherOrderDerivativesAndGraphs">../higherOrderDerivativesAndGraphs/digInHigherOrderDerivativesAndGraphs.tex</a> <a class="activity" href="higherOrderDerivativesAndGraphs/digInConcavity">../higherOrderDerivativesAndGraphs/digInConcavity.tex</a> <a class="activity" href="higherOrderDerivativesAndGraphs/digInPositionVelocityAndAcceleration">../higherOrderDerivativesAndGraphs/digInPositionVelocityAndAcceleration.tex</a>
+<a class="activity" href="productAndQuotientRules/titlePage">../productAndQuotientRules/titlePage.tex</a> <a class="activity" href="productAndQuotientRules/breakGround">../productAndQuotientRules/breakGround.tex</a> <a class="activity" href="productAndQuotientRules/digInProductRuleAndQuotientRule">../productAndQuotientRules/digInProductRuleAndQuotientRule.tex</a>
+<a class="activity" href="chainRule/titlePage">../chainRule/titlePage.tex</a> <a class="activity" href="chainRule/breakGround">../chainRule/breakGround.tex</a> <a class="activity" href="chainRule/digInChainRule">../chainRule/digInChainRule.tex</a> <a class="activity" href="chainRule/digInDerivativesOfTrigonometricFunctions">../chainRule/digInDerivativesOfTrigonometricFunctions.tex</a>
+<a class="activity" href="linearApproximation/digInExplanationOfTheProductAndChainRules">../linearApproximation/digInExplanationOfTheProductAndChainRules.tex</a>
+<a class="activity" href="meanValueTheorem/titlePage">../meanValueTheorem/titlePage.tex</a> <a class="activity" href="meanValueTheorem/breakGround">../meanValueTheorem/breakGround.tex</a> <a class="activity" href="meanValueTheorem/digInExtremeValueTheorem">../meanValueTheorem/digInExtremeValueTheorem.tex</a> <a class="activity" href="meanValueTheorem/digInMeanValueTheorem">../meanValueTheorem/digInMeanValueTheorem.tex</a>
+<a class="activity" href="maximumsAndMinimums/titlePage">../maximumsAndMinimums/titlePage.tex</a> <a class="activity" href="maximumsAndMinimums/breakGround">../maximumsAndMinimums/breakGround.tex</a> <a class="activity" href="maximumsAndMinimums/digInMaximumsAndMinimums">../maximumsAndMinimums/digInMaximumsAndMinimums.tex</a>
+<a class="activity" href="optimization/titlePage">../optimization/titlePage.tex</a> <a class="activity" href="optimization/breakGround">../optimization/breakGround.tex</a> <a class="activity" href="optimization/digInOptimization">../optimization/digInOptimization.tex</a>
+<a class="activity" href="appliedOptimization/titlePage">../appliedOptimization/titlePage.tex</a> <a class="activity" href="appliedOptimization/breakGround">../appliedOptimization/breakGround.tex</a> <a class="activity" href="appliedOptimization/digInAppliedOptimization">../appliedOptimization/digInAppliedOptimization.tex</a>
+<a class="activity" href="implicitDifferentiation/titlePage">../implicitDifferentiation/titlePage.tex</a> <a class="activity" href="implicitDifferentiation/breakGround">../implicitDifferentiation/breakGround.tex</a> <a class="activity" href="implicitDifferentiation/digInImplicitDifferentiation">../implicitDifferentiation/digInImplicitDifferentiation.tex</a>
+<a class="activity" href="conceptsOfGraphingFunctions/titlePage">../conceptsOfGraphingFunctions/titlePage.tex</a> <a class="activity" href="conceptsOfGraphingFunctions/breakGround">../conceptsOfGraphingFunctions/breakGround.tex</a> <a class="activity" href="conceptsOfGraphingFunctions/digInConceptsOfGraphingFunctions">../conceptsOfGraphingFunctions/digInConceptsOfGraphingFunctions.tex</a>
+<a class="activity" href="computationsForGraphingFunctions/titlePage">../computationsForGraphingFunctions/titlePage.tex</a> <a class="activity" href="computationsForGraphingFunctions/breakGround">../computationsForGraphingFunctions/breakGround.tex</a> <a class="activity" href="computationsForGraphingFunctions/digInComputationsForGraphingFunctions">../computationsForGraphingFunctions/digInComputationsForGraphingFunctions.tex</a>
+<a class="activity" href="antiderivatives/titlePage">../antiderivatives/titlePage.tex</a> <a class="activity" href="antiderivatives/breakGround">../antiderivatives/breakGround.tex</a> <a class="activity" href="antiderivatives/digInBasicAntiderivatives">../antiderivatives/digInBasicAntiderivatives.tex</a> <a class="activity" href="antiderivatives/digInFallingObjects">../antiderivatives/digInFallingObjects.tex</a>
+<a class="activity" href="approximatingTheAreaUnderACurve/titlePage">../approximatingTheAreaUnderACurve/titlePage.tex</a> <a class="activity" href="approximatingTheAreaUnderACurve/breakGround">../approximatingTheAreaUnderACurve/breakGround.tex</a> <a class="activity" href="approximatingTheAreaUnderACurve/digInApproximatingAreaWithRectangles">../approximatingTheAreaUnderACurve/digInApproximatingAreaWithRectangles.tex</a>
+<a class="activity" href="antiderivativesAndArea/titlePage">../antiderivativesAndArea/titlePage.tex</a> <a class="activity" href="antiderivativesAndArea/breakGround">../antiderivativesAndArea/breakGround.tex</a> <a class="activity" href="antiderivativesAndArea/digInRelatingVelocityAndPositionAntiderivativesAndAreas">../antiderivativesAndArea/digInRelatingVelocityAndPositionAntiderivativesAndAreas.tex</a>
+<a class="activity" href="definiteIntegral/titlePage">../definiteIntegral/titlePage.tex</a> <a class="activity" href="definiteIntegral/breakGround">../definiteIntegral/breakGround.tex</a> <a class="activity" href="definiteIntegral/digInTheDefiniteIntegral">../definiteIntegral/digInTheDefiniteIntegral.tex</a>
+<a class="activity" href="firstFundamentalTheoremOfCalculus/titlePage">../firstFundamentalTheoremOfCalculus/titlePage.tex</a> <a class="activity" href="firstFundamentalTheoremOfCalculus/breakGround">../firstFundamentalTheoremOfCalculus/breakGround.tex</a> <a class="activity" href="firstFundamentalTheoremOfCalculus/digInFirstFundamentalTheoremOfCalculus">../firstFundamentalTheoremOfCalculus/digInFirstFundamentalTheoremOfCalculus.tex</a>
+<a class="activity" href="secondFundamentalTheoremOfCalculus/titlePage">../secondFundamentalTheoremOfCalculus/titlePage.tex</a> <a class="activity" href="secondFundamentalTheoremOfCalculus/breakGround">../secondFundamentalTheoremOfCalculus/breakGround.tex</a> <a class="activity" href="secondFundamentalTheoremOfCalculus/digInSecondFundamentalTheoremOfCalculus">../secondFundamentalTheoremOfCalculus/digInSecondFundamentalTheoremOfCalculus.tex</a> <a class="activity" href="secondFundamentalTheoremOfCalculus/digInATaleOfThreeIntegrals">../secondFundamentalTheoremOfCalculus/digInATaleOfThreeIntegrals.tex</a>
+<a class="activity" href="applicationsOfIntegrals/titlePage">../applicationsOfIntegrals/titlePage.tex</a> <a class="activity" href="applicationsOfIntegrals/breakGround">../applicationsOfIntegrals/breakGround.tex</a> <a class="activity" href="applicationsOfIntegrals/digInApplicationsOfIntegrals">../applicationsOfIntegrals/digInApplicationsOfIntegrals.tex</a>
+ 
+ 
+</head></html>
+                                                  
+                                                                                                   
+
+
