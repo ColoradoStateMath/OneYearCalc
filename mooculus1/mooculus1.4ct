@@ -1,5 +1,0 @@
-\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
-\doTocEntry\tocpart{I}{\csname a:TocLink\endcsname{1}{x1-1000I}{QQ2-1-1}{Pre-requisite Activities (optional)}}{7}\relax 
-\doTocEntry\tocpart{II}{\csname a:TocLink\endcsname{1}{x1-2000II}{QQ2-1-2}{Limits and continuity}}{13}\relax 
-\doTocEntry\tocpart{III}{\csname a:TocLink\endcsname{1}{x1-3000III}{QQ2-1-3}{Derivatives}}{19}\relax 
-\par 
