@@ -1,0 +1,778 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+                                                                  
+
+                                                                  
+<title>Applied optimization</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- charset=utf-8,-css,html,xhtml --> 
+<meta name="src" content="digInAppliedOptimization.tex" /> 
+<meta name="date" content="2017-01-23 15:53:00" /> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="ximera" content="version 0.0.1" /> 
+<link href="http://ximera.osu.edu/public/static/base.min.css" rel="stylesheet" media="screen"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/> 
+<script data-module="script" data-main="http://ximera.osu.edu/public/javascripts/app.min" src="http://ximera.osu.edu/components/requirejs/require.js"/> 
+<meta name="learning-outcome" content="Recognize optimization problem."/> 
+<meta name="learning-outcome" content="Translate a word problem into the problem of finding the extreme values of a function."/> 
+<meta name="learning-outcome" content="Solve basic word problems involving maxima or minima."/> 
+<meta name="learning-outcome" content="Interpret an optimization problem as the procedure used to make a system or design as effective or functional as possible."/> 
+<meta name="learning-outcome" content="Set up an optimization problem by identifying the objective function and appropriate constraints."/> 
+<meta name="learning-outcome" content="Solve optimization problems by finding the appropriate absolute extremum."/> 
+<meta name="learning-outcome" content="Identify the appropriate domain for functions which are models of real-world phenomena."/> 
+</head><body> 
+<div class="preamble">
+<script type="math/tex">
+\newenvironment {prompt}{}{}
+\newcommand {\todo }[0]{}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\CancelColor }[0]{}
+\newcommand {\cancelto }[0]{1}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\proj }{proj}
+\DeclareMathOperator {\scal }{scal}
+\newcommand {\tightoverset }[2]{\mathop {#2}\limits ^{\vbox to -.5ex{\kern -0.75ex\hbox {$#1$}\vss }}}
+\newcommand {\arrowvec }[1]{\tightoverset {\scriptstyle \rightharpoonup }{#1}}
+\newcommand {\vec }[0]{\mathbf }
+\newcommand {\veci }[0]{\vec {i}}
+\newcommand {\vecj }[0]{\vec {j}}
+\newcommand {\veck }[0]{\vec {k}}
+\newcommand {\vecl }[0]{\boldsymbol {\l }}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
+\newcommand {\epstopdfsetup }[0]{\setkeys {ETE}}
+ changed the theorem header of amsthm failed\MessageBreak }}}
+\newcommand {\GetTitleStringSetup }[0]{\setkeys {gettitlestring}}
+\newcommand {\Sectionformat }[2]{#1}
+</script>
+</div>                                                                                                      <div class="preamble">
+                                                                                                      <script type="math/tex">
+                                                                                                      % This file was *autogenerated* from digInAppliedOptimization.sagetex.sage with
+                                                                                                       % sagetex.py version 2015/08/26 v3.0-92d9f7a
+                                                                                                      %8c56ed41934af92022c6357748892579% md5sum of corresponding .sage file (minus &#x0022;goboom&#x0022;,&#x0022;current_tex_line&#x0022;,and pause/unpause lines)
+                                                                                                      </script>
+                                                                                                      </div>
+
+                                                                  
+<div 
+class="abstract" 
+>
+<!--l. 17--><p class="noindent" >Now we put our optimization skills to work.
+</p></div>   <div class="maketitle"></div>
+In this section, we will present several worked examples of optimization problems.
+Our method for solving these problems is essentially the following:
+     <dl class="description"><dt class="description">
+Draw a picture. </dt><dd 
+class="description">If possible, draw a schematic picture with all the relevant
+     information.
+     </dd><dt class="description">
+Determine your goal. </dt><dd 
+class="description">We need identify what needs to be optimized.
+     </dd><dt class="description">
+Find constraints. </dt><dd 
+class="description">What limitations are set on our optimization?
+     </dd><dt class="description">
+Solve for a single variable. </dt><dd 
+class="description">Now you should have a function to optimize.
+     </dd><dt class="description">
+Use calculus to find the extreme values. </dt><dd 
+class="description">Be sure to check your answer!</dd></dl>
+<div class="theorem-like problem-environment example" id="problem1"><a 
+ id="x1-62r1"></a>You are making cylindrical containers to contain a given volume. Suppose that the
+top and bottom are made of a material that is <script type="math/tex"> <![CDATA[ 
+N 
+]]> 
+</script> times as expensive (cost per unit area)
+as the material used for the lateral side of the cylinder. Find (in terms of <script type="math/tex"> <![CDATA[ 
+N 
+]]> 
+</script>) the ratio
+of height to base radius of the cylinder that minimizes the cost of making the
+containers. <div class="theorem-like problem-environment explanation" id="problem2"><a 
+ id="x1-63r2"></a>First we draw a picture: <div class="image-environment">  <img 
+src="./digInAppliedOptimization-figure0.svg" alt="PIC"  
+ />
+</div>
+Letting <script type="math/tex"> <![CDATA[ 
+c 
+]]> 
+</script> represent the cost of the lateral side, we can write an expression for
+the cost of materials: <script type="math/tex; mode=display"> <![CDATA[ 
+ C = 2\pi crh+\answer [given]{2\pi r^2Nc}.  
+]]> 
+</script> Since we know that <script type="math/tex"> <![CDATA[ 
+V=\pi r^2h 
+]]> 
+</script>, we can use this relationship
+to eliminate <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script> (we could eliminate <script type="math/tex"> <![CDATA[ 
+r 
+]]> 
+</script>, but it&#x2019;s a little easier if we eliminate <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script>,
+which appears in only one place in the above formula for cost). We find
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+  C(r)&=2c\pi r\frac{V}{\pi r^2}+2Nc\pi r^2\\
+  &=\frac{2cV}{r}+2Nc\pi r^2.
+\end{align*} 
+]]> 
+</script>
+We want to know the minimum value of this function when <script type="math/tex"> <![CDATA[ 
+r 
+]]> 
+</script> is in <script type="math/tex"> <![CDATA[ 
+(0,\infty ) 
+]]> 
+</script>. Setting <script type="math/tex; mode=display"> <![CDATA[ 
+ C'(r)=\answer [given]{-2cV/r^2+4Nc\pi r} =0  
+]]> 
+</script> we
+find <script type="math/tex"> <![CDATA[ 
+r=\sqrt [3]{V/(2N\pi )} 
+]]> 
+</script>. Since <script type="math/tex"> <![CDATA[ 
+C''(r)=\answer [given]{4cV/r^3+4Nc\pi } 
+]]> 
+</script> is positive when <script type="math/tex"> <![CDATA[ 
+r 
+]]> 
+</script> is positive, there is a local minimum at the
+critical value, and hence a global minimum since there is only one critical
+value.
+<!--l. 88--><p class="noindent" >Finally, since <script type="math/tex"> <![CDATA[ 
+h=V/(\pi r^2) 
+]]> 
+</script>, </p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+\frac{h}{r}&=\frac{V}{\pi r^3}\\
+&=\frac{V}{\pi(V/(2N\pi))}\\
+&=\answer[given]{2N},
+\end{align*} 
+]]> 
+</script>
+so the minimum cost occurs when the height <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script> is <script type="math/tex"> <![CDATA[ 
+2N 
+]]> 
+</script> times the radius. If, for
+                                                                  
+
+                                                                  
+example, there is no difference in the cost of materials, the height is twice the
+radius.
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem3"><a 
+ id="x1-64r3"></a>You want to sell a certain number <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> of items in order to maximize your profit. Market
+research tells you that if you set the price at $<script type="math/tex"> <![CDATA[ 
+1.50 
+]]> 
+</script>, you will be able to sell <script type="math/tex"> <![CDATA[ 
+5000 
+]]> 
+</script> items, and for
+every <script type="math/tex"> <![CDATA[ 
+10 
+]]> 
+</script> cents you lower the price below $<script type="math/tex"> <![CDATA[ 
+1.50 
+]]> 
+</script> you will be able to sell another <script type="math/tex"> <![CDATA[ 
+1000 
+]]> 
+</script> items.
+Suppose that your fixed costs (‘‘start-up costs&#x2019;&#x2019;) total $<script type="math/tex"> <![CDATA[ 
+2000 
+]]> 
+</script>, and the per item cost of
+production (‘‘marginal cost&#x2019;&#x2019;) is $<script type="math/tex"> <![CDATA[ 
+0.50 
+]]> 
+</script>. Find the price to set per item and the number of
+items sold in order to maximize profit, and also determine the maximum
+profit you can get. <div class="theorem-like problem-environment explanation" id="problem4"><a 
+ id="x1-65r4"></a>The first step is to convert the problem into a function
+maximization problem. The revenue for selling <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> items at <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> dollars is given by <script type="math/tex; mode=display"> <![CDATA[ 
+ r(x) = nx  
+]]> 
+</script> and the
+cost of producing <script type="math/tex"> <![CDATA[ 
+n 
+]]> 
+</script> items is given by <script type="math/tex; mode=display"> <![CDATA[ 
+ c(x) = 2000+0.5 n.  
+]]> 
+</script> However, from the problem we see
+that the number of items sold is itself a function of <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>, <script type="math/tex; mode=display"> <![CDATA[ 
+ n(x) =5000+\frac {1000(1.5-x)}{0.10}  
+]]> 
+</script> So profit is give by:
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+P(x) &= r(x) - c(x)\\
+&= nx - (2000+0.5 n)\\
+&=-10000x^2+25000x-12000.
+\end{align*} 
+]]> 
+</script>
+We want to know the maximum value of this function when <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> is between 0 and <script type="math/tex"> <![CDATA[ 
+1.5 
+]]> 
+</script>. The
+derivative is <script type="math/tex; mode=display"> <![CDATA[ 
+ P'(x)=\answer [given]{-20000x+25000},  
+]]> 
+</script> which is zero when <script type="math/tex"> <![CDATA[ 
+x=1.25 
+]]> 
+</script>. Since <script type="math/tex"> <![CDATA[ 
+P''(x)=-20000<0 
+]]> 
+</script>, there must be a local maximum at <script type="math/tex"> <![CDATA[ 
+x=1.25 
+]]> 
+</script>, and
+since this is the only critical value it must be a global maximum as well.
+Alternately, we could compute <script type="math/tex"> <![CDATA[ 
+P(0)=-12000 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+P(1.25)=3625 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+P(1.5)=3000 
+]]> 
+</script> and note that <script type="math/tex"> <![CDATA[ 
+P(1.25) 
+]]> 
+</script> is the maximum of these.
+Thus the maximum profit is $<script type="math/tex"> <![CDATA[ 
+3625 
+]]> 
+</script>, attained when we set the price at $<script type="math/tex"> <![CDATA[ 
+1.25 
+]]> 
+</script> and sell <script type="math/tex"> <![CDATA[ 
+7500 
+]]> 
+</script>
+items.
+</div>
+</div>
+<div class="theorem-like problem-environment example" id="problem5"><a 
+ id="x1-66r5"></a>If you fit the largest possible cone inside a sphere, what fraction of the volume of the
+sphere is occupied by the cone? (Here by ‘‘cone&#x2019;&#x2019; we mean a right circular cone, i.e., a
+cone for which the base is perpendicular to the axis of symmetry, and for which the
+cross-section cut perpendicular to the axis of symmetry at any point is a circle.)
+<div class="image-environment">  <img 
+src="./digInAppliedOptimization-figure1.svg" alt="PIC"  
+ />
+</div>
+<div class="theorem-like problem-environment explanation" id="problem6"><a 
+ id="x1-67r6"></a>Let <script type="math/tex"> <![CDATA[ 
+R 
+]]> 
+</script> be the radius of the sphere, and let <script type="math/tex"> <![CDATA[ 
+r 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script> be the base radius and height of the
+cone inside the sphere. Our goal is to maximize the volume of the cone: <script type="math/tex"> <![CDATA[ 
+V_c=\pi r^2h/3 
+]]> 
+</script>. The largest <script type="math/tex"> <![CDATA[ 
+r 
+]]> 
+</script>
+could be is <script type="math/tex"> <![CDATA[ 
+R 
+]]> 
+</script> and the largest <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script> could be is <script type="math/tex"> <![CDATA[ 
+2R 
+]]> 
+</script>.
+<!--l. 187--><p class="noindent" >Notice that the function we want to maximize, <script type="math/tex"> <![CDATA[ 
+\pi r^2h/3 
+]]> 
+</script>, depends on <em>two</em> variables. Our next
+step is to find the relationship and use it to solve for one of the variables in terms of
+the other, so as to have a function of only one variable to maximize. In this
+problem, the condition is apparent in the figure, as the upper corner of the
+triangle, whose coordinates are <script type="math/tex"> <![CDATA[ 
+(r,h-R) 
+]]> 
+</script>, must be on the circle of radius <script type="math/tex"> <![CDATA[ 
+R 
+]]> 
+</script>. Write <script type="math/tex; mode=display"> <![CDATA[ 
+ r^2 + (h-R)^2=R^2.  
+]]> 
+</script>
+Solving for <script type="math/tex"> <![CDATA[ 
+r^2 
+]]> 
+</script>, since <script type="math/tex"> <![CDATA[ 
+r^2 
+]]> 
+</script> is found in the formula for the volume of the cone, we
+find <script type="math/tex; mode=display"> <![CDATA[ 
+ r^2=R^2-(h-R)^2.  
+]]> 
+</script> Substitute this into the formula for the volume of the cone to find
+</p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+ V_{\text{c}}(h)&=\pi(R^2-(h-R)^2)h/3 \\
+                                                                  
+
+                                                                  
+&=-{\pi\over3}h^3+{2\over3}\pi h^2R
+\end{align*} 
+]]> 
+</script>
+<!--l. 208--><p class="noindent" >We want to maximize <script type="math/tex"> <![CDATA[ 
+V_{\text {c}}(h) 
+]]> 
+</script> when <script type="math/tex"> <![CDATA[ 
+h 
+]]> 
+</script> is between <script type="math/tex"> <![CDATA[ 
+0 
+]]> 
+</script> and <script type="math/tex"> <![CDATA[ 
+2R 
+]]> 
+</script>. We solve <script type="math/tex; mode=display"> <![CDATA[ 
+ V_{\text {c}}'(h)=\answer [given]{-\pi h^2+(4/3)\pi h R}=0,  
+]]> 
+</script> finding <script type="math/tex"> <![CDATA[ 
+h=0 
+]]> 
+</script> or <script type="math/tex"> <![CDATA[ 
+h=4R/3 
+]]> 
+</script>. We compute <script type="math/tex; mode=display"> <![CDATA[ 
+ V_{\text {c}}(0)=V_{\text {c}}(2R)=0  
+]]> 
+</script>
+and <script type="math/tex; mode=display"> <![CDATA[ 
+ V_{\text {c}}(4R/3)=(32/81)\pi R^3.  
+]]> 
+</script> The maximum is the latter. Since the volume of the sphere is <script type="math/tex"> <![CDATA[ 
+(4/3)\pi R^3 
+]]> 
+</script>, the fraction of
+the sphere occupied by the cone is <script type="math/tex; mode=display"> <![CDATA[ 
+ \frac {(32/81)\pi R^3}{(4/3)\pi R^3}=\frac {8}{27}\approx 30\%.  
+]]> 
+</script>
+</div>
+</div>
+</p>
+<div class="theorem-like problem-environment example" id="problem7"><a 
+ id="x1-68r7"></a>A power line needs to be run from an power station located on the beach to an
+offshore facility. <div class="image-environment">  <img 
+src="./digInAppliedOptimization-figure2.svg" alt="PIC"  
+ />
+</div>
+It costs $50/ft. to run a power line along the land, and $130/ft. to run a
+power line under water. How much of the power line should be run along the
+land to minimize the overall cost? What is the minimal cost? <div class="theorem-like problem-environment explanation" id="problem8"><a 
+ id="x1-69r8"></a>There are two
+immediate solutions that we could consider, each of which we will reject
+through ‘‘common sense.&#x2019;&#x2019; First, we could minimize the distance by directly
+connecting the two locations with a straight line. However, this requires
+that all the wire be laid underwater, the most costly option. Second, we
+could minimize the underwater length by running a wire all 5000 ft. along
+the beach, directly across from the offshore facility. This has the undesired
+effect of having the longest distance of all, probably ensuring a nonminimal
+cost.
+<!--l. 281--><p class="noindent" >The optimal solution likely has the line being run along the ground for a while, then
+underwater, as the figure implies. We need to label our unknown distances: the
+distance run along the ground and the distance run underwater. Recognizing that the
+underwater distance can be measured as the hypotenuse of a right triangle, we can
+label our figure as follows </p><div class="image-environment">  <img 
+src="./digInAppliedOptimization-figure3.svg" alt="PIC"  
+ />
+</div>
+By choosing <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> as we did, we make the expression under the square root simple. We
+now create the cost function: <script type="math/tex; mode=display"> <![CDATA[ 
+ \begin {array}{ccc} \text {Cost} = & & \\ \text {land cost} & + & \text {water cost} \\ \text {\$50}\times \text {land distance} &+& \text {\$130}\times \text {water distance} \\ 50(5000-x) &+& 130\sqrt {x^2+1000^2}.\\ \end {array}  
+]]> 
+</script> So we have <script type="math/tex; mode=display"> <![CDATA[ 
+ c(x) = \answer [given]{50(5000-x)+ 130\sqrt {x^2+1000^2}}.  
+]]> 
+</script> This function only makes sense on the
+interval <script type="math/tex"> <![CDATA[ 
+[0,5000] 
+]]> 
+</script>. While we are fairly certain the endpoints will not give a minimal cost, we
+still evaluate <script type="math/tex"> <![CDATA[ 
+c(x) 
+]]> 
+</script> at each to verify. <script type="math/tex; mode=display"> <![CDATA[ 
+ c(0) = 380000 \quad \quad c(5000) \approx 662873.  
+]]> 
+</script> We now find the critical points of <script type="math/tex"> <![CDATA[ 
+c(x) 
+]]> 
+</script>. We compute <script type="math/tex"> <![CDATA[ 
+c'(x) 
+]]> 
+</script> as <script type="math/tex; mode=display"> <![CDATA[ 
+ c'(x) = \answer [given]{-50+\frac {130x}{\sqrt {x^2+1000^2}}}.  
+]]> 
+</script>
+Recognize that this is never undefined. Setting <script type="math/tex"> <![CDATA[ 
+c'(x)=0 
+]]> 
+</script> and solving for <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>, we have:
+<script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+      -50+\frac{130x}{\sqrt{x^2+1000^2}} &= 0 \\
+      \frac{130x}{\sqrt{x^2+1000^2}}  &= 50\\
+      \frac{130^2x^2}{x^2+1000^2} &= 50^2\\
+      130^2x^2 &= 50^2(x^2+1000^2) \\
+      130^2x^2-50^2x^2 &= 50^2\cdot1000^2\\
+      (130^2-50^2)x^2 &= 50000^2\\
+      x^2 &= \frac{50000^2}{130^2-50^2}\\
+                                                                  
+
+                                                                  
+      x &= \frac{50000}{\sqrt{130^2-50^2}}\\
+      x &= \frac{50000}{120},
+    \end{align*} 
+]]> 
+</script>
+Evaluating <script type="math/tex"> <![CDATA[ 
+c(x) 
+]]> 
+</script> at <script type="math/tex"> <![CDATA[ 
+x=416.67 
+]]> 
+</script> gives a cost of about <script type="math/tex"> <![CDATA[ 
+\$370000 
+]]> 
+</script>. The distance the power line is laid along land
+is <script type="math/tex"> <![CDATA[ 
+5000-416.67 = 4583.33\unit {ft} 
+]]> 
+</script> and the underwater distance is <script type="math/tex"> <![CDATA[ 
+\sqrt {416.67^2+1000^2} \approx 1083\unit {ft} 
+]]> 
+</script>.
+</div>
+</div>
+<!--l. 363--><p class="noindent" >We now work a similar problem without concrete numbers.
+</p>
+<div class="theorem-like problem-environment example" id="problem9"><a 
+ id="x1-70r9"></a><a class="ximera-label" id="exam:sand and road"></a> Suppose you want to reach a point <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> that is located across the sand from a nearby
+road. <div class="image-environment">  <img 
+src="./digInAppliedOptimization-figure4.svg" alt="PIC"  
+ />
+</div>
+Suppose that the road is straight, and <script type="math/tex"> <![CDATA[ 
+b 
+]]> 
+</script> is the distance from <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> to the closest point <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script> on
+the road. Let <script type="math/tex"> <![CDATA[ 
+v 
+]]> 
+</script> be your speed on the road, and let <script type="math/tex"> <![CDATA[ 
+w 
+]]> 
+</script>, which is less than <script type="math/tex"> <![CDATA[ 
+v 
+]]> 
+</script>, be your speed
+on the sand. Right now you are at the point <script type="math/tex"> <![CDATA[ 
+D 
+]]> 
+</script>, which is a distance <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script> from <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script>. At what
+point <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> should you turn off the road and head across the sand in order to
+minimize your travel time to <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script>? <div class="theorem-like problem-environment explanation" id="problem10"><a 
+ id="x1-71r10"></a>Let <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> be the distance short of <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script> where you
+turn off, the distance from <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> to <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script>. We want to minimize the total travel time.
+Recall that when traveling at constant velocity, time is distance divided by
+velocity.
+<!--l. 416--><p class="noindent" >You travel the distance from <script type="math/tex"> <![CDATA[ 
+D 
+]]> 
+</script> to <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> at speed <script type="math/tex"> <![CDATA[ 
+v 
+]]> 
+</script>, and then the distance from
+<script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> to <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> at speed <script type="math/tex"> <![CDATA[ 
+w 
+]]> 
+</script>. The distance from <script type="math/tex"> <![CDATA[ 
+D 
+]]> 
+</script> to <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> is <script type="math/tex"> <![CDATA[ 
+a-x 
+]]> 
+</script>. By the Pythagorean theorem,
+the distance from <script type="math/tex"> <![CDATA[ 
+B 
+]]> 
+</script> to <script type="math/tex"> <![CDATA[ 
+A 
+]]> 
+</script> is <script type="math/tex; mode=display"> <![CDATA[ 
+ \sqrt {x^2+b^2}.  
+]]> 
+</script> Hence the total time for the trip is <script type="math/tex; mode=display"> <![CDATA[ 
+ T(x)=\frac {a-x}{v}+\frac {\sqrt {x^2+b^2}}{w}.  
+]]> 
+</script> We want to
+find the minimum value of <script type="math/tex"> <![CDATA[ 
+T 
+]]> 
+</script> when <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> is between 0 and <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script>. As usual we set <script type="math/tex"> <![CDATA[ 
+T'(x)=0 
+]]> 
+</script> and
+solve for <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script>. Write <script type="math/tex; mode=display"> <![CDATA[ 
+ T'(x)=\answer [given]{-1/v+\frac {x}{w\sqrt {x^2+b^2}}} =0.  
+]]> 
+</script> We find that <script type="math/tex; mode=display"> <![CDATA[ 
+ x=\frac {wb}{\sqrt {v^2-w^2}}  
+]]> 
+</script> Notice that <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script> does not appear in the last
+expression, but <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script> is not irrelevant, since we are interested only in critical
+values that are in <script type="math/tex"> <![CDATA[ 
+[0,a] 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+wb/\sqrt {v^2-w^2} 
+]]> 
+</script> is either in this interval or not. If it is, we can
+use the second derivative to test it: <script type="math/tex; mode=display"> <![CDATA[ 
+ T''(x) = \answer [given]{\frac {b^2}{(x^2+b^2)^{3/2}w}}.  
+]]> 
+</script> Since this is always positive there is
+a local minimum at the critical point, and so it is a global minimum as
+well.
+</p><!--l. 446--><p class="noindent" >If the critical value is not in <script type="math/tex"> <![CDATA[ 
+[0,a] 
+]]> 
+</script> it is larger than <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script>. In this case the minimum must occur
+at one of the endpoints. We can compute </p><script type="math/tex; mode=display"><![CDATA[ 
+\begin{align*} 
+T(0)&={a\over v}+{b\over w} \\
+T(a)&={\sqrt{a^2+b^2}\over w}
+\end{align*} 
+]]> 
+</script>
+but it is difficult to determine which of these is smaller by direct comparison. If, as is
+likely in practice, we know the values of <script type="math/tex"> <![CDATA[ 
+v 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+w 
+]]> 
+</script>, <script type="math/tex"> <![CDATA[ 
+a 
+]]> 
+</script>, and <script type="math/tex"> <![CDATA[ 
+b 
+]]> 
+</script>, then it is easy to determine this.
+With a little cleverness, however, we can determine the minimum in general. We
+have seen that <script type="math/tex"> <![CDATA[ 
+T''(x) 
+]]> 
+</script> is always positive, so the derivative <script type="math/tex"> <![CDATA[ 
+T'(x) 
+]]> 
+</script> is always increasing. We know
+that at <script type="math/tex"> <![CDATA[ 
+wb/\sqrt {v^2-w^2} 
+]]> 
+</script> the derivative is zero, so for values of <script type="math/tex"> <![CDATA[ 
+x 
+]]> 
+</script> less than that critical value,
+the derivative is negative. This means that <script type="math/tex"> <![CDATA[ 
+T(0)>T(a) 
+]]> 
+</script>, so the minimum occurs when
+<script type="math/tex"> <![CDATA[ 
+x=a 
+]]> 
+</script>.
+<!--l. 461--><p class="noindent" >So the upshot is this: If you start farther away from <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script> than <script type="math/tex"> <![CDATA[ 
+wb/\sqrt {v^2-w^2} 
+]]> 
+</script> then you always want to
+                                                                  
+
+                                                                  
+cut across the sand when you are a distance <script type="math/tex"> <![CDATA[ 
+wb/\sqrt {v^2-w^2} 
+]]> 
+</script> from point <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script>. If you start closer than this
+to <script type="math/tex"> <![CDATA[ 
+C 
+]]> 
+</script>, you should cut directly across the sand.
+</div>
+</div>
+</p><!--l. 470--><p class="noindent" >With optimization problems you will see a variety of situations that require you to
+combine problem solving skills with calculus. Focus on the <em>process</em>. One must learn
+how to form equations from situations that can be manipulated into what you need.
+Forget memorizing how to do ‘‘this kind of problem&#x2019;&#x2019; as opposed to ‘‘that kind of
+problem.&#x2019;&#x2019;
+     </p><div class="quote">
+     <!--l. 478--><p class="noindent" ><strong>Learning   a   process   will   benefit   one   far   more   than
+     memorizing a specific technique.</strong></p></div>
+</body> 
+ 
+</html>
+                                                                  
+
+                                                                  
+                                                                  
+
+
