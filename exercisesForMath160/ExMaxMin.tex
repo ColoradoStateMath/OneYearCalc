@@ -13,23 +13,25 @@
 
 \begin{document}
 \begin{abstract}
-  Here we'll practice on maxima and minima concepts.
+  Here we'll practice on maxima and minima concepts. If the answer is false, be sure to have a counter example prepared!
 \end{abstract}
 \maketitle
 
 %%MinTF1
 \begin{exercise}
-	If $f'(a) = 0$, then $x=a$ is a local extremum of $f$.
+	If $f'(a) = 0$, then $x=a$ is a local extremum of $f$.  
 	\begin{multipleChoice}	
 		\choice{True}
 		\choice[correct]{False}
 	\end{multipleChoice}
+        \begin{feedback} Here are two ways this can be false: 1) It isn't $x=a$ that would be the max, but rather $f(a)$.  2) $f(x)$ could be increasing on either side of $x=a$ and so there would not be a maximum at $x=a$
+    \end{feedback}
 \end{exercise}
 
 
 %%MinTF4
 \begin{exercise}
-If $f$ is continuous, $f'(x)<0$ when $x<a$ and $f'(x) \geq 0$ when $x>a$, then $a$ is a local max.
+If $f$ is continuous, $f'(x)<0$ when $x<a$ and $f'(x) \geq 0$ when $x>a$, then $f(a)$ is a local max.
 	\begin{multipleChoice}	
 		\choice{True}
 		\choice[correct]{False}
@@ -74,14 +76,7 @@ If $f$ and $g$ both have local minima at $x=a$, then their sum $f+g$ has a local
 	\end{multipleChoice}
 \end{exercise}
 
-%%MinTF8
-\begin{exercise}
-If $f''(x)<0$ on $(2,5)$, and $f'(3)=0$, then $x=3$ is a local max
-	\begin{multipleChoice}	
-		\choice[true]{True}
-		\choice{False}
-	\end{multipleChoice}
-\end{exercise}
+
 
 %%MinTF9
 \begin{exercise}
@@ -95,11 +90,12 @@ If $f$ is differentiable and decreasing on $(a,b)$, then $f'(x)<0$ on $(a,b)$
 
 %%MinTF10
 \begin{exercise}
-If $f$ and $g$ both have local minima at $x=a$, then their product $f\cdot g$ has a local minima at $x=a$ as well.
+If $f$ and $g$ both have local minima at $x=a$, then $x=a$ is a critical point of the function $h(x)=f(x)\cdot g(x)$.
+%their product $f\cdot g$ has a local minima at $x=a$ as well. (this one is false)
 
 \begin{multipleChoice}	
-  \choice{True}
-  \choice[correct]{False}
+  \choice[correct]{True}
+  \choice{False}
 \end{multipleChoice}
 \end{exercise}
 

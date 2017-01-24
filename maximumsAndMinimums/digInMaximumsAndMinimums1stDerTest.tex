@@ -35,9 +35,9 @@ We use derivatives to help locate extrema.
 
 The method of the previous section for deciding whether there is a
 local maximum or minimum at a critical point by testing ``near-by''
-points is not always convenient. Instead, since we have already had to
+points is not always convenient.  Instead, since we have already had to
 compute the derivative to find the critical points, we can use
-information about the derivative to decide. Recall that
+information about the derivative to determine if we have a local maximum or minimum. Recall that
 \begin{itemize}
 \item If $f'(x) >0$ on an interval, then $f$ is increasing on that interval.
 \item If $f'(x) <0$ on an interval, then $f$ is decreasing on that interval.
@@ -73,19 +73,19 @@ Start by computing
 \[
 \ddx f(x) = \answer[given]{x^3+x^2-2x}.
 \]
-Now we need to find when this function is positive and when it is
-negative. To do this, solve 
+Now we need to find when THIS function is positive and when it is
+negative. To do this, start by asking where the derivative is neither positive nor negative, in other words, when is the derivative zero or undefined. Note that this function is a polynomial, and will always be defined, so we don't have any places to look for where the derivative is undefined.  To find when the derivative is zero, solve 
 \[
 f'(x) = \answer[given]{x^3+x^2-2x} =0.
 \]
 Factor $f'(x)$
 \begin{align*}
-f'(x) &= \answer[given]{x^3+x^2-2x} \\
-&=x(\answer[given]{x^2+x-2})\\
-&=x(x+2)\answer[given]{(x-1)}.
+\answer[given]{x^3+x^2-2x} &= 0 \\
+x(\answer[given]{x^2+x-2}) &= 0\\
+x(x+2)(\answer[given]{x-1}) &= 0.
 \end{align*}
 So the critical points (when $f'(x)=0$) are when $x=-2$, $x=0$, and
-$x=1$. Now we can check points \textbf{between} the critical points to find
+$x=1$. These are the ONLY $x$-values where our derivative is neither positive nor negative, so the function is neither increasing nor decreasing. The function isn't changing behavior BETWEEN critical points, so we can check a random point \textbf{between} the critical points to find the behavior on that interval. In other words, check 
 when $f'(x)$ is increasing and decreasing:
 \begin{align*}
   f'(-3)&=\answer[given]{-12},\\
@@ -178,7 +178,7 @@ are at $x=-2$ and $x=1$, see the graphs of of $f(x) =x^4/4 + x^3/3
 \end{example}
 
 
-Hence we have seen that if $f'$ is zero and increasing at a point,
+In the graph above we see that if $f'$ is zero and increasing at a point,
 then $f$ has a local minimum at the point. If $f'$ is zero and
 decreasing at a point then $f$ has a local maximum at the
 point. Thus, we see that we can gain information about $f$ by
