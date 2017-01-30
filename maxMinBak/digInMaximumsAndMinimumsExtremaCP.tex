@@ -1,0 +1,276 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title[Dig-In]{Extreme Values and Critical Points}
+
+
+
+\outcome{Define a critical point.}
+\outcome{Find critical points.}
+\outcome{Define absolute maximum and absolute minimum.}
+\outcome{Find the absolute max or min of a continuous function on a closed interval.}
+\outcome{Define local maximum and local minimum.}
+\outcome{Compare and contrast local and absolute maxima and minima.}
+\outcome{Identify situations in which an absolute maximum or minimum is guaranteed.}
+\outcome{Classify critical points.}
+\outcome{State the First Derivative Test.}
+\outcome{Apply the First Derivative Test.}
+\outcome{State the Second Derivative Test.}
+\outcome{Apply the Second Derivative Test.}
+\outcome{Define inflection points.}
+\outcome{Find inflection points.}
+  
+
+
+\begin{document}
+\begin{abstract}
+We use derivatives to help locate extrema.  
+\end{abstract}
+\maketitle
+
+
+Whether we are interested in a function as a purely mathematical
+object or in connection with some application to the real world, it is
+often useful to know what the graph of the function looks like. We can
+obtain a good picture of the graph using certain crucial information
+provided by derivatives of the function.
+
+\section{Extrema}
+
+Local \textit{extrema} on a function are points on the graph where the
+$y$-coordinate is larger (or smaller) than all other $y$-coordinates
+on the graph at points ``close to'' $(x,y)$. 
+
+\begin{definition}\hfil\index{maximum/minimum!local}
+\begin{enumerate}
+\item A function $f$ has a \dfn{local maximum} at $x=a$, if $f(a)\ge
+  f(x)$ for every $x$ near $a$.
+\item A function $f$ has a \dfn{local minimum} at $x=a$, if $f(a)\le
+  f(x)$ for every $x$ near $a$.
+\end{enumerate}
+A \dfn{local extremum}\index{extremum!local} is either a local
+maximum or a local minimum.
+\end{definition}
+
+\begin{problem}
+  True or false: ``All absolute extrema are also local extrema.''
+  \begin{multipleChoice}
+    \choice[correct]{true}
+    \choice{false}
+  \end{multipleChoice}
+  \begin{feedback}
+    All global extrema are local extrema.
+  \end{feedback}
+\end{problem}
+
+Points where local maxima and minima occur are quite distinctive on the graph of
+a function, and are therefore useful in understanding the shape of the
+graph. In many applied problems we want to find the largest or
+smallest value that a function achieves (for example, we might want
+to find the minimum cost at which some task can be performed) and so
+identifying maxima and minima will be useful for applied
+problems as well.
+
+
+
+\section{Critical points}
+
+
+If $(x,f(x))$ is a point where $f$ reaches a local maximum or minimum,
+and if the derivative of $f$ exists at $x$, then the graph has a
+tangent line and the tangent line must be horizontal. This is
+important enough to state as a theorem, though we will not prove it.
+
+\begin{theorem}[Fermat's Theorem]\index{Fermat's Theorem}\label{theorem:fermat}
+If $f$ has a local extremum at $x=a$ and $f$ is differentiable
+at $a$, then $f'(a)=0$.
+\end{theorem}
+
+\begin{problem}
+  Does Fermat's Theorem say that if $f'(a) = 0$, then $f$ has a local
+  extrema at $x=a$?
+  \begin{multipleChoice}
+    \choice{yes}
+    \choice[correct]{no}
+  \end{multipleChoice}
+  \begin{feedback}
+    Consider $f(x) = x^3$, $f'(0) = 0$, but $f$ does not have a local
+    maximum or minimum at $x=0$.
+  \end{feedback}
+\end{problem}
+
+
+Here is an example of a function and its derivative where Fermat's Theorem applies. 
+Consider the plots of $f(x) = x^3-4x^2+3x$ and $f'(x) =
+3x^2-8x+3$, and look at the output of the derivative at the same x-values where local extrema occur.
+\begin{image}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            ymax=3,
+            ymin=-3,
+            %samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [dashed, textColor, smooth] plot coordinates {(.451,0) (.451,.631)}; %% {.451};
+          \addplot [dashed, textColor, smooth] plot coordinates {(2.215,-2.113) (2.215,0)}; %% axis{2.215};
+          \addplot [very thick, penColor2, smooth] {3*x^2-8*x+3};
+          \addplot [very thick, penColor, smooth] {x^3-4*x^2+3*x};
+          \node at (axis cs:2.5,-2) [anchor=west] {\color{penColor}$f$};  
+          \node at (axis cs:.2,2) [anchor=west] {\color{penColor2}$f'$};
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(.451,0)};  %% closed hole
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(2.215,0)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(.451,.631)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(2.215,-2.113)};  %% closed hole
+        \end{axis}
+\end{tikzpicture}
+%% \caption{A plot of $f(x) = x^3-4x^2+3x$ and $f'(x) = 3x^2-8x+3$.}
+%% \label{figure:x^3-4x^2+3x}
+\end{image}
+However, this is only half of the story! Consider $f(x) = x^{2/3}$ and $f'(x) = \frac{2}{3x^{1/3}}$:
+\begin{image}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            ymax=2,
+            ymin=-2,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [very thick, penColor2, samples=100, smooth,domain=(-3:-.01)] {-(2/3)*abs(x)^(-1/3)};
+          \addplot [very thick, penColor2, samples=100, smooth,domain=(.01:3)] {(2/3)*abs(x)^(-1/3)};
+          \addplot [very thick, penColor, smooth,domain=(-3:-.01)] {abs(x)^(2/3)};
+          \addplot [very thick, penColor, smooth,domain=(.01:3)] {x^(2/3)};         
+          \node at (axis cs:-2,1.7) [anchor=west] {\color{penColor}$f$};  
+          \node at (axis cs:2,.7) [anchor=west] {\color{penColor2}$f'$};
+        \end{axis}
+\end{tikzpicture}
+%% \caption{A plot of $f(x) = x^{2/3}$ and $f'(x) = \frac{2}{3x^{1/3}}$.}
+%% \label{figure:x^{2/3}}
+\end{image}
+What do you notice about the value of the derivative at the place where the minimum occurs?
+
+This brings us to our next definition.
+
+\begin{definition}\index{critical point}
+  A function has a \dfn{critical point} at an interior point in its domain $x=a$ if 
+  \[
+  f'(a) = 0\qquad\text{or}\qquad \text{$f'(a)$ does not exist.}
+  \]
+\end{definition}
+
+\begin{warning} 
+When looking for local maximum and minimum points, you are likely to
+make two sorts of mistakes: 
+\begin{itemize}
+\item You may forget that a maximum or minimum can occur where the
+  derivative does not exist, so don't forget to check whether the
+  derivative exists everywhere. 
+\item You might assume that any place that the derivative is zero is a
+  local maximum or minimum point, but this is not true, consider the
+  plots of $f(x) = x^3$ and $f'(x) = 3x^2$.
+\begin{image}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-3:3,
+            ymax=3,
+            ymin=-3,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [very thick, penColor2, smooth] {3*x^2};
+          \addplot [very thick, penColor, smooth] {x^3};         
+          \node at (axis cs:1,.9) [anchor=west] {\color{penColor}$f$};  
+          \node at (axis cs:-.5,1) [anchor=west] {\color{penColor2}$f'$};
+        \end{axis}
+\end{tikzpicture}
+%% \caption{A plot of $f(x) = x^3$ and $f'(x) = 3x^2$. While $f'(0)=0$,
+%%   there is neither a maximum nor minimum at $(0,f(0))$.}
+%% \label{figure:x^3}
+\end{image}
+While $f'(0)=0$, there is neither a maximum nor minimum at $(0,f(0))$.
+\end{itemize}
+\end{warning}
+
+
+
+Since the derivative is zero or undefined at both local maximum and
+local minimum points, we need a way to determine which, if either,
+actually occurs. The most elementary approach is to test directly
+whether the $y$ coordinates near the potential maximum or minimum are
+above or below the $y$ coordinate at the point of interest. 
+
+It is not always easy to compute the value of a function at a
+particular point. The task is made easier by the availability of
+calculators and computers, but they have their own drawbacks: they do
+not always allow us to distinguish between values that are very close
+together. Nevertheless, because this method is conceptually simple and
+sometimes easy to perform, you could consider it.  However, be wary of using this approach as an exam answer- it is difficult to justify, and works only on nice enough functions. It is better if you use some of the methods you will learn over the next few cards.
+
+
+
+
+\begin{example}
+Find all local maximum and minimum values for the function 
+$f(x)=x^3-x$. 
+\begin{explanation} 
+Write
+\[
+\ddx f(x)=\answer[given]{3x^2-1}.
+\] 
+This is defined everywhere and is zero at $x=\pm \sqrt{3}/3$. Looking
+first at $x=\sqrt{3}/3$, we see that 
+\[
+f(\sqrt{3}/3)=\answer[given]{-2\sqrt{3}/9}.
+\] 
+Now we test two points on either side of $x=\sqrt{3}/3$, making sure
+that neither is farther away than the nearest critical point; since
+$\sqrt{3}<3$, $\sqrt{3}/3<1$ and we can use $x=0$ and $x=1$. Since
+\[
+f(0)=0>-2\sqrt{3}/9\qquad\text{and}\qquad f(1)=0>-2\sqrt{3}/9,
+\] 
+there must be a local minimum at $x=\answer[given]{\sqrt{3}/3}$.
+
+For $x=-\sqrt{3}/3$, we see that $f(-\sqrt{3}/3)=2\sqrt{3}/9$. This
+time we can use $x=0$ and $x=-1$, and we find that $f(-1)=f(0)=0<
+2\sqrt{3}/9$, so there must be a local maximum at
+$x=\answer[given]{-\sqrt{3}/3}$, see the plot below:
+\begin{image}
+\begin{tikzpicture}
+	\begin{axis}[
+            domain=-2:2,
+            ymax=2,
+            ymin=-2,
+            %samples=100,
+            axis lines =middle, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+          \addplot [dashed, textColor, smooth] plot coordinates {(-.577,0) (-.577,.385)}; %% {.451};
+          \addplot [dashed, textColor, smooth] plot coordinates {(.577,-.385) (.577,0)}; %% axis{2.215};
+
+          \addplot [very thick, penColor2, smooth] {3*x^2-1};
+          \addplot [very thick, penColor, smooth] {x^3-x};
+
+          \node at (axis cs:1.2,.3) [anchor=west] {\color{penColor}$f$};  
+          \node at (axis cs:-.75,1) [anchor=west] {\color{penColor2}$f'$};
+
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(-.577,0)};  %% closed hole
+          \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(.577,0)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(-.577,.385)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(.577,-.385)};  %% closed hole
+        \end{axis}
+\end{tikzpicture}
+%%\caption{A plot of $f(x) = x^3-x$ and $f'(x) = 3x^2-1$.}
+%%\label{figure:x^3-x}
+\end{image}
+\end{explanation}
+\end{example}
+
+
+\end{document}
