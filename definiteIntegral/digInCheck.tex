@@ -1,0 +1,53 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\outcome{Use integral notation for both antiderivatives and definite integrals.}
+\outcome{Compute definite integrals using geometry.}
+\outcome{Compute definite integrals using the properties of integrals.}
+\outcome{Justify the properties of definite integrals using algebra or geometry.}
+\outcome{Understand how Riemann sums are used to find exact area.}
+\outcome{Define net area.}
+\outcome{Split the area under a curve into several pieces to aid with calculations.}
+\outcome{Use symmetry to calculate definite integrals.}
+\outcome{Explain geometrically why symmetry of a function simplifies calculation of some definite integrals.}
+
+
+\title[Dig-In:]{The definite integral- now with images!}
+
+\begin{document}
+\begin{abstract}
+  Definite integrals compute signed area.
+\end{abstract}
+\maketitle
+
+
+
+\begin{problem}
+Consider the following graph of $y=f(x)$, if it loads:
+
+\begin{image}
+  \begin{tikzpicture}
+    \begin{axis}[
+        width=6in,
+        height=3in,
+        xmin=-.5, xmax=5.5,ymin=-1.2,ymax=2.2,domain=0:6,
+        axis lines =center, xlabel=$x$, ylabel=$y$,
+        every axis y label/.style={at=(current axis.above origin),anchor=south},
+        every axis x label/.style={at=(current axis.right of origin),anchor=west},
+        axis on top,
+    ] 
+      \addplot [draw=none, %pattern=north west lines, pattern color=blue,
+        fill=fillp,
+        domain=0:1] {x} \closedcycle;
+      \addplot [draw=none, %pattern=north west lines, pattern color=blue,
+        fill=fillp,
+        domain=1:5] {2-x/2} \closedcycle;
+      
+      \addplot [penColor,very thick,domain=0:1] {x};
+      \addplot [penColor,very thick,domain=1:5] {2-x/2};
+  \end{axis}
+  \end{tikzpicture}
+\end{image}
+\end{problem}
+\end{document}
